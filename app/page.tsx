@@ -2,7 +2,7 @@ import Header from './header/header';
 
 export default function Home() {
   return (
-    <main className='w-screen h-screen'>
+    <main className='h-screen w-screen'>
       <Header />
     </main>
   );
