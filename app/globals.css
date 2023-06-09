@@ -5,3 +5,12 @@
 body {
   background-color: #ebecf0;
 }
+
+.bgColor {
+  background-color: #ebecf0;
+}
+
+.underlinedText {
+  text-decoration-line: underline;
+  text-decoration-color: rgb(251 146 60);
+}

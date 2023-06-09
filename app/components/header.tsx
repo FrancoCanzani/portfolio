@@ -24,18 +24,21 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 flex w-full items-center justify-between px-8 py-3 text-sm capitalize ${
+      className={`bgColor sticky top-0 mb-5 flex w-full items-center justify-between px-8 py-3 text-sm capitalize lg:mb-10 ${
         hasScrolled ? 'shadow-sm shadow-gray-300' : 'shadow-none'
       }`}
     >
-      <Image
-        src={'/brand/3.png'}
-        width={30}
-        height={30}
-        alt='Franco Canzani letters'
-      />
+      <Link href={'/'}>
+        <Image
+          src={'/brand/3.png'}
+          width={30}
+          height={30}
+          alt='Franco Canzani letters'
+          className='cursor-pointer'
+        />
+      </Link>
       <div className='flex items-center'>
-        <section className='hidden px-8 py-3 md:flex'>
+        <section className='flex px-8 py-3'>
           <div className='flex items-center justify-evenly'>
             <a
               href='https://www.linkedin.com/in/franco-canzani/'
@@ -61,14 +64,18 @@ export default function Header() {
             </a>
           </div>
         </section>
-        <section className='hidden cursor-pointer items-center font-bold text-white  lg:flex'>
+        <section className='flex cursor-pointer items-center font-bold text-white'>
           <a
-            className='mr-3 bg-black px-7 py-2 hover:bg-orange-400'
+            className='mr-3 bg-black px-4 py-2 hover:bg-orange-400 lg:px-8'
             href='https://cal.com/francocanzani'
+            target='blank'
           >
             Book an interview
           </a>
-          <Link className='bg-black px-7 py-2 hover:bg-purple-400' href={'/'}>
+          <Link
+            className='hidden bg-black px-7 py-2 hover:bg-purple-400 md:flex'
+            href={'/'}
+          >
             Blog
           </Link>
         </section>
