@@ -50,8 +50,8 @@ export default function About() {
 
       <div className='mt-10'>
         Learn more{' '}
-        <Link href={'/'} className='underline'>
-          About Me
+        <Link href={'/'} className='underline hover:opacity-75'>
+          About Me{' '}
         </Link>
         <br />
         <a
