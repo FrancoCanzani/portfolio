@@ -1,17 +1,26 @@
 import Link from 'next/link';
+
 import { useState } from 'react';
+
 export default function About() {
-  const [isDownloaded, setIsDownloaded] = useState(undefined);
+  const [isDownloaded, setIsDownloaded] = useState('Download Resume');
+
+  function downloadStatus() {
+    if (document.readyState == 'loading') {
+      setIsDownloaded('Downloading');
+    } else if (document.readyState == 'complete') {
+      setIsDownloaded('Completed');
+      setTimeout(() => {
+        setIsDownloaded('Download Resume');
+      }, 3000);
+    }
+  }
 
   return (
     <section className='p-6 sm:px-24 md:px-28 lg:px-36'>
       <h1 className='text-3xl font-black'>Franco Canzani</h1>
       <h2 className='mb-2 text-xs capitalize'>Front end developer</h2>
-      <a
-        href='https://goo.gl/maps/kj3qRxZa2fR18fPK7'
-        target='blank'
-        className=''
-      >
+      <a href='https://goo.gl/maps/kj3qRxZa2fR18fPK7' target='blank'>
         🌍
         <span className='ml-1 hover:underline'>Denia, Alicante, Spain</span>
       </a>
@@ -42,15 +51,18 @@ export default function About() {
       <div className='mt-10'>
         Learn more{' '}
         <Link href={'/'} className='underline'>
-          About me
+          About Me
         </Link>
         <br />
         <a
           href='./Franco_Canzani.pdf'
           download
-          className='mt-1 flex w-48 items-center justify-center bg-black px-4 py-2 font-bold text-white hover:bg-green-600'
+          onClick={downloadStatus}
+          className={`mt-1 flex w-48 items-center justify-center bg-black px-4 py-2 font-bold text-white hover:bg-green-600 ${
+            isDownloaded !== 'Download Resume' ? 'animate-pulse' : ''
+          }`}
         >
-          Download Resume
+          {isDownloaded}
         </a>
       </div>
     </section>
