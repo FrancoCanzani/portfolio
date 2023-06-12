@@ -12,7 +12,7 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 export function getSortedPostsData(): PostData[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
+  const allPostsData = fileNames.reduce<PostData[]>((posts, fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '');
 
@@ -23,12 +23,21 @@ export function getSortedPostsData(): PostData[] {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
 
+    // Check if the matterResult has data
+    if (!matterResult.data) {
+      console.log(`Invalid metadata in file: ${fullPath}`);
+      return posts; // Exclude this file from the result
+    }
+
     // Combine the data with the id
-    return {
+    const postData: PostData = {
       id,
-      ...matterResult.data,
-    } as PostData;
-  });
+      date: matterResult.data.date,
+    };
+
+    return [...posts, postData];
+  }, []);
+
   // Sort posts by date
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
