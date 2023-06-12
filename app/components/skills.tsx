@@ -54,7 +54,7 @@ export default function Skills() {
               alt='Skill logo'
               height={50}
               width={50}
-              className={`hover:scale-125 ${
+              className={`mt-4 hover:scale-125 ${
                 index === skills.length - 1 ? '' : 'mr-10'
               }`}
             />
