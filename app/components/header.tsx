@@ -74,7 +74,7 @@ export default function Header() {
           </a>
           <Link
             className='hidden bg-black px-7 py-2 hover:bg-purple-400 md:flex'
-            href={'/'}
+            href={'/blog'}
           >
             Blog
           </Link>
