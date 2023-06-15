@@ -1,20 +1,29 @@
-import { getAllPostIds, getPostData } from '@/lib/posts';
+import { getPostData, getAllPostIds } from '@/lib/posts';
 
-// Return a list of `params` to populate the [slug] dynamic segment
-export async function generateStaticParams() {
-  const posts = getPostData();
-  return posts.map((post) => ({
-    id: post.id,
-  }));
+export async function getStaticPaths() {
+  const paths = getAllPostIds();
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
-export default async function Post({ params }) {
-  const { id } = params;
+export async function getStaticProps({ params }) {
+  const postData = await getPostData(params.id);
+  return {
+    props: {
+      postData,
+    },
+  };
+}
+
+export default function Post({ postData }) {
+  const { id, title, contentHtml } = postData;
 
   return (
     <article>
-      <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+      <h1>{title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
     </article>
   );
 }

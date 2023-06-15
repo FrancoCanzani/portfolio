@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 
 export default async function Home() {
   const allPostsData = await getSortedPostsData();
+
   return (
     <section>
       <h1>Blog posts</h1>
