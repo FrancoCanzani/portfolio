@@ -1,29 +1,23 @@
 import { getPostData, getAllPostIds } from '@/lib/posts';
 
-export async function getStaticPaths() {
-  const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
+export async function generateStaticParams() {
+  const allPostIds = getAllPostIds();
+  return allPostIds;
 }
 
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
-  return {
-    props: {
-      postData,
-    },
-  };
+async function getPost(params) {
+  const post = await getPostData(params);
+
+  return post;
 }
 
-export default function Post({ postData }) {
-  const { id, title, contentHtml } = postData;
+export default async function Post(params) {
+  const post = await getPost(params.id);
 
   return (
     <article>
-      <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      <h1>{post.id}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
     </article>
   );
 }
