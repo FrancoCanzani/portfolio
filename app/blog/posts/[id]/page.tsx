@@ -1,5 +1,12 @@
 import { getPostData, getAllPostIds } from '@/lib/posts';
 
+interface PostParams {
+  id: string;
+  title: string;
+  contentHtml: string;
+  date: string;
+}
+
 export async function generateStaticParams() {
   const postIds = getAllPostIds();
   return postIds.map((item) => ({
@@ -7,13 +14,13 @@ export async function generateStaticParams() {
   }));
 }
 
-async function getPost(params) {
+async function getPost(params: string) {
   const post = await getPostData(params);
 
   return post;
 }
 
-export default async function Post({ params }) {
+export default async function Post({ params }: { params: PostParams }) {
   const post = await getPost(params.id);
 
   return (
