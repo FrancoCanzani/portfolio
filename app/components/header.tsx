@@ -70,7 +70,7 @@ export default function Header() {
             href='https://cal.com/francocanzani'
             target='blank'
           >
-            Book an interview
+            Book a Meeting
           </a>
           <Link
             className='hidden bg-black px-7 py-2 hover:bg-purple-400 md:flex'

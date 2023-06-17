@@ -1,4 +1,4 @@
-import { getPostData, getAllPostIds } from '@/lib/posts';
+import { getPostData, getAllPostIds } from '@/scripts/posts';
 
 interface PostParams {
   id: string;

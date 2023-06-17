@@ -1,6 +1,6 @@
-import { getSortedPostsData } from '@/lib/posts';
-
 import Link from 'next/link';
+
+import { getSortedPostsData } from '@/scripts/posts';
 
 export default async function Home() {
   const allPostsData = await getSortedPostsData();

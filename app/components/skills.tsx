@@ -11,12 +11,12 @@ import tailwindLogo from '../../public/skills/tailwindLogo.svg';
 import typescriptLogo from '../../public/skills/typescriptLogo.svg';
 
 const skills = [
-  jsLogo,
-  typescriptLogo,
-  reactLogo,
-  nextLogo,
-  supabaseLogo,
-  tailwindLogo,
+  { logo: jsLogo, name: 'JavaScript' },
+  { logo: typescriptLogo, name: 'TypeScript' },
+  { logo: reactLogo, name: 'React' },
+  { logo: nextLogo, name: 'Next.js' },
+  { logo: supabaseLogo, name: 'Supabase' },
+  { logo: tailwindLogo, name: 'Tailwind CSS' },
 ];
 
 export default function Skills() {
@@ -48,16 +48,22 @@ export default function Skills() {
       <div className='w-full bg-slate-200'>
         <div className='flex flex-wrap items-center justify-center p-2 py-10 sm:px-24 md:px-28 lg:px-36'>
           {skills.map((skill, index) => (
-            <Image
+            <div
               key={uuidv4()}
-              src={skill}
-              alt='Skill logo'
-              height={50}
-              width={50}
-              className={`mt-4 hover:scale-125 ${
+              className={`mt-4 flex items-center rounded-md border-2 border-gray-400 p-3 hover:scale-110 ${
                 index === skills.length - 1 ? '' : 'mr-10'
               }`}
-            />
+            >
+              <Image
+                key={uuidv4()}
+                src={skill.logo}
+                alt={`${skill.name} logo`}
+                height={25}
+                width={25}
+                className='mr-3'
+              />
+              <p className='font-semibold'>{skill.name}</p>
+            </div>
           ))}
         </div>
       </div>
