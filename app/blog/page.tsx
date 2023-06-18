@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <section className='p-6 sm:px-24 md:px-28 lg:px-36'>
-      <h1 className='bg mb-4 text-4xl font-black'>Blog posts*</h1>
+      <h1 className='bg mb-4 text-4xl font-black'>Blog Posts*</h1>
       <ul>
         {allPostsData.map(({ id, title }) => (
           <li

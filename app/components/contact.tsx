@@ -7,7 +7,7 @@ export default function Contact() {
         <h1 className='pl-6 pt-6 text-5xl font-black uppercase sm:pl-24 md:pl-28 lg:pl-36'>
           Contact
         </h1>
-        <div className='w-full bg-red-100'>
+        <div className='w-full bg-indigo-100'>
           <div className='flex flex-col flex-wrap items-center justify-center p-2 py-10 sm:px-24 md:px-28 lg:px-36'>
             <div className='capitalize'>
               <a
