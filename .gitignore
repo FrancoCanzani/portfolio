@@ -18,7 +18,9 @@
 # misc
 .DS_Store
 *.pem
-sendEmail.js
+
+# Keys
+emailCredentials.js
 
 # debug
 npm-debug.log*
