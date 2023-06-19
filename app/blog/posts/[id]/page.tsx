@@ -24,7 +24,7 @@ export default async function Post({ params }: { params: PostParams }) {
   const post = await getPost(params.id);
 
   return (
-    <article>
+    <article className='py-6'>
       <h1>{post.id}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
     </article>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { getSortedPostsData } from '@/scripts/posts';
 
@@ -20,8 +21,21 @@ export default async function Home() {
   ];
 
   return (
-    <section className='p-6 sm:px-24 md:px-28 lg:px-36'>
-      <h1 className='bg mb-4 text-4xl font-black'>Blog Posts*</h1>
+    <section className='px-6 sm:px-24 md:px-28 lg:px-36'>
+      <Link
+        href={'/'}
+        className='flex items-center text-xs capitalize hover:underline'
+      >
+        <Image
+          src={'/PhArrowLeftThin.svg'}
+          alt='Left arrow'
+          width={18}
+          height={18}
+          className='mr-1'
+        ></Image>
+        Back to home
+      </Link>{' '}
+      <h1 className='bg mb-4 py-6 text-4xl font-black'>Blog Posts*</h1>
       <ul>
         {allPostsData.map(({ id, title }) => (
           <li
@@ -37,7 +51,7 @@ export default async function Home() {
           </li>
         ))}
       </ul>
-      <div className='fixed bottom-2'>
+      <div className=''>
         <p className='text-xs'>
           * Disclaimer: Personal notes only, not a resource. Not reliable. Use
           at own risk. No guarantees. Errors possible. Not for decision-making.
