@@ -1,0 +1,44 @@
+import { initializeApp } from 'firebase/app';
+import {
+  getAuth,
+  signInWithRedirect,
+  getRedirectResult,
+  GoogleAuthProvider,
+} from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAgoNsVTQjQbMm5lmG6e1ouy0qecVHuky8',
+  authDomain: 'blog-f64bc.firebaseapp.com',
+  projectId: 'blog-f64bc',
+  storageBucket: 'blog-f64bc.appspot.com',
+  messagingSenderId: '558854756137',
+  appId: '1:558854756137:web:7788ae9d893f12f0e3c938',
+  measurementId: 'G-2VV82ZBXHC',
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const provider = new GoogleAuthProvider();
+
+export function signInWithGoogle() {
+  signInWithRedirect(auth, provider);
+}
+
+export function getUserDisplayName() {
+  return getRedirectResult(auth)
+    .then((result) => {
+      if (result.user) {
+        return result.user.displayName;
+      } else {
+        return null;
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      return null;
+    });
+}
+
+export { app, auth };

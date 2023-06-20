@@ -25,8 +25,12 @@ export default async function Post({ params }: { params: PostParams }) {
 
   return (
     <article className='py-6'>
-      <h1>{post.id}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+      <h1 className='mb-2 text-3xl font-bold uppercase'>{post.title}</h1>
+      <h4 className='mb-6 text-xs'>{post.date}</h4>
+      <div
+        className=''
+        dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+      />
     </article>
   );
 }

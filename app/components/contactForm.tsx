@@ -81,7 +81,6 @@ export default function ContactForm() {
             required
             className='rounded-sm px-2 py-1'
             placeholder='John Doe'
-            autoFocus
             value={name}
             onChange={handleNameInput}
           />

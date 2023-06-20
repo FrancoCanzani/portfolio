@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import Login from './login';
+
 export default function Header() {
   const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -73,12 +75,13 @@ export default function Header() {
             Book a Meeting
           </a>
           <Link
-            className='hidden bg-black px-7 py-2 hover:bg-purple-400 md:flex'
+            className='mr-3 hidden bg-black px-7 py-2 hover:bg-purple-400 md:flex'
             href={'/blog'}
           >
             Blog
           </Link>
         </section>
+        <Login />
       </div>
     </header>
   );
