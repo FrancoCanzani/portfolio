@@ -26,19 +26,4 @@ export function signInWithGoogle() {
   signInWithRedirect(auth, provider);
 }
 
-export function getUserDisplayName() {
-  return getRedirectResult(auth)
-    .then((result) => {
-      if (result.user) {
-        return result.user.displayName;
-      } else {
-        return null;
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-      return null;
-    });
-}
-
 export { app, auth };

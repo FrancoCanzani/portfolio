@@ -40,33 +40,7 @@ export default function Header() {
         />
       </Link>
       <div className='flex items-center'>
-        <section className='flex px-8 py-3'>
-          <div className='flex items-center justify-evenly'>
-            <a
-              href='https://www.linkedin.com/in/franco-canzani/'
-              target='blank'
-            >
-              <Image
-                src='./AkarIconsLinkedinv1Fill.svg'
-                width={20}
-                height={20}
-                alt='Linkedin link'
-                className='mr-2 hover:opacity-80'
-              />
-            </a>
-
-            <a href='https://github.com/FrancoCanzani' target='blank'>
-              <Image
-                src='./MdiGithub.svg'
-                width={20}
-                height={20}
-                alt='Github link'
-                className='ml-2 hover:opacity-80'
-              />
-            </a>
-          </div>
-        </section>
-        <section className='flex cursor-pointer items-center font-bold text-white'>
+        <nav className='flex cursor-pointer items-center font-bold text-white'>
           <a
             className='mr-3 bg-black px-4 py-2 hover:bg-orange-400 lg:px-8'
             href='https://cal.com/francocanzani'
@@ -80,7 +54,7 @@ export default function Header() {
           >
             Blog
           </Link>
-        </section>
+        </nav>
         <Login />
       </div>
     </header>
