@@ -4,6 +4,7 @@ import {
   signInWithRedirect,
   getRedirectResult,
   GoogleAuthProvider,
+  AuthProvider,
 } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -20,9 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const provider = new GoogleAuthProvider();
-
-export function signInWithGoogle() {
+export function signInWithSocialMedia(provider: AuthProvider) {
   signInWithRedirect(auth, provider);
 }
 
