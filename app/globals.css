@@ -14,3 +14,99 @@ body {
   text-decoration-line: underline;
   text-decoration-color: rgb(251 146 60);
 }
+
+/* Hide the default checkbox */
+.container input {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container {
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border-radius: 0.125rem;
+  transition: 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.like {
+  position: relative;
+  font-size: 0.8em;
+  top: -3.5em;
+  text-align: center;
+  z-index: -1;
+}
+
+.icon {
+  margin: 0.2em;
+  fill: white;
+  transition: 0.4s ease-in-out;
+}
+
+.checkmark:hover {
+  background-color: white;
+}
+
+.checkmark:hover .icon {
+  fill: black;
+  transform: rotate(-8deg);
+  transform-origin: bottom left;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #15803d;
+}
+
+.container input:checked ~ .like {
+  animation: 0.6s up_3951;
+}
+
+.container input:checked ~ .checkmark .icon {
+  fill: white;
+  transform: none;
+  animation: 0.5s jump_3951;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+@keyframes up_3951 {
+  100% {
+    transform: translateY(-2em);
+  }
+}
+
+@keyframes jump_3951 {
+  50% {
+    transform-origin: center;
+    transform: translateY(-0.5em) rotate(-8deg);
+  }
+
+  100% {
+    transform-origin: center;
+    transform: translateY(0em);
+  }
+}

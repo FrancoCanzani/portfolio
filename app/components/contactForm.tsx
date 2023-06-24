@@ -36,7 +36,7 @@ export default function ContactForm() {
     if (form.current) {
       emailjs.sendForm(SERVICE_KEY, TEMPLATE_KEY, form.current, API_KEY).then(
         (result: EmailJSResponseStatus) => {
-          setFormStatus({ status: 'Form submitted', color: 'bg-green-100' });
+          setFormStatus({ status: 'Message sent!', color: 'bg-green-100' });
           setTimeout(() => {
             setFormStatus({ status: '', color: '' });
           }, 5000);
@@ -116,11 +116,11 @@ export default function ContactForm() {
       <div className='mt-4 flex items-center'>
         <button
           type='submit'
-          className='mr-4 bg-black px-4 py-2 font-semibold text-white hover:bg-green-700'
+          className='mr-4 rounded-sm bg-black px-4 py-2 font-bold text-white hover:bg-green-700'
         >
           Submit
         </button>
-        <span className={`${formStatus.color} px-4 py-2 font-semibold`}>
+        <span className={`${formStatus.color} rounded-sm px-4 py-2 font-bold`}>
           {formStatus.status}
         </span>
       </div>

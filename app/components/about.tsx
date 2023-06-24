@@ -54,7 +54,7 @@ export default function About() {
           <span className='mr-1'>Learn more</span>
           <Link
             href={'/'}
-            className=' flex items-center underline hover:text-gray-500'
+            className='flex items-center underline hover:text-gray-500'
           >
             About Me
             <Image
@@ -71,7 +71,7 @@ export default function About() {
           href='./Franco_Canzani.pdf'
           download
           onClick={downloadStatus}
-          className={`flex w-48 items-center justify-center bg-black px-4 py-2 font-bold text-white hover:bg-green-600 ${
+          className={`flex w-48 items-center justify-center rounded-sm bg-black px-4 py-2 font-bold text-white hover:bg-green-600 ${
             isDownloaded !== 'Download Resume' ? 'animate-pulse' : ''
           }`}
         >

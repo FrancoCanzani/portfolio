@@ -75,7 +75,7 @@ export default function Login() {
       <div className='relative' ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className='bg-green-700 px-4 py-2 font-bold text-white hover:bg-green-500'
+          className='rounded-sm bg-green-700 px-4 py-2 font-bold text-white hover:bg-green-500'
         >
           {user ? user.displayName || 'Logout' : 'Login'}
         </button>
@@ -84,7 +84,7 @@ export default function Login() {
           <div className='bg-red-300 hover:bg-red-700'>
             {user ? (
               <button
-                className='absolute right-0 mt-2 block w-24 bg-red-700 px-4 py-2 font-bold text-white hover:bg-red-500'
+                className='absolute right-0 mt-2 block w-24 rounded-sm bg-red-700 px-4 py-2 font-bold text-white hover:bg-red-500'
                 onClick={handleSignOut}
               >
                 Log Out
@@ -92,7 +92,7 @@ export default function Login() {
             ) : (
               <>
                 <button
-                  className='absolute right-0 mt-2 flex w-52 items-center justify-center bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
+                  className='absolute right-0 mt-2 flex w-52 items-center justify-center rounded-sm bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
                   onClick={signInAsAnonymous}
                 >
                   <Image
@@ -105,7 +105,7 @@ export default function Login() {
                   <span>Login Anonymously</span>
                 </button>
                 <button
-                  className='absolute right-0 top-20 mt-2 flex w-52 items-center justify-center bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
+                  className='absolute right-0 top-20 mt-2 flex w-52 items-center justify-center rounded-sm bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
                   onClick={() => signInWithSocialMedia(googleAuth)}
                 >
                   <Image
@@ -118,7 +118,7 @@ export default function Login() {
                   <span>Login With Google</span>
                 </button>
                 <button
-                  className='absolute right-0 top-32 mt-2 flex w-52 items-center justify-center bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
+                  className='absolute right-0 top-32 mt-2 flex w-52 items-center justify-center rounded-sm bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
                   onClick={() => signInWithSocialMedia(githubAuth)}
                 >
                   <Image
@@ -131,7 +131,7 @@ export default function Login() {
                   <span>Login With GitHub</span>
                 </button>
                 <button
-                  className='absolute right-0 top-44 mt-2 flex w-52 items-center justify-center bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
+                  className='absolute right-0 top-44 mt-2 flex w-52 items-center justify-center rounded-sm bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
                   onClick={() => signInWithSocialMedia(facebookAuth)}
                 >
                   <Image

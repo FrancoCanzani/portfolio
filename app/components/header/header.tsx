@@ -42,14 +42,14 @@ export default function Header() {
       <div className='flex items-center'>
         <nav className='flex cursor-pointer items-center font-bold text-white'>
           <a
-            className='mr-3 bg-black px-4 py-2 hover:bg-orange-400 lg:px-8'
+            className='mr-3 rounded-sm bg-black px-4 py-2 hover:bg-orange-400 lg:px-8'
             href='https://cal.com/francocanzani'
             target='blank'
           >
             Book a Meeting
           </a>
           <Link
-            className='mr-3 hidden bg-black px-7 py-2 hover:bg-purple-400 md:flex'
+            className='mr-3 hidden rounded-sm bg-black px-7 py-2 hover:bg-purple-400 md:flex'
             href={'/blog'}
           >
             Blog

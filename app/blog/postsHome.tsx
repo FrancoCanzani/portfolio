@@ -5,13 +5,21 @@ import Image from 'next/image';
 
 import { FormEvent, useState } from 'react';
 
-export default function PostsHome({ allPostsData }) {
-  const [searchParam, setSearchParam] = useState<string | undefined>('');
+interface PostData {
+  id: string;
+  title: string;
+}
 
-  function handleSearch(event: FormEvent) {
+interface PostsHomeProps {
+  allPostsData: PostData[];
+}
+
+export default function PostsHome({ allPostsData }: PostsHomeProps) {
+  const [searchParam, setSearchParam] = useState('');
+
+  function handleSearch(event: FormEvent<HTMLInputElement>) {
     event.preventDefault();
-
-    setSearchParam(event.target.value);
+    setSearchParam(event.currentTarget.value);
   }
 
   const filteredPosts = allPostsData.filter(({ title }) =>
@@ -67,7 +75,7 @@ export default function PostsHome({ allPostsData }) {
           filteredPosts.map(({ id, title }) => (
             <li
               key={id}
-              className={`mb-2 px-1 py-3 font-semibold ${
+              className={`mb-2 rounded-sm px-1 py-3 font-semibold ${
                 colors[Math.floor(Math.random() * 9)]
               }`}
             >
@@ -81,13 +89,6 @@ export default function PostsHome({ allPostsData }) {
           <span>Oops. Nothing written yet</span>
         )}
       </ul>
-      <div className='bottom-12'>
-        <p className='text-xs'>
-          * Disclaimer: Personal notes only, not a resource. Not reliable. Use
-          at own risk. No guarantees. Errors possible. Not for decision-making.
-          Verify information.
-        </p>
-      </div>
     </section>
   );
 }

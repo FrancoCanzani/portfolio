@@ -15,6 +15,7 @@ const firebaseConfig = {
   messagingSenderId: '558854756137',
   appId: '1:558854756137:web:7788ae9d893f12f0e3c938',
   measurementId: 'G-2VV82ZBXHC',
+  databaseURL: 'https://blog-f64bc-default-rtdb.firebaseio.com',
 };
 
 // Initialize Firebase

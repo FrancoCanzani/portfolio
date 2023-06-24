@@ -1,10 +1,8 @@
 import { getPostData, getAllPostIds } from '@/scripts/posts';
+import matter from 'gray-matter';
 
 interface PostParams {
   id: string;
-  title: string;
-  contentHtml: string;
-  date: string;
 }
 
 export async function generateStaticParams() {
@@ -16,8 +14,14 @@ export async function generateStaticParams() {
 
 async function getPost(params: string) {
   const post = await getPostData(params);
+  const { data, content } = matter(post.contentHtml);
 
-  return post;
+  return {
+    id: post.id,
+    title: data.title,
+    date: data.date,
+    contentHtml: content,
+  };
 }
 
 export default async function Post({ params }: { params: PostParams }) {
@@ -25,7 +29,7 @@ export default async function Post({ params }: { params: PostParams }) {
 
   return (
     <article className='py-6'>
-      <h1 className='mb-2 text-3xl font-bold uppercase'>{post.title}</h1>
+      <h1 className='text-3xl font-bold uppercase'>{post.title}</h1>
       <h4 className='mb-6 text-xs'>{post.date}</h4>
       <div
         className=''
