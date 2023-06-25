@@ -1,4 +1,4 @@
-import { SERVICE_KEY, TEMPLATE_KEY, API_KEY } from '../../emailCredentials';
+import { SERVICE_KEY, TEMPLATE_KEY, API_KEY } from '../../../emailCredentials';
 
 import { useState, FormEvent, useRef, ChangeEvent } from 'react';
 

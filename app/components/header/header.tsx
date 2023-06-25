@@ -8,6 +8,7 @@ import Login from './login';
 export default function Header() {
   const [hasScrolled, setHasScrolled] = useState(false);
 
+  // Adds a shadow to the header when scrolling down
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -35,22 +36,25 @@ export default function Header() {
           src={'/brand/3.png'}
           width={30}
           height={30}
-          alt='Franco Canzani letters'
+          alt='Franco Canzani brand letters'
+          aria-label='Brand logo that links to home page'
           className='cursor-pointer'
         />
       </Link>
       <div className='flex items-center'>
         <nav className='flex cursor-pointer items-center font-bold text-white'>
           <a
-            className='mr-3 rounded-sm bg-black px-4 py-2 hover:bg-orange-400 lg:px-8'
+            className='mr-3 hidden rounded-sm bg-black px-4 py-2 hover:bg-orange-400 md:flex lg:px-8'
             href='https://cal.com/francocanzani'
             target='blank'
+            aria-label='Link to cal.com profile to book a meeting'
           >
             Book a Meeting
           </a>
           <Link
-            className='mr-3 hidden rounded-sm bg-black px-7 py-2 hover:bg-purple-400 md:flex'
+            className='mr-3 rounded-sm bg-black px-7 py-2 hover:bg-purple-400'
             href={'/blog'}
+            aria-label='Link to my blog'
           >
             Blog
           </Link>

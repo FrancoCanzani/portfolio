@@ -33,9 +33,16 @@ export default function Comments({ postID }) {
     }
 
     getComments();
-  }, [comment]);
+  }, []);
 
-  async function addComment() {
+  function handleAddComment(e) {
+    e.preventDefault();
+    const newComment = e.target.elements.comment.value;
+    addComment(newComment);
+    e.target.comment.value = '';
+  }
+
+  async function addComment(newComment) {
     try {
       const userData = {
         displayName: user?.displayName,
@@ -46,21 +53,21 @@ export default function Comments({ postID }) {
         userName: userData.displayName,
         userPic: userData.photoURL,
         postId: postID,
-        comment: comment,
+        comment: newComment,
       };
 
       const docRef = await addDoc(collection(db, 'comments'), commentData);
       console.log('Comment posted with ID: ', docRef.id);
+
+      // Fetch the updated comments from the database
+      const querySnapshot = await getDocs(collection(db, 'comments'));
+      const commentsData = querySnapshot.docs.map((doc) => doc.data());
+
+      // Update the comments state with the latest comments data
+      setComments(commentsData);
     } catch (e) {
       console.error('Error adding comment: ', e);
     }
-  }
-
-  function handleAddComment(e) {
-    e.preventDefault();
-    setComment(e.target.elements.comment.value);
-    addComment();
-    e.target.comment.value = '';
   }
 
   return (

@@ -17,11 +17,14 @@ const facebookAuth = new FacebookAuthProvider();
 
 import Image from 'next/image';
 
+import LoginButton from './loginButton';
+
 export default function Login() {
   const [user, setUser] = useState<User | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Function that detects the change on the Auth User
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -32,6 +35,7 @@ export default function Login() {
     });
   }, []);
 
+  // Effect to close the dropdown when the mouse is not in the area
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (
@@ -49,7 +53,7 @@ export default function Login() {
     };
   }, []);
 
-  const handleSignOut = () => {
+  function handleSignOut() {
     signOut(auth)
       .then(() => {
         setUser(null);
@@ -57,7 +61,7 @@ export default function Login() {
       .catch((error) => {
         console.log(error);
       });
-  };
+  }
 
   function signInAsAnonymous() {
     signInAnonymously(auth)
@@ -92,57 +96,39 @@ export default function Login() {
             ) : (
               <>
                 <button
-                  className='absolute right-0 mt-2 flex w-52 items-center justify-center rounded-sm bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
+                  className='absolute right-0 mt-2 flex w-60 items-center justify-start rounded-sm bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
                   onClick={signInAsAnonymous}
                 >
                   <Image
                     src={'/log in dropdown icons/UserAnonymous.svg'}
                     width={18}
                     height={18}
-                    alt='Anonymous icon for sign in anonymously button'
+                    alt='Anonymous icon'
                     className='mr-2'
                   />
-                  <span>Login Anonymously</span>
+                  <span>Continue as Anonymous</span>
                 </button>
-                <button
-                  className='absolute right-0 top-20 mt-2 flex w-52 items-center justify-center rounded-sm bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
-                  onClick={() => signInWithSocialMedia(googleAuth)}
-                >
-                  <Image
-                    src={'/log in dropdown icons/LogosGoogleIcon.svg'}
-                    width={18}
-                    height={18}
-                    alt='Anonymous icon for sign in anonymously button'
-                    className='mr-2'
-                  />
-                  <span>Login With Google</span>
-                </button>
-                <button
-                  className='absolute right-0 top-32 mt-2 flex w-52 items-center justify-center rounded-sm bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
-                  onClick={() => signInWithSocialMedia(githubAuth)}
-                >
-                  <Image
-                    src={'/MdiGithub.svg'}
-                    width={18}
-                    height={18}
-                    alt='Anonymous icon for sign in anonymously button'
-                    className='mr-2'
-                  />
-                  <span>Login With GitHub</span>
-                </button>
-                <button
-                  className='absolute right-0 top-44 mt-2 flex w-52 items-center justify-center rounded-sm bg-gray-700 px-4 py-2 font-bold text-white hover:bg-gray-500'
-                  onClick={() => signInWithSocialMedia(facebookAuth)}
-                >
-                  <Image
-                    src={'/log in dropdown icons/LogosFacebook.svg'}
-                    width={18}
-                    height={18}
-                    alt='Anonymous icon for sign in anonymously button'
-                    className='mr-2'
-                  />
-                  <span>Login With Facebook</span>
-                </button>
+                <LoginButton
+                  provider={'Google'}
+                  position={'top-20 mt-2'}
+                  event={() => signInWithSocialMedia(googleAuth)}
+                  imageURL={'/log in dropdown icons/LogosGoogleIcon.svg'}
+                  alt={'Google icon'}
+                />
+                <LoginButton
+                  provider={'Github'}
+                  position={'top-28 mt-5'}
+                  event={() => signInWithSocialMedia(githubAuth)}
+                  imageURL={'/MdiGithub.svg'}
+                  alt={'Github icon'}
+                />
+                <LoginButton
+                  provider={'Facebook'}
+                  position={'top-40 mt-4'}
+                  event={() => signInWithSocialMedia(facebookAuth)}
+                  imageURL={'/log in dropdown icons/LogosFacebook.svg'}
+                  alt={'Facebook icon'}
+                />
               </>
             )}
           </div>
