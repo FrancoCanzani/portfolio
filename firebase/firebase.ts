@@ -1,11 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import {
-  getAuth,
-  signInWithRedirect,
-  getRedirectResult,
-  GoogleAuthProvider,
-  AuthProvider,
-} from 'firebase/auth';
+import { getAuth, signInWithRedirect, AuthProvider } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAgoNsVTQjQbMm5lmG6e1ouy0qecVHuky8',
@@ -21,9 +16,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 export function signInWithSocialMedia(provider: AuthProvider) {
   signInWithRedirect(auth, provider);
 }
 
-export { app, auth };
+export { app, auth, db };
