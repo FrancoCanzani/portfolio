@@ -68,7 +68,7 @@ export default function About() {
         </div>
         <br />
         <a
-          href='./Franco_Canzani.pdf'
+          href='./resume/Franco_Canzani.pdf'
           download
           onClick={downloadStatus}
           className={`flex w-48 items-center justify-center rounded-sm bg-black px-4 py-2 font-bold text-white hover:bg-green-600 ${

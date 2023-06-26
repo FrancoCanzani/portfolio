@@ -1,14 +1,22 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+
 import Image from 'next/image';
+
 import { User, onAuthStateChanged } from 'firebase/auth';
 import { auth, db } from '../../firebase/firebase';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import {
+  collection,
+  onSnapshot,
+  addDoc,
+  where,
+  query,
+  orderBy,
+} from 'firebase/firestore';
 
-export default function Comments({ postID }) {
+export default function Comments({ postID }: { postID: string }) {
   const [user, setUser] = useState<User | null>(null);
-  const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -24,50 +32,47 @@ export default function Comments({ postID }) {
   useEffect(() => {
     async function getComments() {
       try {
-        const querySnapshot = await getDocs(collection(db, 'comments'));
-        const commentsData = querySnapshot.docs.map((doc) => doc.data());
-        setComments(commentsData);
+        const q = query(
+          collection(db, 'comments'),
+          where('postId', '==', postID)
+        );
+
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+          const commentsData = snapshot.docs.map((doc) => doc.data());
+          setComments(commentsData);
+        });
+
+        // Unsubscribe from the snapshot listener when the component unmounts or when postID changes.
+        return () => unsubscribe();
       } catch (e) {
         console.error('Error retrieving comments: ', e);
       }
     }
 
     getComments();
-  }, []);
+  }, [postID]);
+
+  async function addComment(newComment: string) {
+    try {
+      const commentData = {
+        userName: user?.displayName,
+        userPic: user?.photoURL,
+        postId: postID,
+        comment: newComment,
+        date: new Date(),
+      };
+
+      await addDoc(collection(db, 'comments'), commentData);
+    } catch (e) {
+      console.error('Error adding comment: ', e);
+    }
+  }
 
   function handleAddComment(e) {
     e.preventDefault();
     const newComment = e.target.elements.comment.value;
     addComment(newComment);
     e.target.comment.value = '';
-  }
-
-  async function addComment(newComment) {
-    try {
-      const userData = {
-        displayName: user?.displayName,
-        photoURL: user?.photoURL,
-      };
-
-      const commentData = {
-        userName: userData.displayName,
-        userPic: userData.photoURL,
-        postId: postID,
-        comment: newComment,
-      };
-
-      const docRef = await addDoc(collection(db, 'comments'), commentData);
-      console.log('Comment posted with ID: ', docRef.id);
-
-      // Fetch the updated comments from the database
-      const querySnapshot = await getDocs(collection(db, 'comments'));
-      const commentsData = querySnapshot.docs.map((doc) => doc.data());
-
-      // Update the comments state with the latest comments data
-      setComments(commentsData);
-    } catch (e) {
-      console.error('Error adding comment: ', e);
-    }
   }
 
   return (
