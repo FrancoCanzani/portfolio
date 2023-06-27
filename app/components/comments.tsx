@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 
 import Image from 'next/image';
 
@@ -15,9 +15,18 @@ import {
   orderBy,
 } from 'firebase/firestore';
 
+interface CommentData {
+  userName: string;
+  userPic: string;
+  userId: string;
+  postId: string;
+  comment: string;
+  date: string;
+}
+
 export default function Comments({ postID }: { postID: string }) {
   const [user, setUser] = useState<User | null>(null);
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState<CommentData[]>([]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -34,11 +43,14 @@ export default function Comments({ postID }: { postID: string }) {
       try {
         const q = query(
           collection(db, 'comments'),
-          where('postId', '==', postID)
+          where('postId', '==', postID),
+          orderBy('date', 'asc')
         );
 
         const unsubscribe = onSnapshot(q, (snapshot) => {
-          const commentsData = snapshot.docs.map((doc) => doc.data());
+          const commentsData = snapshot.docs.map(
+            (doc) => doc.data() as CommentData
+          );
           setComments(commentsData);
         });
 
@@ -54,12 +66,22 @@ export default function Comments({ postID }: { postID: string }) {
 
   async function addComment(newComment: string) {
     try {
+      const d = new Date();
+      const commentDate = d.toLocaleString('en-GB', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      });
+
       const commentData = {
         userName: user?.displayName,
         userPic: user?.photoURL,
+        userId: user?.uid,
         postId: postID,
         comment: newComment,
-        date: new Date(),
+        date: commentDate,
       };
 
       await addDoc(collection(db, 'comments'), commentData);
@@ -68,11 +90,13 @@ export default function Comments({ postID }: { postID: string }) {
     }
   }
 
-  function handleAddComment(e) {
+  function handleAddComment(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const newComment = e.target.elements.comment.value;
+    const newComment = (
+      e.currentTarget.elements.namedItem('comment') as HTMLTextAreaElement
+    ).value;
     addComment(newComment);
-    e.target.comment.value = '';
+    e.currentTarget.reset();
   }
 
   return (
@@ -111,19 +135,22 @@ export default function Comments({ postID }: { postID: string }) {
         {comments.length > 0 &&
           comments.map((comment, index) => (
             <li key={index}>
-              <div className='mb-2 flex rounded-sm bg-white p-4'>
-                <div className='mr-3 h-full'>
+              <div className='mb-2 flex flex-col rounded-sm bg-white p-4'>
+                <div className='mr-3 flex items-center'>
                   <Image
                     src={`${comment.userPic}`}
                     alt='User pic'
                     width={30}
                     height={30}
-                    className='rounded-sm'
+                    className='mr-3 rounded-sm'
                   />
+                  <div className='flex flex-col'>
+                    <span className='font-bold'>{comment.userName}</span>
+                    <span className='text-xs font-light'>{comment.date}</span>
+                  </div>
                 </div>
                 <div className='flex flex-col'>
-                  <span className='font-bold'>{comment.userName}</span>
-                  <p>{comment.comment}</p>
+                  <p className='mt-3 pl-10'>{comment.comment}</p>
                 </div>
               </div>
             </li>
