@@ -13,7 +13,6 @@ import { auth, signInWithSocialMedia } from '../../../firebase/firebase';
 
 const googleAuth = new GoogleAuthProvider();
 const githubAuth = new GithubAuthProvider();
-const facebookAuth = new FacebookAuthProvider();
 
 import Image from 'next/image';
 
@@ -79,9 +78,9 @@ export default function Login() {
       <div className='relative' ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className='rounded-sm bg-green-700 px-4 py-2 font-bold text-white hover:bg-green-500'
+          className='rounded-sm bg-black px-4 py-2 font-bold text-white hover:bg-green-600'
         >
-          {user ? user.displayName || 'Logout' : 'Login'}
+          {user ? user.displayName || 'Anonymous' : 'Sign In'}
         </button>
 
         {isOpen && (
@@ -91,7 +90,7 @@ export default function Login() {
                 className='absolute right-0 mt-2 block w-24 rounded-sm bg-red-700 px-4 py-2 font-bold text-white hover:bg-red-500'
                 onClick={handleSignOut}
               >
-                Log Out
+                Sign Out
               </button>
             ) : (
               <>
@@ -100,7 +99,7 @@ export default function Login() {
                   onClick={signInAsAnonymous}
                 >
                   <Image
-                    src={'/log in dropdown icons/UserAnonymous.svg'}
+                    src={'/loginIcons/UserAnonymous.svg'}
                     width={18}
                     height={18}
                     alt='Anonymous icon'
@@ -112,7 +111,7 @@ export default function Login() {
                   provider={'Google'}
                   position={'top-20 mt-2'}
                   event={() => signInWithSocialMedia(googleAuth)}
-                  imageURL={'/log in dropdown icons/LogosGoogleIcon.svg'}
+                  imageURL={'/loginIcons/LogosGoogleIcon.svg'}
                   alt={'Google icon'}
                 />
                 <LoginButton
@@ -121,13 +120,6 @@ export default function Login() {
                   event={() => signInWithSocialMedia(githubAuth)}
                   imageURL={'/MdiGithub.svg'}
                   alt={'Github icon'}
-                />
-                <LoginButton
-                  provider={'Facebook'}
-                  position={'top-40 mt-4'}
-                  event={() => signInWithSocialMedia(facebookAuth)}
-                  imageURL={'/log in dropdown icons/LogosFacebook.svg'}
-                  alt={'Facebook icon'}
                 />
               </>
             )}

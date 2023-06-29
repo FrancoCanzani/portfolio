@@ -1,5 +1,5 @@
 import ContactForm from './contactForm';
-import Image from 'next/image';
+
 export default function Contact() {
   return (
     <section>
@@ -15,42 +15,21 @@ export default function Contact() {
                 href='https://cal.com/francocanzani'
                 target='blank'
               >
-                <Image
-                  src={'/contactFormIcons/Meeting.svg'}
-                  alt='Schedule meeting icon'
-                  width={25}
-                  height={25}
-                  className='md:mr-2 md:hidden'
-                />
-                <span className='hidden md:flex'> Book a Meeting</span>
+                <span>Meeting</span>
               </a>
               <a
                 className='mr-3 flex items-center justify-center rounded-sm bg-black px-4 py-2 font-semibold text-white hover:bg-green-500 lg:px-8'
                 href='wa.link/h37pvs'
                 target='blank'
               >
-                <Image
-                  src={'/contactFormIcons/Whatsapp.svg'}
-                  alt='Chat on WhatsApp'
-                  width={25}
-                  height={25}
-                  className='md:mr-2 md:hidden'
-                />
-                <span className='hidden md:flex'> Chat on WhatsApp</span>{' '}
+                <span>WhatsApp</span>
               </a>
               <a
                 className='mr-3 flex items-center justify-center rounded-sm bg-black px-4 py-2 font-semibold text-white hover:bg-red-500 lg:px-8'
                 href='mailto:francocanzani@gmail.com'
                 target='blank'
               >
-                <Image
-                  src={'/contactFormIcons/newEmail.svg'}
-                  alt='Send me an email'
-                  className='md:mr-2 md:hidden'
-                  width={25}
-                  height={25}
-                />
-                <span className='hidden md:flex'> Email me</span>
+                <span>Email</span>
               </a>
             </div>
             <span className='mb-8 mt-11 font-light capitalize italic'>

@@ -85,7 +85,7 @@ export default function ContactForm() {
             onChange={handleNameInput}
           />
         </div>
-        <div className='flex flex-col'>
+        <div className='mt-2 flex flex-col md:mt-0'>
           <label htmlFor='email' className='font-semibold'>
             Email
           </label>

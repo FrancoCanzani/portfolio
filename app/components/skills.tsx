@@ -6,17 +6,17 @@ import { v4 as uuidv4 } from 'uuid';
 import jsLogo from '../../public/skills/jsLogo.svg';
 import nextLogo from '../../public/skills/nextLogo.svg';
 import reactLogo from '../../public/skills/reactLogo.svg';
-import supabaseLogo from '../../public/skills/supabaseLogo.svg';
+import firebaseLogo from '../../public/skills/firebaseLogo.svg';
 import tailwindLogo from '../../public/skills/tailwindLogo.svg';
 import typescriptLogo from '../../public/skills/typescriptLogo.svg';
 
 const skills = [
-  { logo: jsLogo, name: 'JavaScript' },
-  { logo: typescriptLogo, name: 'TypeScript' },
-  { logo: reactLogo, name: 'React' },
-  { logo: nextLogo, name: 'Next.js' },
-  { logo: supabaseLogo, name: 'Supabase' },
-  { logo: tailwindLogo, name: 'Tailwind CSS' },
+  { logo: jsLogo, name: 'JavaScript', border: 'border-yellow-200' },
+  { logo: typescriptLogo, name: 'TypeScript', border: 'border-blue-500' },
+  { logo: reactLogo, name: 'React', border: 'border-slate-900' },
+  { logo: nextLogo, name: 'Next.js', border: 'border-black' },
+  { logo: firebaseLogo, name: 'Firebase', border: 'border-yellow-400' },
+  { logo: tailwindLogo, name: 'Tailwind', border: 'border-cyan-700' },
 ];
 
 export default function Skills() {
@@ -46,12 +46,14 @@ export default function Skills() {
       </div>
 
       <div className='w-full bg-slate-200'>
-        <div className='flex flex-wrap items-center justify-center p-2 py-10 sm:px-24 md:px-28 lg:px-36'>
+        <div className='flex flex-col items-center justify-center p-2 py-10 sm:px-24 md:px-28 lg:flex-row lg:px-36'>
           {skills.map((skill, index) => (
             <div
               key={uuidv4()}
-              className={`mt-4 flex items-center rounded-md border-2 border-gray-400 p-3 hover:scale-110 ${
-                index === skills.length - 1 ? '' : 'mr-10'
+              className={`mt-4 flex w-64 items-center justify-center rounded-sm border-4 ${
+                skill.border
+              } p-2 hover:scale-110 ${
+                index === skills.length - 1 ? '' : 'lg:mr-10'
               }`}
             >
               <Image

@@ -19,7 +19,7 @@ export default function About() {
 
   return (
     <section className='p-6 sm:px-24 md:px-28 lg:px-36'>
-      <h1 className='text-3xl font-black md:text-5xl'>Franco Canzani</h1>
+      <h1 className='text-3xl font-black md:text-7xl'>Franco Canzani</h1>
       <h2 className='mb-4 text-xs capitalize'>Front end developer</h2>
       <a href='https://goo.gl/maps/kj3qRxZa2fR18fPK7' target='blank'>
         🌍
