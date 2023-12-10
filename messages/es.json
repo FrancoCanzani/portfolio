@@ -4,5 +4,9 @@
     "about": "Sobre Mi",
     "contact": "Contacto",
     "mode": "Cambiar Modo"
+  },
+  "Landing": {
+    "title": "Desarrollador De Software",
+    "welcomeMessage": "Creo soluciones que no solo aborden problemas y desafíos del mundo real, sino que también tengan la capacidad de transmitir narrativas cautivadoras. Esto implica crear software que agregue valor a los usuarios y a las organizaciones."
   }
 }

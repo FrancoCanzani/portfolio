@@ -10,7 +10,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }) {
-  const t = await getTranslations({ locale, namespace: 'Metadata' });
+  const t = await getTranslations({ locale });
   // Read metadata from the JSON file based on the locale
   const metadata = require(`../../../messages/metadata.${locale}.json`);
 
@@ -35,7 +35,7 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
   return (
     <html lang={params.locale}>
       <body
-        className={`${hedvig.className} antialiased bg-black text-white dark:bg-white dark:text-black`}
+        className={`${hedvig.className} antialiased max-w-2xl lg:mx-auto bg-black text-white dark:bg-white dark:text-black`}
       >
         <Providers>{children}</Providers>
       </body>

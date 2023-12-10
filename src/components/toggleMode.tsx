@@ -1,17 +1,17 @@
 'use client';
+
 import React from 'react';
 import { useTheme } from 'next-themes';
-
-export function ToggleMode({ text }: { text: string }) {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === 'system' ? systemTheme : theme;
+import { Sun, Moon } from 'lucide-react';
+export function ToggleMode() {
+  const { theme, setTheme } = useTheme();
 
   return (
     <button
+      aria-label='toggle mode'
       onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}
-      className=''
     >
-      {text}
+      {theme == 'light' ? <Sun size={18} /> : <Moon size={18} />}
     </button>
   );
 }
