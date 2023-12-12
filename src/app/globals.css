@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --icon-color-light: black;
+  --icon-color-dark: white;
+}
+
+[data-theme='light'] .icon {
+  color: var(--icon-color-light);
+}
+
+[data-theme='dark'] .icon {
+  color: var(--icon-color-dark);
+}
