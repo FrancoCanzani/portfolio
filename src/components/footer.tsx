@@ -1,4 +1,5 @@
 import Badge from './badge';
+import { ToggleMode } from './toggleMode';
 
 export default function Footer() {
   return (
@@ -28,6 +29,7 @@ export default function Footer() {
           alt='X icon'
           src='/icons/github.svg'
         />
+        <ToggleMode />
       </div>
     </footer>
   );

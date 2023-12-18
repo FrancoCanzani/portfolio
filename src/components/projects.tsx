@@ -1,14 +1,17 @@
 import Link from 'next/link';
 import Badge from './badge';
+import { useTranslations } from 'next-intl';
 
 export default function Projects() {
+  const t = useTranslations('Projects');
+
   return (
-    <section>
-      <h3 className='text-2xl font-semibold mb-6'>Selected Projects</h3>
+    <section className='mb-6'>
+      <h3 className='text-2xl font-semibold mb-6'>{t('title')}</h3>
       <div className='flex gap-3 flex-wrap'>
         <ProjectCard
           name={'Boring Chat'}
-          description={'A Full Stack chat app using webSockets'}
+          description={'A Full Stack chat app using WebSockets'}
           href='https://github.com/FrancoCanzani/chatApp'
           technologies={[
             'NextJS',
@@ -59,7 +62,7 @@ function ProjectCard({
   technologies: string[];
 }) {
   return (
-    <div className='p-4 w-full sm:w-[49%] border border-gray-300 rounded-lg shadow-sm'>
+    <div className='p-4 w-full sm:w-[49%] border border-gray-300 dark:border-gray-700 dark:bg-zinc-950 bg-gray-100 rounded-md shadow-sm'>
       <div className='flex mb-2 items-center justify-between'>
         <div className='flex items-center justify-start gap-x-2'>
           <svg
@@ -87,14 +90,14 @@ function ProjectCard({
           src='/icons/github.svg'
         />
       </div>
-      <p className='text-xs mb-1 dark:text-gray-700 text-gray-200'>
+      <p className='text-xs mb-1 text-gray-700 dark:text-gray-200'>
         {description}
       </p>
       {technologies &&
         technologies.map((tech: string, index: number) => (
           <span
             key={index}
-            className='text-xs dark:text-gray-700 text-gray-200'
+            className='text-xs text-gray-700 dark:text-gray-200'
           >
             {tech}
             {index != technologies.length - 1 && ', '}

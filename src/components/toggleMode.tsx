@@ -11,7 +11,7 @@ export function ToggleMode() {
       aria-label='toggle mode'
       onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}
     >
-      {theme == 'light' ? <Sun size={18} /> : <Moon size={18} />}
+      {theme == 'dark' ? <Sun size={18} /> : <Moon size={18} />}
     </button>
   );
 }

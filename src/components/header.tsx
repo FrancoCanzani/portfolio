@@ -3,29 +3,28 @@ import { ToggleMode } from './toggleMode';
 import { useTranslations } from 'next-intl';
 import { ExternalLink } from 'lucide-react';
 import SwitchLanguage from './switchLanguage';
+import ProfileCard from './profileCard';
 
 export default function Header() {
   const t = useTranslations('Header');
 
   return (
     <header className='mb-10 w-full'>
-      <h1 className='text-lg leading-5 font-semibold mx-auto px-4 uppercase'>
-        Franco <br /> Canzani
-      </h1>
-      <nav className='mt-4 border-y w-full text-sm'>
-        <ul className='flex justify-between items-center w-full px-4 border-y-[0.2px] border-opacity-5 border-white py-2'>
+      <ProfileCard />
+      <nav className='mt-4 border-y w-full border-gray-400 text-sm'>
+        <ul className='flex justify-between items-center w-full px-4 border-y border-opacity-5 border-white py-2'>
           <div className='flex space-x-4'>
             <li>
-              <Link
-                className='text-gray-300 hover:text-white dark:text-gray-600 dark:hover:text-black'
-                href='#'
+              <a
+                className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
+                href='#projects'
               >
                 {t('work')}
-              </Link>
+              </a>
             </li>
             <li>
               <Link
-                className='text-gray-300 hover:text-white dark:text-gray-600 dark:hover:text-black'
+                className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
                 href='#'
               >
                 {t('about')}
@@ -33,7 +32,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                className='text-gray-300 gap-x-1 flex items-center justify-center hover:text-white dark:text-gray-600 dark:hover:text-black'
+                className='dark:text-gray-300 gap-x-1 flex items-center justify-center dark:hover:text-white text-gray-600 hover:text-black'
                 href='#'
               >
                 Blog <ExternalLink size={16} />
@@ -41,7 +40,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                className='text-gray-300 hover:text-white dark:text-gray-600 dark:hover:text-black'
+                className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
                 href='#'
               >
                 {t('contact')}

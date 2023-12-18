@@ -1,4 +1,7 @@
 {
+  "Profile": {
+    "description": "Developer, 🇦🇷 in 🇪🇸"
+  },
   "Header": {
     "work": "Projects",
     "about": "About",
@@ -8,5 +11,13 @@
   "Landing": {
     "title": "Independent Software Developer",
     "welcomeMessage": "I craft solutions that not only address real-world problems and challenges but also have the ability to convey compelling narratives. This involves creating software that adds value to users and organizations."
+  },
+  "Projects": {
+    "title": "Selected Projects"
+  },
+  "Resume": {
+    "title": "Grab my resume!",
+    "description": "Explore my rich profesional journey and accomplishments in different fields focused in problem solving.",
+    "button": "Download my CV"
   }
 }

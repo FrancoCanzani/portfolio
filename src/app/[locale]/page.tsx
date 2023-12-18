@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Footer from '@/components/footer';
 import Projects from '@/components/projects';
+import Resume from '@/components/resume';
 
 export default function Component() {
   const t = useTranslations('Landing');
@@ -16,7 +17,9 @@ export default function Component() {
           <h2 className='text-5xl font-bold capitalize'>
             <Balancer>{t('title')}.</Balancer>
           </h2>
-          <p className='mt-4 max-w-prose'>{t('welcomeMessage')}</p>
+          <p className='mt-4 max-w-prose text-gray-600 dark:text-gray-200'>
+            {t('welcomeMessage')}
+          </p>
         </section>
         <div className='columns-2 sm:columns-3 gap-4 my-8'>
           <div className='relative h-40 mb-4'>
@@ -87,6 +90,7 @@ export default function Component() {
           </div>
         </div>
         <Projects />
+        <Resume />
       </main>
       <Footer />
     </div>
