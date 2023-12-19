@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Footer from '@/components/footer';
 import Projects from '@/components/projects';
 import Resume from '@/components/resume';
+import Contact from '@/components/contact';
 
 export default function Component() {
   const t = useTranslations('Landing');
@@ -91,6 +92,7 @@ export default function Component() {
         </div>
         <Projects />
         <Resume />
+        <Contact />
       </main>
       <Footer />
     </div>

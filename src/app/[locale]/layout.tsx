@@ -35,7 +35,7 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
   return (
     <html lang={params.locale} className='scroll-smooth'>
       <body
-        className={`${hedvig.className} antialiased max-w-2xl lg:mx-auto dark:bg-black dark:text-white bg-[#e9e7e9] text-black`}
+        className={`${hedvig.className} antialiased max-w-2xl mx-auto dark:bg-black dark:text-white bg-[#e9e7e9] text-black`}
       >
         <Providers>{children}</Providers>
       </body>

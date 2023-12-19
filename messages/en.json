@@ -17,7 +17,10 @@
   },
   "Resume": {
     "title": "Grab my resume!",
-    "description": "Explore my rich profesional journey and accomplishments in different fields focused in problem solving.",
-    "button": "Download my CV"
+    "description": "Explore my rich professional journey and accomplishments in different fields focused in problem solving.",
+    "button": "Download CV"
+  },
+  "Contact": {
+    "title": "Find me on"
   }
 }

@@ -6,7 +6,7 @@ export default function Projects() {
   const t = useTranslations('Projects');
 
   return (
-    <section className='mb-6'>
+    <section className='mb-8'>
       <h3 className='text-2xl font-semibold mb-6'>{t('title')}</h3>
       <div className='flex gap-3 flex-wrap'>
         <ProjectCard
@@ -62,7 +62,7 @@ function ProjectCard({
   technologies: string[];
 }) {
   return (
-    <div className='p-4 w-full sm:w-[49%] border border-gray-300 dark:border-gray-700 dark:bg-zinc-950 bg-gray-100 rounded-md shadow-sm'>
+    <div className='p-4 w-full sm:w-[49%] border border-gray-300 dark:border-gray-700 dark:bg-gray-0 bg-gray-100 rounded-md shadow-sm'>
       <div className='flex mb-2 items-center justify-between'>
         <div className='flex items-center justify-start gap-x-2'>
           <svg

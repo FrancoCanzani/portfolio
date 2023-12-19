@@ -19,5 +19,8 @@
     "title": "Descarga mi curriculum!",
     "description": "Explore mi trayectoria profesional y mis logros en diferentes campos enfocados en la resolución de problemas.",
     "button": "Descargar CV"
+  },
+  "Contact": {
+    "title": "Contáctame"
   }
 }
