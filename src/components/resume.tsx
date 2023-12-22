@@ -11,7 +11,7 @@ export default function Resume() {
         {t('description')}
       </p>
       <a download href='/Franco_Canzani.pdf'>
-        <button className='bg-black group dark:text-gray-200 dark:bg-gray-800 shadow-sm cursor-pointer text-sm flex items-center gap-x-5 text-gray-200 font-semibold rounded-md px-3 py-2'>
+        <button className='font-normal group flex items-center justify-center gap-x-2 p-2 ring-1 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'>
           {t('button')}
           <Download size={18} className='group-hover:animate-bounce' />
         </button>
