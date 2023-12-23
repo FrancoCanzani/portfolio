@@ -12,7 +12,7 @@ export async function sendEmail(formData: FormData) {
   };
 
   const { data } = await resend.emails.send({
-    from: 'francocanzani@gmail.com',
+    from: 'francocanzani.site',
     to: ['francocanzani@gmail.com'],
     subject: 'New Message',
     html: `
