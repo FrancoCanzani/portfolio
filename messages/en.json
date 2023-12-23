@@ -13,7 +13,16 @@
     "welcomeMessage": "I craft solutions that not only address real-world problems and challenges but also have the ability to convey compelling narratives. This involves creating software that adds value to users and organizations."
   },
   "Projects": {
-    "title": "Selected Projects"
+    "title": "Selected Projects",
+    "boringChat": {
+      "description": "A Full Stack chat app using WebSockets"
+    },
+    "portfolio": {
+      "description": "My portfolio website with internationalization"
+    },
+    "blog": {
+      "description": "A blog with comments and newsletter features"
+    }
   },
   "Resume": {
     "title": "Grab my resume!",
@@ -22,5 +31,8 @@
   },
   "Contact": {
     "title": "Find me on"
+  },
+  "About": {
+    "title": "About me"
   }
 }

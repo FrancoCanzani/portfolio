@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { LinkBadge } from './linkBadge';
 
@@ -7,11 +6,13 @@ export default function Projects() {
 
   return (
     <section className='mb-8' id='projects'>
-      <h3 className='text-2xl font-semibold mb-6'>{t('title')}</h3>
+      <h1 className='text-2xl font-bold dark:text-gray-100 mb-6'>
+        {t('title')}
+      </h1>
       <div className='flex gap-3 flex-wrap'>
         <ProjectCard
-          name={'Boring Chat'}
-          description={'A Full Stack chat app using WebSockets'}
+          name={'Chat app'}
+          description={t('boringChat.description')}
           href='https://github.com/FrancoCanzani/chatApp'
           technologies={[
             'NextJS',
@@ -22,9 +23,9 @@ export default function Projects() {
           ]}
         />
         <ProjectCard
-          name={'Boring Chat'}
-          description={'A Full Stack chat app using webSockets'}
-          href='https://github.com/FrancoCanzani/chatApp'
+          name={'Portfolio'}
+          description={t('portfolio.description')}
+          href='https://github.com/FrancoCanzani/portfolio'
           technologies={[
             'NextJS',
             'TypeScript',
@@ -34,9 +35,9 @@ export default function Projects() {
           ]}
         />
         <ProjectCard
-          name={'Boring Chat'}
-          description={'A Full Stack chat app using webSockets'}
-          href='https://github.com/FrancoCanzani/chatApp'
+          name={'blog'}
+          description={t('blog.description')}
+          href='https://github.com/FrancoCanzani/blog'
           technologies={[
             'NextJS',
             'TypeScript',
@@ -64,7 +65,7 @@ function ProjectCard({
   return (
     <div className='p-4 w-full space-y-2 sm:w-[49%] ring-1 flex flex-col ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'>
       <div className='flex mb-2 items-center justify-between'>
-        <div className='flex items-center justify-start gap-x-2'>
+        <div className='flex items-center justify-start gap-x-1'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='1em'
@@ -76,11 +77,15 @@ function ProjectCard({
               d='M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m6.75 11.5c2.75 0 3.49-2.03 3.68-3.1c.91-.29 1.57-1.14 1.57-2.15C18 7 17 6 15.75 6S13.5 7 13.5 8.25c0 .94.57 1.75 1.39 2.08C14.67 11 14 12 12 12c-1.38 0-2.34.35-3 .84V8.87c.87-.31 1.5-1.14 1.5-2.12c0-1.25-1-2.25-2.25-2.25S6 5.5 6 6.75c0 .98.63 1.81 1.5 2.12v6.26c-.87.31-1.5 1.14-1.5 2.12c0 1.25 1 2.25 2.25 2.25s2.25-1 2.25-2.25c0-.93-.56-1.75-1.37-2.07c.28-.68 1.1-1.68 3.62-1.68m-4.5 3a.75.75 0 0 1 .75.75a.75.75 0 0 1-.75.75a.75.75 0 0 1-.75-.75a.75.75 0 0 1 .75-.75m0-10.5a.75.75 0 0 1 .75.75a.75.75 0 0 1-.75.75a.75.75 0 0 1-.75-.75a.75.75 0 0 1 .75-.75m7.5 1.5a.75.75 0 0 1 .75.75a.75.75 0 0 1-.75.75a.75.75 0 0 1-.75-.75a.75.75 0 0 1 .75-.75'
             />
           </svg>
-          <Link href={href} className='flex items-center justify-start gap-x-2'>
-            <h3 className='text-blue-500 hover:underline text-sm lowercase font-semibold'>
+          <a
+            href={href}
+            target='_blank'
+            className='flex items-center justify-start gap-x-2'
+          >
+            <h3 className='text-blue-500 hover:underline text-md lowercase font-semibold'>
               {name}
             </h3>
-          </Link>
+          </a>
         </div>
         <LinkBadge
           href='https://github.com/'

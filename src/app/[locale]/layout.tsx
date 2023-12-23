@@ -1,9 +1,11 @@
 import '../globals.css';
+import Header from '@/components/header';
 import { notFound } from 'next/navigation';
 import { Providers } from '@/components/providers';
-import { Hedvig_Letters_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { getTranslations } from 'next-intl/server';
-const hedvig = Hedvig_Letters_Sans({ weight: '400', subsets: ['latin'] });
+import Footer from '@/components/footer';
+const inter = Inter({ subsets: ['latin'] });
 
 export async function generateMetadata({
   params: { locale },
@@ -35,9 +37,13 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
   return (
     <html lang={params.locale} className='scroll-smooth'>
       <body
-        className={`${hedvig.className} antialiased max-w-2xl mx-auto dark:bg-black dark:text-white bg-[#e9e7e9] text-black`}
+        className={`${inter.className} antialiased max-w-2xl py-12 mx-auto dark:bg-black dark:text-white bg-[#fcfcfc] text-black`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

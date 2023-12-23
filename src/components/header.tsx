@@ -1,34 +1,38 @@
-import Link from 'next/link';
 import { ToggleMode } from './toggleMode';
 import { useTranslations } from 'next-intl';
 import { ExternalLink } from 'lucide-react';
 import SwitchLanguage from './switchLanguage';
-import ProfileCard from './profileCard';
+import { Link } from '@/navigation';
 
 export default function Header() {
   const t = useTranslations('Header');
 
   return (
     <header className='mb-10 w-full px-4'>
-      <ProfileCard />
+      <Link
+        href={'/'}
+        className='hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 font-bold text-xl transition-[background-color]'
+      >
+        Franco Canzani
+      </Link>
       <nav className='mt-4 px-1 border-y w-full border-white text-sm'>
         <ul className='flex justify-between items-center w-full border-y border-opacity-5 border-white py-2'>
           <div className='flex space-x-4'>
             <li>
-              <a
+              <Link
                 className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
-                href='#projects'
+                href='/#projects'
               >
                 {t('work')}
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
-                href='#'
+                href='/about'
               >
                 {t('about')}
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -39,12 +43,12 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a
+              <Link
                 className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
-                href='#contact'
+                href='/#contact'
               >
                 {t('contact')}
-              </a>
+              </Link>
             </li>
           </div>
           <div className='flex items-center justify-center gap-x-2'>

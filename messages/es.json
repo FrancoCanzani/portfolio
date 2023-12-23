@@ -13,7 +13,16 @@
     "welcomeMessage": "Creo soluciones que no solo aborden problemas y desafíos del mundo real, sino que también tengan la capacidad de transmitir narrativas cautivadoras. Esto implica crear software que agregue valor a los usuarios y a las organizaciones."
   },
   "Projects": {
-    "title": "Proyectos"
+    "title": "Proyectos",
+    "boringChat": {
+      "description": "Chat full stack usando webSockets"
+    },
+    "portfolio": {
+      "description": "Mi sitio web con internacionalización"
+    },
+    "blog": {
+      "description": "Mi blog con comentarios y funciones de newsletter"
+    }
   },
   "Resume": {
     "title": "Descarga mi curriculum!",
@@ -22,5 +31,8 @@
   },
   "Contact": {
     "title": "Contáctame"
+  },
+  "About": {
+    "title": "Sobre mi"
   }
 }

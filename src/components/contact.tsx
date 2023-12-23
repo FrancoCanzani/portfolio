@@ -7,20 +7,22 @@ export default function Contact() {
 
   return (
     <section className='mb-6' id='contact'>
-      <h3 className='text-2xl font-semibold mb-4'>{t('title')}</h3>
+      <h1 className='text-2xl font-bold mb-6 dark:text-gray-100'>
+        {t('title')}
+      </h1>
       <div className='flex items-center gap-4 mb-4'>
         <LinkBadge href='mailto:francocanzani@gmail.com'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
-            stroke-width='1.5'
+            strokeWidth='1.5'
             stroke='currentColor'
             data-slot='icon'
             className='w-6 h-6'
           >
             <path
-              stroke-linecap='round'
+              strokeLinecap='round'
               strokeLinejoin='round'
               d='M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75'
             />
@@ -42,7 +44,7 @@ export default function Contact() {
             </g>
           </svg>
         </LinkBadge>
-        <LinkBadge href='https://github.com/' target='_blank'>
+        <LinkBadge href='https://github.com/FrancoCanzani' target='_blank'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='23'
