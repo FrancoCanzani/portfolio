@@ -13,7 +13,6 @@ export async function generateMetadata({
   params: { locale: string };
 }) {
   const t = await getTranslations({ locale });
-  // Read metadata from the JSON file based on the locale
   const metadata = require(`../../../messages/metadata.${locale}.json`);
 
   return {
