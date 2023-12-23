@@ -1,5 +1,5 @@
 import Balancer from 'react-wrap-balancer';
-import { useTranslations } from 'next-intl';
+import { useTranslations, NextIntlClientProvider, useLocale } from 'next-intl';
 import Image from 'next/image';
 import Projects from '@/components/projects';
 import Resume from '@/components/resume';

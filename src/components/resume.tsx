@@ -5,7 +5,7 @@ export default function Resume() {
   const t = useTranslations('Resume');
 
   return (
-    <section className='mb-8'>
+    <section className='mb-12'>
       <h1 className='text-2xl font-bold mb-6 dark:text-gray-100'>
         {t('title')}
       </h1>

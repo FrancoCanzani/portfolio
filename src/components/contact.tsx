@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import ContactForm from './contactForm';
+import ContactForm from './form/contactForm';
 import { LinkBadge } from './linkBadge';
 
 export default function Contact() {
@@ -71,7 +71,15 @@ export default function Contact() {
           </svg>
         </LinkBadge>
       </div>
-      <ContactForm />
+      <ContactForm
+        // Very annoying prop drilling but Next-Intl requires it
+        name={t('name.title')}
+        namePlaceholder={t('name.placeholder')}
+        email={t('email.title')}
+        emailPlaceholder={t('email.placeholder')}
+        message={t('message.title')}
+        messagePlaceholder={t('message.placeholder')}
+      />
     </section>
   );
 }

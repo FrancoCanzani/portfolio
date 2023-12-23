@@ -30,7 +30,23 @@
     "button": "Descargar CV"
   },
   "Contact": {
-    "title": "Contáctame"
+    "title": "Contáctame",
+    "name": {
+      "title": "Nombre",
+      "placeholder": "Ingresa tu nombre"
+    },
+    "email": {
+      "title": "Email",
+      "placeholder": "Ingresa tu email"
+    },
+    "message": {
+      "title": "Mensaje",
+      "placeholder": "Ingresa tu mensaje"
+    },
+    "button": {
+      "title": "Enviar",
+      "pending": "Enviando..."
+    }
   },
   "About": {
     "title": "Sobre mi"

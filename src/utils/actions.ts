@@ -13,7 +13,7 @@ export async function sendEmail(formData: FormData) {
 
   try {
     const { data } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
+      from: 'Portfolio site <onboarding@resend.dev>',
       to: ['francocanzani@gmail.com'],
       subject: 'New Message',
       html: `
@@ -24,5 +24,6 @@ export async function sendEmail(formData: FormData) {
     });
   } catch (error) {
     console.log(error);
+    throw new Error('Email sending failed');
   }
 }

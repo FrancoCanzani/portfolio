@@ -30,7 +30,23 @@
     "button": "Download CV"
   },
   "Contact": {
-    "title": "Find me on"
+    "title": "Find me on",
+    "name": {
+      "title": "Name",
+      "placeholder": "Enter your name"
+    },
+    "email": {
+      "title": "Email",
+      "placeholder": "Enter your email"
+    },
+    "message": {
+      "title": "Message",
+      "placeholder": "Enter your message"
+    },
+    "button": {
+      "title": "Send message",
+      "pending": "Sending..."
+    }
   },
   "About": {
     "title": "About me"
