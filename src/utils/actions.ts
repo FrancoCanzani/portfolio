@@ -11,14 +11,18 @@ export async function sendEmail(formData: FormData) {
     message: formData.get('message'),
   };
 
-  const { data } = await resend.emails.send({
-    from: 'francocanzani.site',
-    to: ['francocanzani@gmail.com'],
-    subject: 'New Message',
-    html: `
-      <h1>New message from ${inputs.name}!</h1>
-      <p>${inputs.message}</p>
-      <p>Can be reached at ${inputs.email}</p>
-    `,
-  });
+  try {
+    const { data } = await resend.emails.send({
+      from: 'Acme <onboarding@resend.dev>',
+      to: ['francocanzani@gmail.com'],
+      subject: 'New Message',
+      html: `
+        <h1>New message from ${inputs.name}!</h1>
+        <p>${inputs.message}</p>
+        <p>Can be reached at ${inputs.email}</p>
+      `,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
