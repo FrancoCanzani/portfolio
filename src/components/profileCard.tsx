@@ -5,7 +5,7 @@ export default function ProfileCard() {
   const t = useTranslations('Profile');
 
   return (
-    <div className='flex items-center justify-start px-4'>
+    <div className='flex items-center justify-start'>
       <Image
         src={'/pic.png'}
         alt='profile pic'

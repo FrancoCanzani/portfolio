@@ -9,10 +9,10 @@ export default function Header() {
   const t = useTranslations('Header');
 
   return (
-    <header className='mb-10 w-full'>
+    <header className='mb-10 w-full px-4'>
       <ProfileCard />
-      <nav className='mt-4 border-y w-full border-gray-400 text-sm'>
-        <ul className='flex justify-between items-center w-full px-4 border-y border-opacity-5 border-white py-2'>
+      <nav className='mt-4 px-1 border-y w-full border-white text-sm'>
+        <ul className='flex justify-between items-center w-full border-y border-opacity-5 border-white py-2'>
           <div className='flex space-x-4'>
             <li>
               <a
@@ -23,28 +23,28 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <Link
+              <a
                 className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
                 href='#'
               >
                 {t('about')}
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 className='dark:text-gray-300 gap-x-1 flex items-center justify-center dark:hover:text-white text-gray-600 hover:text-black'
                 href='#'
               >
                 Blog <ExternalLink size={16} />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
-                href='#'
+                href='#contact'
               >
                 {t('contact')}
-              </Link>
+              </a>
             </li>
           </div>
           <div className='flex items-center justify-center gap-x-2'>

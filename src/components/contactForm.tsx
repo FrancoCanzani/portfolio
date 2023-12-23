@@ -1,6 +1,22 @@
+'use client';
+
+import { sendEmail } from '@/utils/actions';
+import { useRef } from 'react';
+import SubmitButton from './submitButton';
+
 export default function ContactForm() {
+  const formRef = useRef<HTMLFormElement>(null);
+
   return (
-    <form action=''>
+    <form
+      action={async (formData) => {
+        await sendEmail(formData);
+        if (formRef.current != null) {
+          formRef.current.reset();
+        }
+      }}
+      ref={formRef}
+    >
       <div className='space-y-4'>
         <div className='space-y-1'>
           <label className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
@@ -9,6 +25,7 @@ export default function ContactForm() {
           <input
             className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
             id='name'
+            name='name'
             placeholder='Enter your name'
             required
           />
@@ -20,6 +37,7 @@ export default function ContactForm() {
           <input
             className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
             id='email'
+            name='email'
             placeholder='Enter your email'
             type='email'
             required
@@ -32,13 +50,12 @@ export default function ContactForm() {
           <textarea
             className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
             id='message'
+            name='message'
             placeholder='Enter your message'
             required
           ></textarea>
         </div>
-        <button className='p-2 ring-1 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'>
-          Send message
-        </button>
+        <SubmitButton />
       </div>
     </form>
   );
