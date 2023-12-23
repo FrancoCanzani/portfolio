@@ -23,7 +23,7 @@ export default function ContactForm() {
             Name
           </label>
           <input
-            className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
+            className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-600 dark:hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
             id='name'
             name='name'
             placeholder='Enter your name'
@@ -35,7 +35,7 @@ export default function ContactForm() {
             Email
           </label>
           <input
-            className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
+            className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-600 dark:hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
             id='email'
             name='email'
             placeholder='Enter your email'
@@ -48,7 +48,7 @@ export default function ContactForm() {
             Message
           </label>
           <textarea
-            className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
+            className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-600 dark:hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
             id='message'
             name='message'
             placeholder='Enter your message'

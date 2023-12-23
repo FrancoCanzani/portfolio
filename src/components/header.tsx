@@ -11,11 +11,11 @@ export default function Header() {
     <header className='mb-10 w-full px-4'>
       <Link
         href={'/'}
-        className='hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 font-bold text-xl transition-[background-color]'
+        className='hover:bg-gray-100 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 font-bold text-xl transition-[background-color]'
       >
         Franco Canzani
       </Link>
-      <nav className='mt-4 px-1 border-y w-full border-white text-sm'>
+      <nav className='mt-4 px-1 border-y w-full dark:border-white border-gray-600 text-sm'>
         <ul className='flex justify-between items-center w-full border-y border-opacity-5 border-white py-2'>
           <div className='flex space-x-4'>
             <li>

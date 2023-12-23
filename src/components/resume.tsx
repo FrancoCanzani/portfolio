@@ -15,7 +15,7 @@ export default function Resume() {
       <a
         download
         href='/Franco_Canzani.pdf'
-        className='font-normal w-fit group flex items-center justify-center gap-x-2 p-2 ring-1 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
+        className='font-normal w-fit group flex items-center justify-center gap-x-2 p-2 ring-1 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-600 dark:hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
       >
         {t('button')}
         <Download size={18} className='group-hover:animate-bounce' />
