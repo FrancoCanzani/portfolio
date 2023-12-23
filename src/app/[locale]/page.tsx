@@ -70,7 +70,7 @@ export default function Component() {
           <div className='relative h-40 mb-4'>
             <Image
               alt='La Bombonera, one of my passions'
-              src='/landing/labombonera.jpg'
+              src='/landing/laBombonera.jpg'
               fill
               sizes='(max-width: 768px) 213px, 33vw'
               priority
