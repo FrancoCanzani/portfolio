@@ -1,9 +1,10 @@
 import Balancer from 'react-wrap-balancer';
-import { useTranslations, NextIntlClientProvider, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Projects from '@/components/projects';
 import Resume from '@/components/resume';
 import Contact from '@/components/contact';
+import Skills from '@/components/skills';
 
 export default function Component() {
   const t = useTranslations('Landing');
@@ -87,6 +88,7 @@ export default function Component() {
         </div>
       </div>
       <Projects />
+      <Skills />
       <Resume />
       <Contact />
     </main>
