@@ -5,6 +5,7 @@ import Projects from '@/components/projects';
 import Resume from '@/components/resume';
 import Contact from '@/components/contact';
 import Skills from '@/components/skills';
+import TextGenerateEffect from '@/components/textGenerate';
 
 export default function Component() {
   const t = useTranslations('Landing');
@@ -12,12 +13,10 @@ export default function Component() {
   return (
     <main className='mx-auto px-4'>
       <section className='mb-10'>
-        <h2 className='text-5xl font-bold capitalize'>
+        <h2 className='text-5xl mb-4 font-bold capitalize'>
           <Balancer>{t('title')}.</Balancer>
         </h2>
-        <p className='mt-4 max-w-prose text-gray-600 dark:text-gray-200'>
-          {t('welcomeMessage')}
-        </p>
+        <TextGenerateEffect words={t('welcomeMessage')} />
       </section>
       <div className='columns-2 sm:columns-3 gap-4 my-8'>
         <div className='relative h-40 mb-4'>

@@ -11,9 +11,12 @@ export default function Header() {
     <header className='mb-10 w-full px-4'>
       <Link
         href={'/'}
-        className='hover:bg-gray-100 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 font-bold text-xl transition-[background-color]'
+        className='hover:bg-gray-50 max-w-fit uppercase flex flex-col dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 font-semibold font-sans leading-5'
       >
-        Franco Canzani
+        <div className='flex items-center justify-start gap-x-1'>
+          Franco <span className='block w-5 h-[1.6px] bg-black'> </span>
+        </div>
+        <span className='ml-4'>Canzani</span>
       </Link>
       <nav className='mt-4 px-1 border-y w-full dark:border-white border-gray-600 text-sm'>
         <ul className='flex justify-between items-center w-full border-y border-opacity-5 border-white py-2'>

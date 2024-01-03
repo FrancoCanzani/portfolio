@@ -36,7 +36,7 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
   return (
     <html lang={params.locale} className='scroll-smooth'>
       <body
-        className={`${inter.className} antialiased max-w-2xl py-12 mx-auto dark:bg-black dark:text-white bg-[#fcfcfc] text-black`}
+        className={`${inter.className} antialiased animate-fade animate-once animate-duration-400 animate-ease-in max-w-2xl py-12 mx-auto dark:bg-black dark:text-white bg-[#fcfcfc] text-black`}
       >
         <Providers>
           <Header />

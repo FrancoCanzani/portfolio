@@ -23,13 +23,12 @@ export default function Skill({
     offset: ['end end', 'start start'],
   });
 
+  console.log(scrollYProgress);
+
   return (
     <motion.div
       className={cn(
-        `p-2 my-4 space-y-3 bg-gray-50 border border-l-4 rounded-md ${className}`,
-        {
-          'border-b-red-600': scrollYProgress,
-        }
+        `p-2 my-4 space-y-3 bg-gray-50 border border-l-4 rounded-md ${className}`
       )}
     >
       <div className='flex items-center justify-between'>
