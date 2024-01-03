@@ -23,7 +23,7 @@ export default function Header() {
           <div className='flex space-x-4'>
             <li>
               <Link
-                className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
+                className='dark:text-gray-300 dark:hover:text-white text-gray-950 hover:text-black'
                 href='/#projects'
               >
                 {t('work')}
@@ -31,7 +31,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
+                className='dark:text-gray-300 dark:hover:text-white text-gray-950 hover:text-black'
                 href='/about'
               >
                 {t('about')}
@@ -39,7 +39,7 @@ export default function Header() {
             </li>
             <li>
               <a
-                className='dark:text-gray-300 gap-x-1 flex items-center justify-center dark:hover:text-white text-gray-600 hover:text-black'
+                className='dark:text-gray-300 gap-x-1 flex items-center justify-center dark:hover:text-white text-gray-950 hover:text-black'
                 href='#'
               >
                 Blog <ExternalLink size={16} />
@@ -47,7 +47,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                className='dark:text-gray-300 dark:hover:text-white text-gray-600 hover:text-black'
+                className='dark:text-gray-300 dark:hover:text-white text-gray-950 hover:text-black'
                 href='/#contact'
               >
                 {t('contact')}
