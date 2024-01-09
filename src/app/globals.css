@@ -2,40 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --icon-color-light: black;
-  --icon-color-dark: white;
-}
-
-[data-theme='light'] .icon {
-  color: var(--icon-color-light);
-}
-
-[data-theme='dark'] .icon {
-  color: var(--icon-color-dark);
-}
-
-.loader {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 32px 0 #fff, -32px 0 #fff;
-  position: relative;
-  animation: flash 0.5s ease-out infinite alternate;
-}
-
-@keyframes flash {
-  0% {
-    background-color: #fff2;
-    box-shadow: 32px 0 #fff2, -32px 0 #fff;
-  }
-  50% {
-    background-color: #fff;
-    box-shadow: 32px 0 #fff2, -32px 0 #fff2;
-  }
-  100% {
-    background-color: #fff2;
-    box-shadow: 32px 0 #fff, -32px 0 #fff2;
-  }
+/* src/Carousel.css */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
 }
