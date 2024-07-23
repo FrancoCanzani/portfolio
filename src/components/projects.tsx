@@ -6,9 +6,18 @@ export default function Projects() {
 
   return (
     <section className="mb-12" id="projects">
-      <h1 className="text-2xl font-bold dark:text-gray-100 mb-6">
-        {t("title")}
-      </h1>
+      <div className="inline-flex justify-between mb-6 w-full">
+        <h1 className="text-2xl font-bold dark:text-gray-100">{t("title")}</h1>
+        <div className="inline-flex items-center justify-center space-x-2">
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-green-400"></span>
+          </span>
+          <p className="text-gray-600 dark:text-gray-200 text-sm">
+            {t("availability")}{" "}
+          </p>
+        </div>
+      </div>
       <div className="flex gap-3 flex-wrap">
         <ProjectCard
           name={"Chat app"}

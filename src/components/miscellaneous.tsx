@@ -17,13 +17,22 @@ export default async function Miscellaneous() {
         </h1>
         <h2 className="text-sm mb-6">
           In my free time I like to do hobby projects and{" "}
-          <a href="www.codewars.com" target="_blank">
+          <a
+            href="www.codewars.com"
+            target="_blank"
+            className="hover:underline"
+          >
             <strong>Codewars</strong>
           </a>{" "}
           Katas.
         </h2>
-        <h2>Codewars Profile</h2>
-        <p>Username: {data.username}</p>
+        <a
+          href="https://www.codewars.com/users/FrancoCanzani"
+          target="_blank"
+          className="hover:underline font-medium"
+        >
+          Profile: {data.username}
+        </a>
         <p>Honor: {data.honor}</p>
         <p>Rank: {data.ranks.overall.name}</p>
         <p>Total Completed Kata: {data.codeChallenges.totalCompleted}</p>
