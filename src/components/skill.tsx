@@ -28,13 +28,13 @@ export default function Skill({
   return (
     <motion.div
       className={cn(
-        `p-2 my-4 space-y-3 bg-gray-50 border border-l-4 rounded-sm ${className}`
+        `p-2 my-4 space-y-3 bg-gray-50 border border-l-4 rounded-md ${className}`
       )}
     >
       <div className='flex items-center justify-between'>
         <h4 className='font-semibold uppercase'>{title}</h4>
         {stillLearning && (
-          <span className='border p-1 text-[10px] capitalize rounded-sm font-semibold ring-yellow-200 ring-inset ring-1'>
+          <span className='border p-1 text-[10px] capitalize rounded-md font-semibold ring-yellow-200 ring-inset ring-1'>
             🚧 Currently learning 🚧
           </span>
         )}

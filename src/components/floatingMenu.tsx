@@ -26,7 +26,8 @@ export default function FloatingMenu() {
         <li>
           <a
             className='dark:text-gray-300 dark:hover:text-white text-gray-500 hover:text-black transition-all duration-200'
-            href='#'
+            href='https://franconotes.vercel.app/'
+            target='_blank'
           >
             Blog
           </a>

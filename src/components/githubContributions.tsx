@@ -59,7 +59,7 @@ const GitHubContributions = ({ username }: { username: string }) => {
         {t('github')}
         {` ${currentYear}`}.
       </h2>
-      <div className='flex flex-wrap rounded-sm mb-4 p-1.5 ring-1 hover:transition-all duration-500 ring-transparent bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'>
+      <div className='flex flex-wrap rounded-md mb-4 p-1.5 ring-1 hover:transition-all duration-500 ring-transparent bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'>
         {currentYearContributions.map(
           (day: { date: string; count: number }) => (
             <div

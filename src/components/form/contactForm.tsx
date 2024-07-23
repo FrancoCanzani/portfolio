@@ -37,7 +37,7 @@ export default function ContactForm({
             {name}
           </label>
           <input
-            className='ring-1 p-2 flex w-full hover:transition-all duration-500 ring-transparent rounded-sm bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'
+            className='ring-1 p-2 flex w-full hover:transition-all duration-500 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'
             id='name'
             name='name'
             placeholder={namePlaceholder}
@@ -49,7 +49,7 @@ export default function ContactForm({
             {email}
           </label>
           <input
-            className='p-2 flex w-full ring-1 hover:transition-all duration-500 ring-transparent rounded-sm bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'
+            className='p-2 flex w-full ring-1 hover:transition-all duration-500 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'
             id='email'
             name='email'
             placeholder={emailPlaceholder}
@@ -62,7 +62,7 @@ export default function ContactForm({
             {message}
           </label>
           <textarea
-            className='p-2 flex w-full ring-1 hover:transition-all duration-500 ring-transparent rounded-sm bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'
+            className='p-2 flex w-full ring-1 hover:transition-all duration-500 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'
             id='message'
             name='message'
             placeholder={messagePlaceholder}

@@ -14,7 +14,7 @@
   },
   "Projects": {
     "title": "Selected Projects",
-    "availability": "Available for new projects.",
+    "availability": "Open to work.",
     "boringChat": {
       "description": "A Full Stack chat app using WebSockets"
     },

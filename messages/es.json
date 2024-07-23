@@ -14,7 +14,7 @@
   },
   "Projects": {
     "title": "Proyectos",
-    "availability": "Disponible para nuevos proyectos.",
+    "availability": "Disponible para trabajar.",
     "boringChat": {
       "description": "Chat full stack usando webSockets"
     },
@@ -34,7 +34,7 @@
     "more": "más"
   },
   "Resume": {
-    "title": "Descarga mi curriculum!",
+    "title": "Descarga mi currículum!",
     "description": "Explore mi trayectoria profesional y mis logros en diferentes campos enfocados en la resolución de problemas.",
     "button": "Descargar CV"
   },

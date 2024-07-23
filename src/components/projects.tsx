@@ -72,7 +72,7 @@ function ProjectCard({
   technologies: string[];
 }) {
   return (
-    <div className='p-4 w-full space-y-2 sm:w-[49%] ring-1 hover:transition-all duration-500 ring-transparent rounded-sm bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'>
+    <div className='p-4 w-full space-y-2 sm:w-[49%] ring-1 hover:transition-all duration-500 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50'>
       <div className='flex mb-2 items-center justify-between'>
         <div className='flex items-center justify-start gap-x-1'>
           <svg
