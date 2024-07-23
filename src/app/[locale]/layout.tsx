@@ -1,13 +1,14 @@
-import "../globals.css";
-import Header from "@/components/header";
-import { notFound } from "next/navigation";
-import { Providers } from "@/components/providers";
-import { Inter } from "next/font/google";
-import { getTranslations } from "next-intl/server";
-import Footer from "@/components/footer";
-import FloatingMenu from "@/components/floatingMenu";
+import '../globals.css';
+import Header from '@/components/header';
+import { Providers } from '@/components/providers';
+import { Inter } from 'next/font/google';
+import { getTranslations } from 'next-intl/server';
+import Footer from '@/components/footer';
+import FloatingMenu from '@/components/floatingMenu';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export async function generateMetadata({
   params: { locale },
@@ -23,28 +24,28 @@ export async function generateMetadata({
     keywords: metadata.keywords,
   };
 }
-const locales = ["en", "es"];
 
-interface LocaleLayoutProps {
+export default async function LocaleLayout({
+  children,
+  params: { locale },
+}: {
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
-}
-
-export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  if (!locales.includes(params.locale as any)) notFound();
+  params: { locale: string };
+}) {
+  const messages = await getMessages();
 
   return (
-    <html lang={params.locale} className="scroll-smooth">
+    <html lang={locale} className='scroll-smooth'>
       <body
         className={`${inter.className} antialiased container max-w-3xl py-12 mx-auto dark:bg-black dark:text-white bg-[#fcfcfc] text-black`}
       >
         <Providers>
-          <Header />
-          {children}
-          <Footer />
-          <FloatingMenu />
+          <NextIntlClientProvider messages={messages}>
+            <Header />
+            {children}
+            <Footer />
+            <FloatingMenu />
+          </NextIntlClientProvider>
         </Providers>
       </body>
     </html>

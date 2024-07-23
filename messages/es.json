@@ -25,6 +25,14 @@
       "description": "Mi blog con comentarios y funciones de newsletter"
     }
   },
+  "Practice": {
+    "title": "Miscelánea",
+    "description": "En mi tiempo libre me gusta trabajar en proyectos personales y desafíos de Codewars.",
+    "codewars": "Estadísticas de Codewars.",
+    "github": "Contribuciones de GitHub en",
+    "less": "menos",
+    "more": "más"
+  },
   "Resume": {
     "title": "Descarga mi curriculum!",
     "description": "Explore mi trayectoria profesional y mis logros en diferentes campos enfocados en la resolución de problemas.",

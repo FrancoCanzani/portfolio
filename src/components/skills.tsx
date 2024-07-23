@@ -31,7 +31,7 @@ function Skill({ tech }: { tech: TechInfo }) {
     <a
       href={tech.docs}
       target='_blank'
-      className='font-normal flex items-center justify-center w-16 h-16 p-2 ring-1 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-600 dark:hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
+      className='font-normal flex items-center justify-center w-16 h-16 p-2 ring-1 ring-transparent rounded-sm bg-white/50 dark:bg-black border hover:ring-gray-600 dark:hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
     >
       <Image src={tech.logo} alt={tech.docs} height={60} width={60} />
     </a>

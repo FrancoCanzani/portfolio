@@ -25,6 +25,14 @@
       "description": "A blog with comments and newsletter features"
     }
   },
+  "Practice": {
+    "title": "Miscellaneous",
+    "description": "In my free time I like to do hobby projects and Codewars Katas.",
+    "codewars": "Codewars stats.",
+    "github": "GitHub Contributions in 2024.",
+    "less": "less",
+    "more": "more"
+  },
   "Resume": {
     "title": "Grab my resume!",
     "description": "Explore my rich professional journey and accomplishments in different fields focused in problem solving.",
