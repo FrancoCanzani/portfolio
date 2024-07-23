@@ -5,6 +5,7 @@ import { Providers } from "@/components/providers";
 import { Inter } from "next/font/google";
 import { getTranslations } from "next-intl/server";
 import Footer from "@/components/footer";
+import FloatingMenu from "@/components/floatingMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,6 +44,7 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
           <Header />
           {children}
           <Footer />
+          <FloatingMenu />
         </Providers>
       </body>
     </html>
