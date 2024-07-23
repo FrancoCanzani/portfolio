@@ -46,8 +46,8 @@ export default function Gallery() {
           key={index}
           className={`absolute transition-all duration-500 ease-in-out`}
           style={{
-            width: '225px',
-            height: '175px',
+            width: '250px',
+            height: '200px',
             transform: `translateX(${getImagePosition(index) * 160}px) 
                         rotate(${index % 2 === 0 ? 1 : -1}deg) 
                         scale(${hoveredIndex === index ? 1.1 : 1})`,
@@ -59,7 +59,7 @@ export default function Gallery() {
             alt={image.alt}
             src={image.src}
             fill
-            sizes='225px'
+            sizes='250px'
             priority
             quality={100}
             className='rounded-[4px] shadow-md object-cover'
