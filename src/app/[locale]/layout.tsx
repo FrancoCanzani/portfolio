@@ -1,12 +1,12 @@
-import '../globals.css';
-import Header from '@/components/header';
-import { notFound } from 'next/navigation';
-import { Providers } from '@/components/providers';
-import { Inter } from 'next/font/google';
-import { getTranslations } from 'next-intl/server';
-import Footer from '@/components/footer';
+import "../globals.css";
+import Header from "@/components/header";
+import { notFound } from "next/navigation";
+import { Providers } from "@/components/providers";
+import { Inter } from "next/font/google";
+import { getTranslations } from "next-intl/server";
+import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata({
   params: { locale },
@@ -22,7 +22,7 @@ export async function generateMetadata({
     keywords: metadata.keywords,
   };
 }
-const locales = ['en', 'es'];
+const locales = ["en", "es"];
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -35,9 +35,9 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
   if (!locales.includes(params.locale as any)) notFound();
 
   return (
-    <html lang={params.locale} className='scroll-smooth'>
+    <html lang={params.locale} className="scroll-smooth">
       <body
-        className={`${inter.className} antialiased animate-fade animate-once animate-duration-400 animate-ease-in max-w-3xl py-12 mx-auto dark:bg-black dark:text-white bg-[#fcfcfc] text-black`}
+        className={`${inter.className} antialiased container max-w-3xl py-12 mx-auto dark:bg-black dark:text-white bg-[#fcfcfc] text-black`}
       >
         <Providers>
           <Header />

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { sendEmail } from '@/utils/actions';
-import { useRef } from 'react';
-import SubmitButton from '../submitButton';
+import { sendEmail } from "@/utils/actions";
+import { useRef } from "react";
+import SubmitButton from "../submitButton";
 
 export default function ContactForm({
   name,
@@ -31,40 +31,40 @@ export default function ContactForm({
       }}
       ref={formRef}
     >
-      <div className='space-y-4'>
-        <div className='space-y-1'>
-          <label className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
+      <div className="space-y-4">
+        <div className="space-y-1">
+          <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             {name}
           </label>
           <input
-            className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-600 dark:hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
-            id='name'
-            name='name'
+            className="ring-1 p-2 flex w-full ring-1 hover:transition-all duration-500 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50"
+            id="name"
+            name="name"
             placeholder={namePlaceholder}
             required
           />
         </div>
-        <div className='space-y-1'>
-          <label className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
+        <div className="space-y-1">
+          <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             {email}
           </label>
           <input
-            className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-600 dark:hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
-            id='email'
-            name='email'
+            className="ring-1 p-2 flex w-full ring-1 hover:transition-all duration-500 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50"
+            id="email"
+            name="email"
             placeholder={emailPlaceholder}
-            type='email'
+            type="email"
             required
           />
         </div>
-        <div className='space-y-1'>
-          <label className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
+        <div className="space-y-1">
+          <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             {message}
           </label>
           <textarea
-            className='ring-1 p-2 flex w-full ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-600 dark:hover:ring-white border-gray-100 shadow-md dark:shadow-none shadow-gray-300/10 dark:border-gray-800/50'
-            id='message'
-            name='message'
+            className="ring-1 p-2 flex w-full ring-1 hover:transition-all duration-500 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-gray-300 hover:shadow dark:hover:ring-gray-400 border-gray-100 shadow-md dark:shadow-none dark:hover:shadow-gray-300/10 shadow-gray-300/10 dark:border-gray-800/50"
+            id="message"
+            name="message"
             placeholder={messagePlaceholder}
             required
           ></textarea>
