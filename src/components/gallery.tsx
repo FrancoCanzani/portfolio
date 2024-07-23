@@ -44,7 +44,7 @@ export default function Gallery() {
       {images.map((image, index) => (
         <div
           key={index}
-          className={`absolute bg-white transition-all duration-500 ease-in-out`}
+          className={`absolute transition-all duration-500 ease-in-out`}
           style={{
             width: '225px',
             height: '175px',
