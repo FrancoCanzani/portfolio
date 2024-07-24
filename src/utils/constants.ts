@@ -1,52 +1,68 @@
 export const technologies = [
   {
-    name: "JavaScript (JS)",
+    name: "JavaScript",
+    color: "#F7DF1E",
     description:
-      "JavaScript is a versatile, high-level programming language that is primarily used for adding interactivity to web pages. It is an essential technology for web development.",
+      "I use JavaScript extensively for client-side scripting, enhancing user interactions, and creating dynamic content in web applications. It's the foundation of my front-end development work.",
   },
   {
-    name: "Python for Small Scripts",
+    name: "TypeScript",
+    color: "#3178C6",
     description:
-      "Python is a high-level programming language known for its readability and efficiency. It's commonly used for writing small scripts and automation tasks due to its simplicity and ease of use.",
+      "TypeScript is my go-to for large-scale applications. I leverage its static typing to catch errors early, improve code maintainability, and enhance my development workflow, especially in complex projects.",
+  },
+  {
+    name: "Python",
+    color: "#3776AB",
+    description:
+      "I use Python for quick scripting, data analysis, and backend development. Its simplicity and extensive library ecosystem make it invaluable for rapid prototyping and solving diverse programming challenges.",
   },
   {
     name: "FastAPI",
+    color: "#009688",
     description:
-      "FastAPI is a modern, fast (high-performance) web framework for building APIs with Python 3.7+ based on standard Python type hints. It's designed to create APIs quickly and efficiently.",
+      "FastAPI is my preferred framework for building high-performance APIs. I utilize its automatic documentation features and async capabilities to create efficient, scalable backend services.",
   },
   {
     name: "React",
+    color: "#61DAFB",
     description:
-      "React is a JavaScript library for building user interfaces, especially single-page applications. It allows developers to build reusable UI components and manage the state of applications efficiently.",
+      "React forms the core of my front-end development. I use it to build interactive UIs, manage application state efficiently, and create reusable components for a consistent user experience across projects.",
   },
   {
     name: "Next.js",
+    color: "#000000",
     description:
-      "Next.js is a React framework that enables server-side rendering and static site generation. It simplifies the process of building React applications with features like automatic routing and optimization.",
+      "I employ Next.js to enhance my React applications with server-side rendering and static site generation. It's crucial for improving SEO, performance, and providing a smooth user experience in my web projects.",
   },
   {
     name: "TailwindCSS",
+    color: "#06B6D4",
     description:
-      "TailwindCSS is a utility-first CSS framework that provides low-level utility classes to build custom designs quickly. It helps in creating responsive and modern designs with minimal effort.",
+      "TailwindCSS is my primary tool for rapid UI development. I use its utility classes to create responsive, customized designs quickly, significantly speeding up my front-end styling process.",
   },
   {
     name: "Node.js",
+    color: "#5FA04E",
     description:
-      "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to execute JavaScript on the server side and is widely used for building scalable network applications.",
+      "I rely on Node.js for server-side JavaScript execution. It's essential in my stack for building scalable network applications, RESTful APIs, and handling server-side logic in full-stack projects.",
   },
   {
     name: "Express",
+    color: "#000000",
     description:
-      "Express is a minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications. It simplifies the process of handling HTTP requests and building server-side logic.",
+      "Express is my framework of choice for building web applications and APIs with Node.js. I use it to quickly set up servers, define routes, and handle HTTP requests in my backend development.",
   },
   {
-    name: "TypeScript (TS)",
+    name: "SQLite",
+    color: "#003B57",
     description:
-      "TypeScript is a superset of JavaScript that adds static types. It provides compile-time checking and enhances the development experience by catching errors early and improving code quality.",
+      "I use SQLite for lightweight, serverless database solutions. It's perfect for my smaller projects or when I need a simple, file-based database that doesn't require a separate server process.",
   },
   {
-    name: "TypeScript (TS) for Frontend",
+    name: "MongoDB",
+    color: "#47A248",
     description:
-      "TypeScript is used in frontend development to improve code quality and maintainability by providing type safety and advanced language features over plain JavaScript.",
+      "MongoDB is my preferred NoSQL database for projects requiring flexible, scalable data storage. I use it when working with large amounts of unstructured data or when I need to scale horizontally easily.",
   },
 ];

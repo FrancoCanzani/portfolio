@@ -25,6 +25,10 @@
       "description": "Mi blog con comentarios y funciones de newsletter"
     }
   },
+  "Skills": {
+    "title": "Tecnologías",
+    "description": "Colección de las herramientas que uso y las que quiero aprender. Sin embargo, esta lista está en continua evolución porque la esencia del buen software no reside en la tecnología en sí."
+  },
   "Practice": {
     "title": "Miscelánea",
     "description": "En mi tiempo libre me gusta trabajar en proyectos personales y desafíos de Codewars.",

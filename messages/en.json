@@ -25,6 +25,10 @@
       "description": "A blog with comments and newsletter features"
     }
   },
+  "Skills": {
+    "title": "Tech Stack",
+    "description": "Here is a collection of the stack I use. Nevertheless, this stack is continually evolving because the essence of exceptional software lies not solely within the technology itself."
+  },
   "Practice": {
     "title": "Miscellaneous",
     "description": "In my free time I like to do hobby projects and Codewars Katas.",
