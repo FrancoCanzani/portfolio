@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* src/Carousel.css */
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 60%;
-  margin: auto;
+
+details summary {
+  cursor: pointer;
+  transition: margin 150ms ease-out;
+}
+
+details[open] summary {
+  margin-bottom: 3px;
 }

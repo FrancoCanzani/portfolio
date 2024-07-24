@@ -9,7 +9,7 @@ interface ImageData {
 }
 
 export default function Gallery() {
-  const [hoveredIndex, setHoveredIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(1);
 
   const images: ImageData[] = [
     { src: "/landing/denia.jpg", alt: "Denia, Alicante, my adoptive home" },
