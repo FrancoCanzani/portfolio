@@ -33,7 +33,7 @@ export default function FloatingMenu() {
         exit={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <nav className="inline-block p-1.5 rounded-md text-xs ring-1 transition-all duration-300 ease-in-out ring-gray-200 bg-white/70 dark:bg-black/70 hover:ring-gray-300 hover:shadow-lg dark:ring-gray-700 dark:hover:ring-gray-600 shadow-sm backdrop-blur-md">
+        <nav className="inline-block p-2 rounded-md text-xs ring-1 transition-all duration-300 ease-in-out ring-gray-200 bg-white/70 dark:bg-black/70 hover:ring-gray-300 hover:shadow-lg dark:ring-gray-700 dark:hover:ring-gray-600 shadow-sm backdrop-blur-md">
           <ul className="flex items-center space-x-1">
             {menuItems.map((item, index) => (
               <li key={index}>
