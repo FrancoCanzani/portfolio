@@ -39,13 +39,7 @@ export default function Skills() {
             SQLite & MongoDB
           </span>
         </p>
-        <p className="inline-flex justify-between border-b p-2 w-full border-gray-300">
-          <span className="font-semibold">Libraries</span>{" "}
-          <span className="text-gray-600 dark:text-gray-200">
-            React & TailwindCss
-          </span>
-        </p>{" "}
-        <p className="inline-flex justify-between p-2 w-full border-gray-300">
+        <p className="inline-flex justify-between bg-gray-100 p-2 w-full border-gray-300">
           <span className="font-semibold">Looking to learn</span>{" "}
           <span className="text-gray-600 dark:text-gray-200">C# & Docker</span>
         </p>

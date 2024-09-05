@@ -15,8 +15,8 @@
   "Projects": {
     "title": "Proyectos",
     "availability": "Disponible para trabajar.",
-    "boringChat": {
-      "description": "Chat full stack usando webSockets"
+    "paywallSkip": {
+      "description": "App que permite acceder articulos bajo paywalls"
     },
     "portfolio": {
       "description": "Mi sitio web con internacionalización"
