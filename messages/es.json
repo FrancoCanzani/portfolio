@@ -32,10 +32,13 @@
   "Practice": {
     "title": "Miscelánea",
     "description": "En mi tiempo libre me gusta trabajar en proyectos personales y desafíos de Codewars.",
-    "codewars": "Estadísticas de Codewars.",
+    "codewars": "Estadísticas de Codewars",
     "github": "Contribuciones de GitHub en",
     "less": "menos",
-    "more": "más"
+    "more": "más",
+    "languages": "Lenguajes de Programación mas usados",
+    "language": "Lenguaje",
+    "repos": "Repositorios"
   },
   "Resume": {
     "title": "Descarga mi currículum!",

@@ -10,7 +10,12 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
-    "clsx": "^2.0.0",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.5.1",
     "framer-motion": "^10.18.0",
     "github-calendar": "^2.3.4",
     "lucide-react": "^0.294.0",
@@ -20,8 +25,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-wrap-balancer": "^1.1.0",
+    "recharts": "^2.13.3",
     "resend": "^2.0.0",
-    "tailwind-merge": "^2.2.0",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
     "tailwindcss-animated": "^1.0.1"
   },
   "devDependencies": {

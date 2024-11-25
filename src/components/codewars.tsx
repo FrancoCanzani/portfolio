@@ -16,8 +16,8 @@ export default async function Codewars() {
 
   return (
     <div className='w-full'>
-      <h2 className='text-sm mb-3'>{t('codewars')}</h2>
-      <div className='flex-col w-full text-sm space-y-1 mb-6 p-1.5 ring-1 hover:transition-all duration-500 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-orange-300 hover:shadow dark:hover:ring-orange-800 border-orange-500 shadow-md dark:shadow-none dark:hover:shadow-orange-300 shadow-orange-300/10 dark:border-orange-800'>
+      <h2 className='text-sm mb-3 font-medium'>{t('codewars')}</h2>
+      <div className='flex-col w-full text-sm space-y-1 mb-6 p-2.5 ring-1 hover:transition-all duration-500 ring-transparent rounded-md bg-white/50 dark:bg-black border hover:ring-orange-300 hover:shadow dark:hover:ring-orange-800 border-orange-500 shadow-md dark:shadow-none dark:hover:shadow-orange-300 shadow-orange-300/10 dark:border-orange-800'>
         <div className='flex items-end justify-between w-full'>
           <Image
             alt='Codewars icon'

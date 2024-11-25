@@ -32,10 +32,13 @@
   "Practice": {
     "title": "Miscellaneous",
     "description": "In my free time I like to do hobby projects and Codewars Katas.",
-    "codewars": "Codewars stats.",
-    "github": "GitHub Contributions in 2024.",
+    "codewars": "Codewars stats",
+    "github": "GitHub Contributions in 2024",
     "less": "less",
-    "more": "more"
+    "more": "more",
+    "languages": "Most used Programming Languages",
+    "language": "Language",
+    "repos": "Repositories"
   },
   "Resume": {
     "title": "Grab my resume!",
