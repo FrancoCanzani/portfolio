@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).npm i next@latest react@latest react-dom@latest eslint-config-next@latest
+# Personal Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 14, featuring internationalization, dark mode support, and real-time GitHub/CodeWars statistics integration.
 
-First, run the development server:
+![Portfolio Preview](public/preview.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Internationalization (i18n)**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  - English and Spanish language support
+  - Seamless language switching
+  - SEO-friendly URLs with locale prefixes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Dark/Light Mode**
 
-## Learn More
+  - System preference detection
+  - Manual toggle option
+  - Persistent theme selection
+  - Smooth theme transitions
 
-To learn more about Next.js, take a look at the following resources:
+- **Real-time Integrations**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  - GitHub contribution graph
+  - Programming language statistics
+  - CodeWars profile statistics
+  - Automatic data updates
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Modern UI/UX**
+  - Responsive design
+  - Smooth animations
+  - Accessibility focused
+  - Clean, minimal interface
 
-## Deploy on Vercel
+## 🛠️ Built With
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js 14](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [next-intl](https://next-intl-docs.vercel.app/) - Internationalization
+- [next-themes](https://github.com/pacocoursey/next-themes) - Theme management
+- [Recharts](https://recharts.org/) - Data visualization
+- [Framer Motion](https://www.framer.com/motion/) - Animations
+- [shadcn/ui](https://ui.shadcn.com/) - UI components
