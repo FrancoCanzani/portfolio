@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 details summary {
   cursor: pointer;
   transition: margin 150ms ease-out;
@@ -12,11 +11,11 @@ details[open] summary {
   margin-bottom: 3px;
 }
 
-details>summary {
+details > summary {
   list-style: none;
 }
 
-details>summary::-webkit-details-marker {
+details > summary::-webkit-details-marker {
   display: none;
 }
 

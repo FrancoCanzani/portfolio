@@ -35,9 +35,9 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className='scroll-smooth'>
+    <html lang={locale} className='scroll-smooth' suppressHydrationWarning>
       <body
-        className={`${inter.className} antialiased container max-w-3xl py-12 mx-auto dark:bg-black dark:text-white bg-[#fcfcfc] text-black`}
+        className={`${inter.className} min-h-screen bg-background text-foreground antialiased container max-w-3xl py-12 mx-auto`}
       >
         <Providers>
           <NextIntlClientProvider messages={messages}>

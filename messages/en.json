@@ -9,20 +9,23 @@
     "mode": "Toggle Mode"
   },
   "Landing": {
-    "title": "Independent Software Developer",
-    "welcomeMessage": "I craft solutions that not only address real-world problems and challenges but also have the ability to convey compelling narratives. This involves creating software that adds value to users and organizations."
+    "title": "Software Developer",
+    "welcomeMessage": "I craft solutions that address real-world problems and challenges. This involves creating software that adds value to users."
   },
   "Projects": {
     "title": "Selected Projects",
     "availability": "Open to work.",
     "paywallSkip": {
-      "description": "Unlock articles behind paywalls"
+      "description": "A modular paywall system enabling subscriptions and premium content access"
     },
     "portfolio": {
-      "description": "My portfolio website with internationalization"
+      "description": "A personal portfolio website showcasing projects and skills"
     },
-    "blog": {
-      "description": "A blog with comments and newsletter features"
+    "furnitureAPI": {
+      "description": "RESTful API for managing furniture data with a front-end catalog"
+    },
+    "encryptShare": {
+      "description": "Secure message-sharing platform with end-to-end encryption and self-destructing messages"
     }
   },
   "Skills": {

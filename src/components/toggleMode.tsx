@@ -12,14 +12,17 @@ export function ToggleMode() {
   }, []);
 
   if (!mounted) {
-    return null;
+    return null; // avoid hydration mismatch
   }
+
   return (
     <button
-      aria-label='toggle mode'
-      onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}
+      aria-label='Toggle dark mode'
+      type='button'
+      className='p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors'
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      {theme == 'dark' ? <Sun /> : <Moon />}
+      {theme === 'dark' ? <Sun /> : <Moon />}
     </button>
   );
 }
@@ -31,6 +34,7 @@ function Moon() {
       width='1em'
       height='1em'
       viewBox='0 0 24 24'
+      className='w-5 h-5'
     >
       <path
         fill='currentColor'
@@ -47,6 +51,7 @@ function Sun() {
       width='1em'
       height='1em'
       viewBox='0 0 24 24'
+      className='w-5 h-5'
     >
       <path
         fill='currentColor'

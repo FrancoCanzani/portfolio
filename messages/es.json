@@ -10,19 +10,22 @@
   },
   "Landing": {
     "title": "Desarrollador De Software",
-    "welcomeMessage": "Creo soluciones que no solo aborden problemas y desafíos del mundo real, sino que también tengan la capacidad de transmitir narrativas cautivadoras. Esto implica crear software que agregue valor a los usuarios y a las organizaciones."
+    "welcomeMessage": "Creo soluciones que aborden problemas y desafíos del mundo real. Esto implica crear software que agregue valor a los usuarios."
   },
   "Projects": {
     "title": "Proyectos",
     "availability": "Disponible para trabajar.",
     "paywallSkip": {
-      "description": "App que permite acceder articulos bajo paywalls"
+      "description": "Sistema modular de paywall que permite suscripciones y acceso a contenido premium"
     },
     "portfolio": {
-      "description": "Mi sitio web con internacionalización"
+      "description": "Sitio web de portafolio personal que muestra proyectos y habilidades"
     },
-    "blog": {
-      "description": "Mi blog con comentarios y funciones de newsletter"
+    "furnitureAPI": {
+      "description": "API RESTful para la gestión de datos de mobiliario con un catálogo en el front-end"
+    },
+    "encryptShare": {
+      "description": "Plataforma segura para compartir mensajes con cifrado de extremo a extremo y mensajes autodestructivos"
     }
   },
   "Skills": {

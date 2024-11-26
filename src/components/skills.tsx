@@ -36,7 +36,7 @@ export default function Skills() {
           <span className='font-semibold'>Databases</span>{' '}
           <span className='text-gray-600 dark:text-gray-200'>MongoDB</span>
         </p>
-        <p className='inline-flex justify-between bg-gray-100 p-2 w-full border-gray-300'>
+        <p className='inline-flex justify-between bg-gray-100 dark:bg-gray-800 dark:text-white p-2 w-full border-gray-300'>
           <span className='font-semibold'>Currently learning</span>{' '}
           <span className='text-gray-600 dark:text-gray-200'>
             SQLite & Golang
