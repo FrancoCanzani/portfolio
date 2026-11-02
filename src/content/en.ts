@@ -53,8 +53,6 @@ export const en: Dictionary = {
       title: "Education",
       items: [
         { title: "Universidad Católica de La Plata", description: "University studies in Argentina.", meta: "2014 – 2017" },
-        { title: "Automate the Boring Stuff with Python", description: "Udemy. Scripting away repetitive reporting." },
-        { title: "NumPy for Data Science and Machine Learning", description: "Udemy. Working with data at scale." },
       ],
     },
     {
