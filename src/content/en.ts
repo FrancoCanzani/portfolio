@@ -11,7 +11,7 @@ export const en: Dictionary = {
   greeting: "Hello, I’m",
   role: "Account & Logistics Manager · International Road Freight",
   intro:
-    "I’m a logistics manager living in Dénia, Alicante, helping some of the biggest companies move their goods across Europe.",
+    "I’m a logistics manager living in Dénia, Alicante, helping some of Europe’s biggest companies move their goods.",
   sections: [
     {
       id: "experience",
