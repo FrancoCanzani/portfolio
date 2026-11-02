@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Dots, Line, Solid } from "@/components/iso/react/draw";
 import { TruckArt } from "../truck/art";
-import { BASE_ART, CUSTOMER_ART, DEPOT_ART, PLATE_ART, ROAD_ART, TRUCK_BACK, TRUCK_OUT } from "./geometry";
+import { BASE_ART, CUSTOMER_ART, DEPOT_ART, ROAD_ART, TRUCK_BACK, TRUCK_OUT } from "./geometry";
 import { RouteLive } from "./live";
 
 const BASE = (
@@ -18,10 +18,6 @@ const BASE = (
     <Line d={BASE_ART.groove} tone="lo" />
     <Line d={BASE_ART.screwRings} tone="lo" />
     <Dots points={BASE_ART.screws} size={0.5} tone="mid" />
-    <Solid paths={PLATE_ART.plate} tone="lo" crease="none" />
-    <Line d={PLATE_ART.line} tone="faint" />
-    <Line d={PLATE_ART.rule} tone="lo" free />
-    <Dots points={PLATE_ART.screws} size={0.45} tone="mid" />
     <Solid paths={ROAD_ART.road} tone="lo" crease="none" />
     <Line d={ROAD_ART.edges} tone="lo" />
     <Line d={ROAD_ART.dashes} tone="faint" free />

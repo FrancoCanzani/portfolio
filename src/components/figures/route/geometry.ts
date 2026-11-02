@@ -28,14 +28,6 @@ export const BASE_ART = {
   screwRings: join(corners(BASE, 9).map(([x, y]) => ring(x, y, 2.2, 0, P, 16))),
 };
 
-const PLATE: Plan = { x: -140, y: 20, w: 52, d: 10, r: 1.5 };
-export const PLATE_ART = {
-  plate: slab(PLATE, 0, 0.8, 3),
-  line: planOutline(insetPlan(PLATE, 1.6), 0.8, P),
-  screws: [at([PLATE.x + 3.4, PLATE.y + PLATE.d / 2, 0.8]), at([PLATE.x + PLATE.w - 3.4, PLATE.y + PLATE.d / 2, 0.8])],
-  rule: join([0, 1, 2].map((row) => onTop([[PLATE.x + 8, PLATE.y + 3.3 + row * 2.2], [PLATE.x + (row === 1 ? 30 : 42), PLATE.y + 3.3 + row * 2.2]], 0.8, P))),
-};
-
 function dashes() {
   const out: string[] = [];
   for (let x = ROAD.x + 8; x + 8 < ROAD.x + ROAD.w; x += 16) out.push(onTop([[x, ROAD_Y], [x + 8, ROAD_Y]], ROAD_H, P));
