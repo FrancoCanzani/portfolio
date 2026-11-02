@@ -12,7 +12,7 @@ export const en: Dictionary = {
   role: "Account & Logistics Manager",
   intro:
     "I’m a **logistics manager** living in Dénia, Alicante, helping some of Europe’s biggest companies move their goods.",
-  clientsTitle: "Companies I work with",
+  clientsTitle: "Some of the companies I work with",
   sections: [
     {
       id: "experience",

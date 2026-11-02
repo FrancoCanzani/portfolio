@@ -124,8 +124,8 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
             <Emphasis text={dict.intro} />
           </p>
           <div className="reveal mt-10" style={reveal(order++)}>
-            <p className="mb-4 text-neutral-400">{dict.clientsTitle}</p>
-            <ul className="flex flex-wrap items-center gap-x-8 gap-y-5">
+            <p className="mb-4 text-center text-neutral-400">{dict.clientsTitle}</p>
+            <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5">
               {clients.map((client) => (
                 <li key={client.name}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
