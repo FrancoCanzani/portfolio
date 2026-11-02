@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
+import { DeparturesBoard } from "@/components/contact/departures-board";
 import { LangSwitch } from "@/components/header/lang-switch";
 import { ScrollTruck } from "@/components/header/scroll-truck";
 import { LoadingFigure } from "@/components/figures/loading/figure";
@@ -23,42 +24,6 @@ function Emphasis({ text }: { text: string }) {
   return text
     .split("**")
     .map((part, i) => (i % 2 ? <strong key={i} className="font-semibold text-neutral-900">{part}</strong> : part));
-}
-
-function ShippingLabel({ label, name }: { label: Dictionary["label"]; name: string }) {
-  return (
-    <div className="rotate-[-0.6deg] rounded-lg border border-dashed border-neutral-300 bg-white p-5 font-mono text-[11px] leading-[18px] text-neutral-500 shadow-[0_1px_0_#0000000a,0_8px_24px_-12px_#0000001f] transition-transform duration-300 ease-out hover:rotate-0">
-      <div className="flex items-center justify-between tracking-wider uppercase">
-        <span>{label.shipTo}</span>
-        <span className="rounded-sm bg-signal px-1.5 text-white">{label.priority}</span>
-      </div>
-      <p className="mt-3 font-sans text-[22px] leading-[28px] font-medium tracking-[-0.01em] text-neutral-900">{name}</p>
-      <p className="mt-0.5">{label.service}</p>
-      <p className="mt-4 border-t border-dashed border-neutral-200 pt-4 font-sans text-[13px] text-pretty text-neutral-500 sm:text-[14px]">{label.note}</p>
-      <div className="mt-4 flex flex-wrap items-center gap-2 font-sans text-[13px] sm:text-[14px]">
-        <a
-          href={`mailto:${label.email}`}
-          className="inline-flex items-center rounded-full bg-neutral-900 px-3.5 py-1.5 font-medium text-white transition-colors duration-200 hover:bg-signal"
-        >
-          {label.emailCta}
-        </a>
-        <a
-          href={label.href}
-          target="_blank"
-          rel="noreferrer"
-          className="group inline-flex items-center gap-1 rounded-full border border-neutral-200 px-3.5 py-1.5 font-medium text-neutral-900 transition-colors duration-200 hover:border-signal hover:text-signal"
-        >
-          {label.linkedinCta}
-          <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
-        </a>
-      </div>
-      <p className="mt-2 select-all">{label.email}</p>
-      <div className="mt-5 flex items-end justify-between gap-4">
-        <span className="barcode block h-9 w-40" aria-hidden="true" />
-        <span className="tracking-widest text-neutral-400">FC · 08+ YRS</span>
-      </div>
-    </div>
-  );
 }
 
 function Milestone({ item }: { item: Item }) {
@@ -166,10 +131,10 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
 
         <section id="contact" className="mt-16 scroll-mt-20">
           <h2 className="reveal mb-4 font-medium text-neutral-900" style={reveal(order++)}>
-            {dict.label.title}
+            {dict.contact.title}
           </h2>
-          <div className="reveal max-w-[380px]" style={reveal(order++)}>
-            <ShippingLabel label={dict.label} name={dict.name} />
+          <div className="reveal" style={reveal(order++)}>
+            <DeparturesBoard contact={dict.contact} />
           </div>
         </section>
       </main>

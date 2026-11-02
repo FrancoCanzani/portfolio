@@ -78,15 +78,12 @@ export const es: Dictionary = {
     route: "Un camión sale cargado de un almacén, descarga en el otro, vuelve a cargar y regresa con carga de vuelta.",
     port: "Una grúa de muelle descarga un contenedor de un buque y lo deja sobre un camión, que sale de la terminal hacia el almacén.",
   },
-  label: {
+  contact: {
     title: "Contacto",
-    priority: "Prioritario",
-    shipTo: "Entregar a",
-    service: "Transporte por carretera · Europa ⇄ EE. UU.",
-    note: "¿Buscas perfil de logística, gestión de transportistas o grandes cuentas? Hablemos.",
+    board: "Salidas · Departures",
+    columns: { destination: "Destino", contact: "Contacto", status: "Estado" },
     email: "francocanzani@gmail.com",
-    emailCta: "Escríbeme",
-    linkedinCta: "LinkedIn",
-    href: LINKEDIN,
+    linkedin: { href: LINKEDIN, handle: "/in/franco-canzani" },
+    status: { available: "Disponible", online: "En línea", copied: "Copiado" },
   },
 };

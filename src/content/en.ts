@@ -78,15 +78,12 @@ export const en: Dictionary = {
     route: "A truck leaves one warehouse loaded, unloads at the other, loads again and drives back with a return load.",
     port: "A quay crane lifts a container off a ship and sets it on a truck, which leaves the terminal for the warehouse.",
   },
-  label: {
+  contact: {
     title: "Contact",
-    priority: "Priority",
-    shipTo: "Deliver to",
-    service: "Road freight · Europe ⇄ US",
-    note: "Hiring for logistics, carrier management or key accounts? Let’s talk.",
+    board: "Departures · Salidas",
+    columns: { destination: "Destination", contact: "Contact", status: "Status" },
     email: "francocanzani@gmail.com",
-    emailCta: "Email me",
-    linkedinCta: "LinkedIn",
-    href: LINKEDIN,
+    linkedin: { href: LINKEDIN, handle: "/in/franco-canzani" },
+    status: { available: "Available", online: "Online", copied: "Copied" },
   },
 };

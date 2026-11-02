@@ -33,15 +33,12 @@ export interface Dictionary {
   intro: string;
   sections: Section[];
   figures: Record<FigureName, string>;
-  label: {
+  contact: {
     title: string;
-    priority: string;
-    shipTo: string;
-    service: string;
-    note: string;
+    board: string;
+    columns: { destination: string; contact: string; status: string };
     email: string;
-    emailCta: string;
-    linkedinCta: string;
-    href: string;
+    linkedin: { href: string; handle: string };
+    status: { available: string; online: string; copied: string };
   };
 }
