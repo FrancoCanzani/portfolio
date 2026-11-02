@@ -1,7 +1,7 @@
 .iso.figure[data-theme="light"] {
-  --anatomy-card: #fafafa;
-  --anatomy-page: #fafafa;
-  --anatomy-paper: #fafafa;
+  --anatomy-card: #fdfdfd;
+  --anatomy-page: #fdfdfd;
+  --anatomy-paper: #fdfdfd;
 }
 
 .tint-red { --t-top: #f0524a; --t-0: #b8231d; --t-1: #c92a23; --t-2: #d9332b; --t-3: #e43d34; --t-edge: #8f1b16; --t-line: #ffb3ae; }

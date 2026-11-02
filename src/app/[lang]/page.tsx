@@ -52,7 +52,7 @@ function Milestone({ item }: { item: Item }) {
     <>
       <span className="absolute top-[3px] -left-[5px] flex size-[9px]" aria-hidden="true">
         {item.current ? <span className="absolute inset-0 animate-ping rounded-[2px] bg-sky-500 opacity-60" /> : null}
-        <span className={`relative size-[9px] rounded-[2px] ring-4 ring-[#fafafa] ${item.current ? "bg-sky-500" : "bg-neutral-300"}`} />
+        <span className={`relative size-[9px] rounded-[2px] ring-4 ring-[#fdfdfd] ${item.current ? "bg-sky-500" : "bg-neutral-300"}`} />
       </span>
       {item.period ? <p className="mb-1 font-mono text-[11px] leading-[16px] text-neutral-400 tabular-nums">{item.period}</p> : null}
     </>
@@ -106,8 +106,8 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
   let order = 0;
 
   return (
-    <div className="min-h-dvh bg-[#fafafa] text-[13px] leading-[22px] text-neutral-600 sm:text-[14px]">
-      <header className="sticky top-0 z-10 bg-[#fafafa]/80 backdrop-blur-md">
+    <div className="min-h-dvh bg-[#fdfdfd] text-[13px] leading-[22px] text-neutral-600 sm:text-[14px]">
+      <header className="sticky top-0 z-10 bg-[#fdfdfd]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-[640px] items-center gap-4 px-6 py-2">
           <ScrollTruck />
           <LangSwitch lang={lang} />
