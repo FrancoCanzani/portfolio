@@ -29,8 +29,8 @@ export const en: Dictionary = {
         {
           title: "Sklum",
           period: "2020 → 2022",
-          description: "Ocean imports: containers from Asia to the warehouse.",
-          body: "From vessel to warehouse door: tracking ships, booking terminal slots, arranging drayage and scheduling unloads, so stock lands when sales need it.",
+          description: "Supply Planner.",
+          body: "I planned supply: deciding what to buy and when, based on stock projections and the demand forecast for each item. I coordinated domestic and international suppliers, most of them shipping containers from Asia, and tracked orders and loading plans so they met the agreed dates and incoterms. I tracked KPIs such as stock coverage, inventory turnover and supplier on-time delivery.",
           figure: "port",
         },
         {

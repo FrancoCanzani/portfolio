@@ -29,8 +29,8 @@ export const es: Dictionary = {
         {
           title: "Sklum",
           period: "2020 → 2022",
-          description: "Importación marítima: contenedores desde Asia hasta el almacén.",
-          body: "Del buque a la puerta del almacén: seguimiento de navieras, citas en terminal, transporte de arrastre y planificación de descargas, para que el stock llegue cuando ventas lo necesita.",
+          description: "Planificador de aprovisionamiento.",
+          body: "Me encargaba de planificar el aprovisionamiento: definir qué comprar y cuándo a partir de las proyecciones de stock y la previsión de demanda de cada artículo. Coordinaba a proveedores nacionales e internacionales, la mayoría con mercancía que llegaba en contenedor desde Asia, y controlaba los pedidos y los planes de carga para que cumplieran las fechas y los incoterms acordados. Hacía seguimiento de KPIs como la cobertura de stock, la rotación y el cumplimiento de plazos de los proveedores.",
           figure: "port",
         },
         {
