@@ -14,7 +14,6 @@ export interface Item {
   body?: string;
   figure?: FigureName;
   current?: boolean;
-  muted?: boolean;
   period?: string;
 }
 
