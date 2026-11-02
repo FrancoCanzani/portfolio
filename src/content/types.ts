@@ -36,7 +36,7 @@ export interface Dictionary {
   figures: Record<FigureName, string>;
   contact: {
     title: string;
-    email: string;
+    email: { user: string; domain: string };
     linkedin: { href: string; handle: string };
   };
 }

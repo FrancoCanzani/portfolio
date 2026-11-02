@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Mail } from "lucide-react";
+import { EmailLink } from "@/components/contact/email-link";
 import { LangSwitch } from "@/components/header/lang-switch";
 import { ScrollTruck } from "@/components/header/scroll-truck";
 import { LoadingFigure } from "@/components/figures/loading/figure";
@@ -27,14 +28,12 @@ function LinkedInIcon() {
   );
 }
 
+const contactLinkClass =
+  "group -mx-2 inline-flex items-center gap-2.5 rounded-md px-2 py-1 text-neutral-900 transition-colors duration-200 hover:bg-red-50 hover:text-signal";
+
 function ContactLink({ href, icon, external, children }: { href: string; icon: ReactNode; external?: boolean; children: ReactNode }) {
   return (
-    <a
-      href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noreferrer" : undefined}
-      className="group -mx-2 inline-flex items-center gap-2.5 rounded-md px-2 py-1 text-neutral-900 transition-colors duration-200 hover:bg-red-50 hover:text-signal"
-    >
+    <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} className={contactLinkClass}>
       <span className="text-neutral-400 transition-colors duration-200 group-hover:text-signal">{icon}</span>
       {children}
       {external ? <ArrowUpRight className="size-3.5 text-neutral-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" /> : null}
@@ -176,9 +175,12 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
           </h2>
           <ul className="reveal space-y-1.5" style={reveal(order++)}>
             <li>
-              <ContactLink href={`mailto:${dict.contact.email}`} icon={<Mail className="size-4" aria-hidden="true" />}>
-                {dict.contact.email}
-              </ContactLink>
+              <EmailLink
+                user={dict.contact.email.user}
+                domain={dict.contact.email.domain}
+                icon={<Mail className="size-4" aria-hidden="true" />}
+                className={contactLinkClass}
+              />
             </li>
             <li>
               <ContactLink href={dict.contact.linkedin.href} icon={<LinkedInIcon />} external>

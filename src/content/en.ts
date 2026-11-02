@@ -81,7 +81,7 @@ export const en: Dictionary = {
   },
   contact: {
     title: "Contact",
-    email: "francocanzani@gmail.com",
+    email: { user: "francocanzani", domain: "gmail.com" },
     linkedin: { href: LINKEDIN, handle: "linkedin.com/in/franco-canzani" },
   },
 };
