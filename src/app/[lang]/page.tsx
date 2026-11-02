@@ -12,7 +12,7 @@ const reveal = (index: number) => ({ "--reveal-i": index }) as CSSProperties;
 
 function Tag({ current, children }: { current?: boolean; children: ReactNode }) {
   return (
-    <span className="mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded border border-neutral-200 bg-white px-1.5 py-px font-mono text-[10.5px] leading-[18px] tracking-wide text-neutral-500 uppercase tabular-nums">
+    <span className="mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded border border-neutral-200 bg-white px-1.5 py-px font-mono text-[10.5px] leading-[18px] tracking-wide text-neutral-500 tabular-nums">
       {current ? <span className="size-1.5 animate-pulse rounded-full bg-signal" aria-hidden="true" /> : null}
       {children}
     </span>
