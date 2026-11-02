@@ -31,6 +31,7 @@ export interface Dictionary {
   greeting: string;
   role: string;
   intro: string;
+  clientsTitle: string;
   sections: Section[];
   figures: Record<FigureName, string>;
   contact: {

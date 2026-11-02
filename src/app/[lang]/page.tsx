@@ -6,7 +6,7 @@ import { ScrollTruck } from "@/components/header/scroll-truck";
 import { LoadingFigure } from "@/components/figures/loading/figure";
 import { PortFigure } from "@/components/figures/port/figure";
 import { RouteFigure } from "@/components/figures/route/figure";
-import { getDictionary, hasLocale, type Dictionary, type Item } from "@/content";
+import { clients, getDictionary, hasLocale, type Dictionary, type Item } from "@/content";
 
 const reveal = (index: number) => ({ "--reveal-i": index }) as CSSProperties;
 
@@ -124,6 +124,25 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
           <p className="reveal mt-4 text-[18px] leading-[28px] text-pretty text-neutral-600 sm:text-[20px] sm:leading-[30px]" style={reveal(order++)}>
             <Emphasis text={dict.intro} />
           </p>
+          <div className="reveal mt-10" style={reveal(order++)}>
+            <p className="mb-4 text-neutral-400">{dict.clientsTitle}</p>
+            <ul className="flex flex-wrap items-center gap-x-8 gap-y-5">
+              {clients.map((client) => (
+                <li key={client.name}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={client.src}
+                    alt={client.name}
+                    title={client.name}
+                    style={{ height: client.height }}
+                    className={`w-auto opacity-60 transition duration-300 hover:opacity-100 ${
+                      client.silhouette ? "brightness-0" : "grayscale hover:grayscale-0"
+                    }`}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {dict.sections.map((section) => (

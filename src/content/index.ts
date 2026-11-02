@@ -7,3 +7,4 @@ const dictionaries: Record<Locale, Dictionary> = { es, en };
 export const getDictionary = (locale: Locale) => dictionaries[locale];
 
 export * from "./types";
+export * from "./clients";
