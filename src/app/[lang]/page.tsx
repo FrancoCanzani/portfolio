@@ -133,9 +133,8 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
       <main className="mx-auto max-w-[640px] px-6 pt-10 pb-32 sm:pt-16">
         <div>
           <h1 className="reveal text-[24px] leading-[32px] font-medium tracking-[-0.01em] text-balance text-neutral-900 sm:text-[28px] sm:leading-[36px]" style={reveal(order++)}>
-            {dict.name}
-            <span className="text-signal"> | </span>
-            <span className="text-neutral-500">{dict.role}</span>
+            {dict.greeting} {dict.name}
+            <span className="block text-neutral-500">{dict.role}</span>
           </h1>
           <p className="reveal mt-4 text-pretty text-neutral-500" style={reveal(order++)}>
             {dict.intro}

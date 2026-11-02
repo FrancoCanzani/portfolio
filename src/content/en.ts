@@ -8,6 +8,7 @@ export const en: Dictionary = {
     description: "Logistics manager with 8+ years moving freight across Europe and the US: carriers, rates and loads that arrive on time.",
   },
   name: "Franco Canzani",
+  greeting: "Hello, I’m",
   role: "International Road Freight & Logistics Manager",
   intro:
     "Logistics manager with 8+ years moving freight across Europe and the US. I connect customers with reliable carriers, from temperature-controlled full truckloads to just-in-time automotive supply. I handle the full cycle: winning clients, negotiating rates and keeping every load on schedule.",

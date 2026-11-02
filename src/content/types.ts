@@ -28,6 +28,7 @@ export interface Section {
 export interface Dictionary {
   meta: { title: string; description: string };
   name: string;
+  greeting: string;
   role: string;
   intro: string;
   switchLabel: string;
