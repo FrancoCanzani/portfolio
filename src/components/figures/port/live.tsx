@@ -24,7 +24,7 @@ interface Props {
 function boxOffset(moment: Moment): [number, number, number] {
   switch (moment.holder) {
     case "ship":
-      return [0, 0, 0];
+      return [moment.shipX, 0, 0];
     case "hook":
       return [0, moment.trolleyY - PICK_Y, moment.hookZ - BOX_H - PICK[2]];
     case "truck":
@@ -42,6 +42,7 @@ const opacity = (value: number) => (value >= 1 ? "" : String(Math.round(value * 
 
 export function PortLive(props: Props) {
   const stage = React.useRef<HTMLDivElement>(null);
+  const ship = React.useRef<SVGGElement>(null);
   const truck = React.useRef<SVGGElement>(null);
   const boxBehind = React.useRef<SVGGElement>(null);
   const boxFront = React.useRef<SVGGElement>(null);
@@ -53,6 +54,8 @@ export function PortLive(props: Props) {
 
   const draw = React.useCallback(() => {
     const moment = momentOf(clock.current);
+    ship.current?.setAttribute("transform", translateAlong(P, [moment.shipX, 0, 0]));
+    if (ship.current) ship.current.style.opacity = opacity(moment.shipAlpha);
     truck.current?.setAttribute("transform", translateAlong(P, [moment.truckX, 0, 0]));
     if (truck.current) truck.current.style.opacity = opacity(moment.truckAlpha);
     const shown = moment.holder === "ship" ? boxBehind.current : boxFront.current;
@@ -80,7 +83,9 @@ export function PortLive(props: Props) {
     <div ref={stage} className="iso-stage">
       <svg className="iso-svg" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-label={props.label} focusable="false">
         {props.base}
-        {props.ship}
+        <g ref={ship} transform={translateAlong(P, [STILL.shipX, 0, 0])}>
+          {props.ship}
+        </g>
         <g ref={boxBehind} style={{ display: "none" }}>
           {props.box}
         </g>

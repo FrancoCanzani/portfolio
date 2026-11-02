@@ -69,6 +69,7 @@ export const en: Dictionary = {
     },
   ],
   figures: {
+    loading: "A warehouse loads boxes one by one onto a truck parked at the dock; once it is full, the truck drives off.",
     route: "A truck leaves one warehouse loaded, unloads at the other, loads again and drives back with a return load.",
     port: "A quay crane lifts a container off a ship and sets it on a truck, which leaves the terminal for the warehouse.",
   },

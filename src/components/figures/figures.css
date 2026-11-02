@@ -55,3 +55,20 @@
 .iso-line.iso-wave {
   stroke: var(--water-line);
 }
+
+.iso-kraft > .iso-fill,
+.iso-kraft > .iso-top {
+  fill: #e6cfa6;
+}
+.iso-kraft > .iso-shade[data-shade="0"] { fill: #b8955f; }
+.iso-kraft > .iso-shade[data-shade="1"] { fill: #c6a36c; }
+.iso-kraft > .iso-shade[data-shade="2"] { fill: #d2b07b; }
+.iso-kraft > .iso-shade[data-shade="3"] { fill: #dcbd8a; }
+.iso-kraft > .iso-edge,
+.iso-kraft > .iso-crease,
+.iso-kraft > .iso-bevel {
+  stroke: #8d6c3c;
+}
+.iso-line.iso-kraft-line {
+  stroke: #a4824f;
+}

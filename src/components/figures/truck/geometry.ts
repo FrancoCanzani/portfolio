@@ -13,7 +13,7 @@ export interface Part {
   strap?: string;
 }
 
-export type Cargo = { kind: "pallets"; count: number } | { kind: "chassis" };
+export type Cargo = { kind: "pallets"; count: number } | { kind: "flatbed" } | { kind: "chassis" };
 
 interface TruckOptions {
   projection: Projection;
@@ -62,7 +62,7 @@ export function buildTruck({ projection: P, laneY, heading, cargo }: TruckOption
   const near = 5 * heading;
   const sideV = heading;
   const farV = -heading;
-  const pallets = cargo.kind === "pallets";
+  const pallets = cargo.kind !== "chassis";
 
   layer = 0;
   for (const u of [37, 25]) wheel(u, farV * 3.2, farV * 5, 3.4);

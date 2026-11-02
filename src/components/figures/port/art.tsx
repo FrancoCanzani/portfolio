@@ -43,7 +43,7 @@ const SHIP = (
     <Solid paths={SHIP_ART.hull} tone="hi" />
     <Line d={SHIP_ART.waterline} tone="lo" />
     <Solid paths={SHIP_ART.bridge} tone="mid" inner={<Line d={SHIP_ART.bridgeWindows} tone="mid" />} />
-    <Solid paths={SHIP_ART.funnel} tone="mid" className="iso-accent" />
+    <Solid paths={SHIP_ART.funnel} tone="mid" />
     {SHIP_ART.cargo.map((art, index) => (
       <Container key={index} art={art} />
     ))}

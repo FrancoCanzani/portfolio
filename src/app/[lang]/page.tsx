@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
+import { LoadingFigure } from "@/components/figures/loading/figure";
 import { PortFigure } from "@/components/figures/port/figure";
 import { RouteFigure } from "@/components/figures/route/figure";
 import { getDictionary, hasLocale, type Dictionary, type Item } from "@/content";
@@ -35,6 +36,8 @@ function Figure({ item, dict }: { item: Item; dict: Dictionary }) {
   switch (item.figure) {
     case undefined:
       return null;
+    case "loading":
+      return <LoadingFigure label={dict.figures.loading} />;
     case "route":
       return <RouteFigure label={dict.figures.route} />;
     case "port":
@@ -56,7 +59,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
   return (
     <div className="min-h-dvh bg-[#fafafa] text-[13px] leading-[22px] text-neutral-600 sm:text-[14px]">
       <header className="sticky top-0 z-10 bg-[#fafafa]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1040px] items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-[640px] items-center justify-between px-6 py-4">
           <Link href={`/${lang}`} className="font-medium text-neutral-900">
             {dict.name}
           </Link>
@@ -70,8 +73,8 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-[1040px] px-6 pt-10 pb-32 sm:pt-16">
-        <div className="max-w-[560px]">
+      <main className="mx-auto max-w-[640px] px-6 pt-10 pb-32 sm:pt-16">
+        <div>
           <h1 className="reveal text-[18px] leading-[28px] font-medium text-balance text-neutral-900 sm:text-[20px] sm:leading-[30px]" style={reveal(order++)}>
             {dict.name}
             <span className="text-neutral-300"> | </span>
@@ -80,11 +83,14 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
           <p className="reveal mt-4 text-pretty text-neutral-500" style={reveal(order++)}>
             {dict.intro}
           </p>
+          <div className="reveal mt-8" style={reveal(order++)}>
+            <LoadingFigure label={dict.figures.loading} />
+          </div>
         </div>
 
         {dict.sections.map((section) => (
           <section key={section.id} id={section.id} className="mt-16 scroll-mt-20">
-            <div className="max-w-[480px]">
+            <div>
               <h2 className="reveal mb-2 font-medium text-neutral-900" style={reveal(order++)}>
                 {section.title}
               </h2>
@@ -93,19 +99,15 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
             <ul className="space-y-1.5">
               {section.items.map((item) =>
                 item.figure ? (
-                  <li
-                    key={item.title}
-                    className="reveal flex flex-col gap-6 pb-10 lg:grid lg:grid-cols-[minmax(0,480px)_minmax(0,1fr)] lg:items-center lg:gap-16 lg:pb-14"
-                    style={reveal(order++)}
-                  >
-                    <div>
-                      <Row item={item} />
-                      {item.body ? <p className="mt-2 text-pretty text-neutral-500">{item.body}</p> : null}
+                  <li key={item.title} className="reveal pb-8" style={reveal(order++)}>
+                    <Row item={item} />
+                    <div className="my-4">
+                      <Figure item={item} dict={dict} />
                     </div>
-                    <Figure item={item} dict={dict} />
+                    {item.body ? <p className="text-pretty text-neutral-500">{item.body}</p> : null}
                   </li>
                 ) : (
-                  <li key={item.title} className="reveal max-w-[480px]" style={reveal(order++)}>
+                  <li key={item.title} className="reveal" style={reveal(order++)}>
                     <Row item={item} />
                   </li>
                 ),

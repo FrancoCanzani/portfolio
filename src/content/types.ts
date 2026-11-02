@@ -4,7 +4,7 @@ export const defaultLocale: Locale = "es";
 
 export const hasLocale = (value: string): value is Locale => (locales as readonly string[]).includes(value);
 
-export type FigureName = "route" | "port";
+export type FigureName = "loading" | "route" | "port";
 
 export interface Item {
   title: string;
