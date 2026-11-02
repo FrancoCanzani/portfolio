@@ -23,7 +23,7 @@ export const en: Dictionary = {
           period: "2022 → Present",
           description: "Import & Export Manager.",
           current: true,
-          body: "I manage transport routes to and from Spain with every country in Europe.",
+          body: "I manage transport routes to and from Spain with every country in Europe. I look after a portfolio of clients and carriers: preparing quotes, negotiating rates and terms, and finding the right truck for each load, many of them temperature-controlled. I follow every shipment from pickup to delivery, sort out any issues along the way and keep growing the portfolio with clients and carriers I can rely on.",
           figure: "route",
         },
         {

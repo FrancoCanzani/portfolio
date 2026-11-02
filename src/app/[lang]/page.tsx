@@ -65,10 +65,9 @@ function Milestone({ item }: { item: Item }) {
   return (
     <>
       <span className="absolute top-[3px] -left-[5px] flex size-[9px]" aria-hidden="true">
-        {item.current ? <span className="absolute inset-0 animate-ping rounded-full bg-signal opacity-60" /> : null}
-        <span className={`relative size-[9px] rounded-full ring-4 ring-[#fafafa] ${item.current ? "bg-signal" : "bg-neutral-300"}`} />
+        <span className={`relative size-[9px] rounded-full ring-4 ring-[#fafafa] ${item.current ? "bg-sky-500" : "bg-neutral-300"}`} />
       </span>
-      {item.period ? <p className="mb-1 font-mono text-[10.5px] leading-[16px] tracking-wide text-neutral-400 uppercase tabular-nums">{item.period}</p> : null}
+      {item.period ? <p className="mb-1 font-mono text-[11px] leading-[16px] text-neutral-400 tabular-nums">{item.period}</p> : null}
     </>
   );
 }

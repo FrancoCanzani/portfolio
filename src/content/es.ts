@@ -23,7 +23,7 @@ export const es: Dictionary = {
           period: "2022 → Actualidad",
           description: "Responsable de importación y exportación.",
           current: true,
-          body: "Me encargo de gestionar rutas de transporte desde y hacia España con todos los países de Europa.",
+          body: "Me encargo de gestionar rutas de transporte desde y hacia España con todos los países de Europa. Llevo una cartera de clientes y transportistas: preparo cotizaciones, negocio tarifas y condiciones, y busco el camión adecuado para cada carga, muchas de ellas a temperatura controlada. Sigo cada servicio desde la recogida hasta la entrega, resuelvo las incidencias y hago crecer la cartera con clientes y proveedores de confianza.",
           figure: "route",
         },
         {
