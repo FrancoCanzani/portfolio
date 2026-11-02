@@ -4,14 +4,14 @@ const LINKEDIN = "https://es.linkedin.com/in/franco-canzani";
 
 export const es: Dictionary = {
   meta: {
-    title: "Franco Canzani · Responsable de Transporte Internacional",
-    description: "Responsable de logística con más de 8 años moviendo mercancía por Europa y Estados Unidos: transportistas, tarifas y cargas que llegan a tiempo.",
+    title: "Franco Canzani · Account & Logistics Manager",
+    description: "Responsable de logística en Dénia, Alicante. Ayudo a algunas de las mayores empresas a mover su mercancía por Europa.",
   },
   name: "Franco Canzani",
   greeting: "Hola, soy",
-  role: "Responsable de Transporte Internacional",
+  role: "Account & Logistics Manager · Transporte internacional por carretera",
   intro:
-    "Responsable de logística con más de 8 años moviendo mercancía por Europa y Estados Unidos. Conecto a clientes con transportistas de confianza, desde cargas completas a temperatura controlada hasta suministro just-in-time para automoción. Me ocupo del ciclo completo: captar clientes, negociar tarifas y que cada carga llegue a tiempo.",
+    "Soy responsable de logística, vivo en Dénia (Alicante) y ayudo a algunas de las mayores empresas a mover su mercancía por Europa.",
   sections: [
     {
       id: "experiencia",
