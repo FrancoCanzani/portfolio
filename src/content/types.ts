@@ -4,10 +4,7 @@ export const defaultLocale: Locale = "es";
 
 export const hasLocale = (value: string): value is Locale => (locales as readonly string[]).includes(value);
 
-export type IconName = "truck" | "route" | "chart" | "languages" | "graduation" | "award" | "code" | "linkedin" | "sparkles";
-
 export interface Item {
-  icon: IconName;
   title: string;
   description: string;
   meta?: string;
@@ -29,5 +26,4 @@ export interface Dictionary {
   indexLabel: string;
   switchLabel: string;
   sections: Section[];
-  footer: string;
 }

@@ -26,7 +26,7 @@ export function SectionIndex({ label, entries }: { label: string; entries: Entry
   }, [entries]);
 
   return (
-    <nav aria-label={label} className="fixed top-1/2 left-6 hidden -translate-y-1/2 text-[12px] leading-[22px] xl:block">
+    <nav aria-label={label} className="fixed top-1/2 left-[calc(50%-280px-160px)] hidden w-32 -translate-y-1/2 text-[12px] leading-[22px] xl:block">
       <p className="mb-1 text-neutral-900">{label}</p>
       <ul>
         {entries.map(({ id, title }) => (

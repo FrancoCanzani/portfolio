@@ -2,7 +2,6 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
-import { ItemIcon } from "@/components/item-icon";
 import { SectionIndex } from "@/components/section-index";
 import { getDictionary, hasLocale, type Item } from "@/content";
 
@@ -11,7 +10,6 @@ const reveal = (index: number) => ({ "--reveal-i": index }) as CSSProperties;
 function Row({ item }: { item: Item }) {
   const body = (
     <>
-      <ItemIcon name={item.icon} />
       <span className="min-w-0 flex-1">
         <span className="font-medium text-neutral-900">{item.title}</span>
         <span className="text-neutral-400"> · </span>
@@ -21,7 +19,7 @@ function Row({ item }: { item: Item }) {
       {item.href ? <ArrowUpRight className="size-3.5 shrink-0 text-neutral-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" /> : null}
     </>
   );
-  const shape = "group flex items-start gap-2.5 [&>*:first-child]:mt-[3px]";
+  const shape = "group flex items-start gap-3";
   if (item.href) {
     return (
       <a href={item.href} target="_blank" rel="noreferrer" className={`${shape} -mx-2 rounded-md px-2 py-1 transition-colors duration-200 hover:bg-neutral-100`}>
@@ -82,10 +80,6 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
             </ul>
           </section>
         ))}
-
-        <footer className="reveal mt-20 text-[12px] text-neutral-400" style={reveal(order++)}>
-          {dict.footer}
-        </footer>
       </main>
     </div>
   );
