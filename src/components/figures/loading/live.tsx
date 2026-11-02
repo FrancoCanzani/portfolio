@@ -3,6 +3,7 @@
 import * as React from "react";
 import { translateAlong } from "@/components/iso/iso-kit";
 import { useInView, useLoop } from "@/components/iso/react/live";
+import { markMotion } from "../truck/motion";
 import { STILL_AT, momentOf } from "./model";
 import { HEIGHT, P, SLOTS, WIDTH } from "./view";
 
@@ -24,11 +25,13 @@ export function LoadingLive(props: Props) {
   const boxes = React.useRef<Array<SVGGElement | null>>([]);
   const inView = useInView(stage);
   const clock = React.useRef(STILL_AT);
+  const lastX = React.useRef(STILL.truckX);
 
   const draw = React.useCallback(() => {
     const moment = momentOf(clock.current);
     truck.current?.setAttribute("transform", translateAlong(P, [moment.truckX, 0, 0]));
     if (truck.current) truck.current.style.opacity = opacity(moment.truckAlpha);
+    markMotion(truck.current, moment.truckX, lastX);
     moment.boxes.forEach((state, index) => {
       const node = boxes.current[index];
       if (!node) return;

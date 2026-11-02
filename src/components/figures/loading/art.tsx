@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Dots, Line, Solid } from "@/components/iso/react/draw";
+import { Verge } from "../scenery-art";
 import { TruckArt } from "../truck/art";
-import { BASE_ART, BOX_ART, DOCK_ART, TRUCK, WAREHOUSE_ART } from "./geometry";
+import { BASE_ART, BOX_ART, DOCK_ART, TRUCK, TRUCK_MARKS, VERGE, WAREHOUSE_ART } from "./geometry";
 import { LoadingLive } from "./live";
 
 const BASE = (
@@ -19,6 +20,7 @@ const BASE = (
     <Line d={BASE_ART.screwRings} tone="lo" />
     <Dots points={BASE_ART.screws} size={0.5} tone="mid" />
     <Line d={BASE_ART.bays} tone="faint" />
+    <Verge art={VERGE} />
   </g>
 );
 
@@ -43,12 +45,12 @@ const WAREHOUSE = (
 );
 
 const BOX = (
-  <g>
-    <Solid paths={BOX_ART.body} tone="mid" crease="faint" className="iso-kraft" />
-    <Line d={BOX_ART.tape} className="iso-kraft-line" />
+  <g className="tint-kraft">
+    <Solid paths={BOX_ART.body} tone="mid" crease="faint" className="iso-tint" />
+    <Line d={BOX_ART.tape} className="iso-tint-line" />
   </g>
 );
 
 export function LoadingArt({ label }: { label: string }) {
-  return <LoadingLive label={label} base={BASE} warehouse={WAREHOUSE} truck={<TruckArt parts={TRUCK} />} box={BOX} />;
+  return <LoadingLive label={label} base={BASE} warehouse={WAREHOUSE} truck={<TruckArt parts={TRUCK} marks={TRUCK_MARKS} />} box={BOX} />;
 }

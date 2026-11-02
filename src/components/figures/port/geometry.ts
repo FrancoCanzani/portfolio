@@ -1,5 +1,5 @@
 import { corners, cylinder, depthOf, onTop, pathOf, ring, segment, slabOf, type Plan, type Point3 } from "@/components/iso/iso-kit";
-import { buildTruck } from "../truck/geometry";
+import { buildTruck, truckMarks } from "../truck/geometry";
 import {
   APEX_Z,
   BASE,
@@ -140,3 +140,4 @@ export const YARD = [
   .sort((a, b) => a.depth - b.depth);
 
 export const TRUCK = buildTruck({ projection: P, laneY: LANE_Y, heading: 1, cargo: { kind: "chassis" } });
+export const TRUCK_MARKS = truckMarks({ projection: P, laneY: LANE_Y, heading: 1 });

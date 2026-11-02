@@ -21,6 +21,7 @@ export const es: Dictionary = {
           title: "RLC Transportes",
           description: "Rentabilidad por ruta: coste por kilómetro, tarifas y retornos cargados.",
           meta: "Actualidad",
+          current: true,
           body: "Un camión que vuelve vacío pierde dinero en la mitad del viaje. Calculo el coste real por kilómetro de cada ruta, negocio tarifas que lo cubran y busco carga de vuelta para que el camión no regrese de vacío. Así cada ida y vuelta deja margen.",
           figure: "route",
         },
@@ -62,15 +63,19 @@ export const es: Dictionary = {
         { title: "Inglés", description: "Competencia profesional completa." },
       ],
     },
-    {
-      id: "contacto",
-      title: "Contacto",
-      items: [{ title: "LinkedIn", description: "La forma más rápida de escribirme.", href: LINKEDIN }],
-    },
   ],
   figures: {
     loading: "Un almacén carga cajas una a una sobre un camión aparcado en el muelle; cuando está lleno, el camión sale.",
     route: "Un camión sale cargado de un almacén, descarga en el otro, vuelve a cargar y regresa con carga de vuelta.",
     port: "Una grúa de muelle descarga un contenedor de un buque y lo deja sobre un camión, que sale de la terminal hacia el almacén.",
+  },
+  label: {
+    title: "Contacto",
+    priority: "Prioritario",
+    shipTo: "Entregar a",
+    service: "Transporte internacional · Europa ⇄ EE. UU.",
+    note: "La forma más rápida de escribirme.",
+    cta: "Escríbeme en LinkedIn",
+    href: LINKEDIN,
   },
 };

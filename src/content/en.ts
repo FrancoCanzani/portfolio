@@ -21,6 +21,7 @@ export const en: Dictionary = {
           title: "RLC Transportes",
           description: "Profitability per route: cost per kilometre, rates and loaded return trips.",
           meta: "Present",
+          current: true,
           body: "A truck that comes back empty loses money on half of the trip. I work out the real cost per kilometre of every route, negotiate rates that cover it and find return loads so the truck never drives home empty. That is how a round trip stays profitable.",
           figure: "route",
         },
@@ -62,15 +63,19 @@ export const en: Dictionary = {
         { title: "English", description: "Full professional proficiency." },
       ],
     },
-    {
-      id: "contact",
-      title: "Contact",
-      items: [{ title: "LinkedIn", description: "The fastest way to reach me.", href: LINKEDIN }],
-    },
   ],
   figures: {
     loading: "A warehouse loads boxes one by one onto a truck parked at the dock; once it is full, the truck drives off.",
     route: "A truck leaves one warehouse loaded, unloads at the other, loads again and drives back with a return load.",
     port: "A quay crane lifts a container off a ship and sets it on a truck, which leaves the terminal for the warehouse.",
+  },
+  label: {
+    title: "Contact",
+    priority: "Priority",
+    shipTo: "Deliver to",
+    service: "International freight · Europe ⇄ US",
+    note: "The fastest way to reach me.",
+    cta: "Message me on LinkedIn",
+    href: LINKEDIN,
   },
 };

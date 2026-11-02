@@ -3,6 +3,7 @@
 import * as React from "react";
 import { translateAlong } from "@/components/iso/iso-kit";
 import { asksForStillness, useInView, useLoop } from "@/components/iso/react/live";
+import { markMotion } from "../truck/motion";
 import { STILL_AT, momentOf } from "./model";
 import { CUSTOMER_X, DEPOT_X, HEIGHT, P, WIDTH } from "./view";
 
@@ -21,6 +22,7 @@ export function RouteLive(props: Props) {
   const backRef = React.useRef<SVGGElement | null>(null);
   const inView = useInView(stage);
   const clock = React.useRef(0);
+  const lastX = React.useRef(0);
 
   const draw = React.useCallback(() => {
     const moment = momentOf(clock.current);
@@ -29,7 +31,9 @@ export function RouteLive(props: Props) {
     if (other && other.style.display !== "none") other.style.display = "none";
     if (!truck) return;
     if (truck.style.display) truck.style.display = "";
-    truck.setAttribute("transform", translateAlong(P, [DEPOT_X + (CUSTOMER_X - DEPOT_X) * moment.along, 0, 0]));
+    const x = DEPOT_X + (CUSTOMER_X - DEPOT_X) * moment.along;
+    truck.setAttribute("transform", translateAlong(P, [x, 0, 0]));
+    markMotion(truck, x, lastX);
     const shown = Math.ceil(moment.load - 1e-6);
     truck.querySelectorAll<SVGGElement>("[data-pallet]").forEach((node) => {
       const display = Number(node.dataset.pallet) < shown ? "" : "none";

@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Dots, Line, Solid } from "@/components/iso/react/draw";
+import { Verge } from "../scenery-art";
 import { TruckArt } from "../truck/art";
-import { BASE_ART, CUSTOMER_ART, DEPOT_ART, ROAD_ART, TRUCK_BACK, TRUCK_OUT } from "./geometry";
+import { BASE_ART, CUSTOMER_ART, DEPOT_ART, MARKS_BACK, MARKS_OUT, ROAD_ART, TRUCK_BACK, TRUCK_OUT, VERGE } from "./geometry";
 import { RouteLive } from "./live";
 
 const BASE = (
@@ -27,6 +28,7 @@ const BASE = (
     <Line d={ROAD_ART.bays} tone="faint" />
     <Line d={ROAD_ART.kmMinor} tone="lo" />
     <Line d={ROAD_ART.kmMajor} tone="mid" />
+    <Verge art={VERGE} />
   </g>
 );
 
@@ -46,7 +48,11 @@ function building(art: typeof DEPOT_ART, key: string) {
         <Solid key={index} paths={paths} tone="mid" />
       ))}
       <Line d={art.ventRings} tone="lo" />
-      {art.canopy ? <Solid paths={art.canopy} tone="mid" /> : null}
+      {art.canopy ? (
+        <g className="tint-mustard">
+          <Solid paths={art.canopy} tone="mid" className="iso-tint" />
+        </g>
+      ) : null}
       <Line d={art.canopyRods} tone="lo" />
     </g>
   );
@@ -55,8 +61,8 @@ function building(art: typeof DEPOT_ART, key: string) {
 const DEPOT = building(DEPOT_ART, "depot");
 const CUSTOMER = building(CUSTOMER_ART, "customer");
 
-const TRUCK_OUT_ART = <TruckArt parts={TRUCK_OUT} />;
-const TRUCK_BACK_ART = <TruckArt parts={TRUCK_BACK} />;
+const TRUCK_OUT_ART = <TruckArt parts={TRUCK_OUT} marks={MARKS_OUT} />;
+const TRUCK_BACK_ART = <TruckArt parts={TRUCK_BACK} marks={MARKS_BACK} />;
 
 export function RouteArt({ label }: { label: string }) {
   return <RouteLive label={label} base={BASE} depot={DEPOT} customer={CUSTOMER} truckOut={TRUCK_OUT_ART} truckBack={TRUCK_BACK_ART} />;

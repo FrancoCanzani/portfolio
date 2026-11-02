@@ -13,6 +13,7 @@ export interface Item {
   href?: string;
   body?: string;
   figure?: FigureName;
+  current?: boolean;
 }
 
 export interface Section {
@@ -30,4 +31,13 @@ export interface Dictionary {
   switchLabel: string;
   sections: Section[];
   figures: Record<FigureName, string>;
+  label: {
+    title: string;
+    priority: string;
+    shipTo: string;
+    service: string;
+    note: string;
+    cta: string;
+    href: string;
+  };
 }

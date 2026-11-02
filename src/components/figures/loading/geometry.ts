@@ -1,5 +1,6 @@
 import { corners, cylinder, onTop, pathOf, planOutline, insetPlan, ring, segment, slabOf, type Plan, type Point3 } from "@/components/iso/iso-kit";
-import { buildTruck } from "../truck/geometry";
+import { vergeOf } from "../scenery";
+import { buildTruck, truckMarks } from "../truck/geometry";
 import { BASE, BASE_H, BOX, DECK_Z, DOCK, FACE_X, FOOT_H, LANE_Y, P, WAREHOUSE, WAREHOUSE_H, at } from "./view";
 
 const slab = (plan: Plan, z: number, h: number, steps = 3, bevel = 0) => slabOf(plan, z, h, P, steps, bevel);
@@ -78,3 +79,5 @@ export const BOX_ART = {
 };
 
 export const TRUCK = buildTruck({ projection: P, laneY: LANE_Y, heading: 1, cargo: { kind: "flatbed" } });
+export const TRUCK_MARKS = truckMarks({ projection: P, laneY: LANE_Y, heading: 1 });
+export const VERGE = vergeOf(P, { x: BASE.x + 6, y: 10, w: BASE.w - 12, d: 14, r: 2 }, [[-98, 17, 3.4], [-84, 19, 2.4], [-20, 17, 2.8], [40, 18, 3.2], [54, 16.5, 2.2], [86, 17.5, 3]]);

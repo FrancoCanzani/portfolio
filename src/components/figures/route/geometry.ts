@@ -11,7 +11,8 @@ import {
   type Plan,
   type Point3,
 } from "@/components/iso/iso-kit";
-import { buildTruck } from "../truck/geometry";
+import { vergeOf } from "../scenery";
+import { buildTruck, truckMarks } from "../truck/geometry";
 import { PALLETS } from "./model";
 import { BASE, BASE_H, BUILDING_H, CUSTOMER, DEPOT, FOOT_H, P, ROAD, ROAD_H, ROAD_Y, at } from "./view";
 
@@ -94,3 +95,6 @@ export const CUSTOMER_ART = building(CUSTOMER, true);
 
 export const TRUCK_OUT = buildTruck({ projection: P, laneY: ROAD_Y, heading: 1, cargo: { kind: "pallets", count: PALLETS } });
 export const TRUCK_BACK = buildTruck({ projection: P, laneY: ROAD_Y, heading: -1, cargo: { kind: "pallets", count: PALLETS } });
+export const MARKS_OUT = truckMarks({ projection: P, laneY: ROAD_Y, heading: 1 });
+export const MARKS_BACK = truckMarks({ projection: P, laneY: ROAD_Y, heading: -1 });
+export const VERGE = vergeOf(P, { x: -144, y: 21, w: 288, d: 9, r: 2 }, [[-128, 25.5, 3.2], [-112, 26, 2.4], [-30, 25.5, 2.8], [52, 26, 3.4], [66, 25.5, 2.2], [128, 25.5, 3]]);

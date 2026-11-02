@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, locales } from "@/content";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument" });
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -25,7 +26,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   return (
-    <html lang={lang} data-scroll-behavior="smooth" className={`${inter.variable} antialiased`}>
+    <html lang={lang} data-scroll-behavior="smooth" className={`${inter.variable} ${serif.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );

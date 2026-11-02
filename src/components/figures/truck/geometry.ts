@@ -124,3 +124,8 @@ export function buildTruck({ projection: P, laneY, heading, cargo }: TruckOption
   }
   return parts.sort((a, b) => a.key - b.key);
 }
+
+export function truckMarks({ projection, laneY, heading }: Omit<TruckOptions, "cargo">) {
+  const w = (u: number, v: number, z: number): Point3 => [heading * u, laneY + heading * v, z];
+  return { exhaust: iso(w(30.5, -3.6, 25), projection), beacon: iso(w(36.75, 0, 22.6), projection) };
+}

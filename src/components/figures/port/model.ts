@@ -21,6 +21,7 @@ const mix = (a: number, b: number, t: number) => a + (b - a) * t;
 export type Holder = "ship" | "hook" | "truck";
 
 export interface Moment {
+  time: number;
   shipX: number;
   shipAlpha: number;
   truckX: number;
@@ -58,5 +59,5 @@ export function momentOf(time: number): Moment {
   const truckAlpha = arriving ? span(t, 0, 0.6) : 1 - span(t, 9.4, 10);
   const holder: Holder = t < 3.4 ? "ship" : t < 7 ? "hook" : "truck";
   const boxAlpha = holder === "ship" ? shipAlpha : holder === "truck" ? truckAlpha : 1;
-  return { shipX, shipAlpha, truckX, truckAlpha, trolleyY: trolleyAt(t), hookZ: hookAt(t), holder, boxAlpha };
+  return { time, shipX, shipAlpha, truckX, truckAlpha, trolleyY: trolleyAt(t), hookZ: hookAt(t), holder, boxAlpha };
 }

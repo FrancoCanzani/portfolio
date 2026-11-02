@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { translateAlong } from "@/components/iso/iso-kit";
+import { iso, translateAlong } from "@/components/iso/iso-kit";
 import { useInView, useLoop } from "@/components/iso/react/live";
 import { SPREADER_AT, cablesPath } from "./geometry";
+import { markMotion } from "../truck/motion";
 import { STILL_AT, momentOf, type Moment } from "./model";
 import { BOX_H, BOX_L, BOX_W, HEIGHT, LANE_Y, P, PICK, PICK_Y, TRUCK_BOX_U, TRUCK_DECK, WIDTH } from "./view";
 
@@ -24,7 +25,7 @@ interface Props {
 function boxOffset(moment: Moment): [number, number, number] {
   switch (moment.holder) {
     case "ship":
-      return [moment.shipX, 0, 0];
+      return [moment.shipX, 0, Math.sin(moment.time * 1.8) * 0.5];
     case "hook":
       return [0, moment.trolleyY - PICK_Y, moment.hookZ - BOX_H - PICK[2]];
     case "truck":
@@ -37,6 +38,12 @@ function boxOffset(moment: Moment): [number, number, number] {
 }
 
 const STILL = momentOf(STILL_AT);
+
+function gullAt(time: number) {
+  const angle = time * 0.45;
+  const [x, y] = iso([120 + 34 * Math.cos(angle), -52 + 16 * Math.sin(angle), 46 + 3 * Math.sin(time * 1.3)], P);
+  return `translate(${Math.round(x * 10) / 10} ${Math.round(y * 10) / 10})`;
+}
 
 const opacity = (value: number) => (value >= 1 ? "" : String(Math.round(value * 100) / 100));
 
@@ -51,13 +58,18 @@ export function PortLive(props: Props) {
   const cables = React.useRef<SVGPathElement>(null);
   const inView = useInView(stage);
   const clock = React.useRef(STILL_AT);
+  const lastX = React.useRef(STILL.truckX);
+  const gull = React.useRef<SVGGElement>(null);
 
   const draw = React.useCallback(() => {
     const moment = momentOf(clock.current);
-    ship.current?.setAttribute("transform", translateAlong(P, [moment.shipX, 0, 0]));
+    const bob = Math.sin(clock.current * 1.8) * 0.5;
+    ship.current?.setAttribute("transform", translateAlong(P, [moment.shipX, 0, bob]));
     if (ship.current) ship.current.style.opacity = opacity(moment.shipAlpha);
     truck.current?.setAttribute("transform", translateAlong(P, [moment.truckX, 0, 0]));
     if (truck.current) truck.current.style.opacity = opacity(moment.truckAlpha);
+    markMotion(truck.current, moment.truckX, lastX);
+    gull.current?.setAttribute("transform", gullAt(clock.current));
     const shown = moment.holder === "ship" ? boxBehind.current : boxFront.current;
     const hidden = moment.holder === "ship" ? boxFront.current : boxBehind.current;
     if (hidden) hidden.style.display = "none";
@@ -104,6 +116,9 @@ export function PortLive(props: Props) {
           {props.spreader}
         </g>
         {props.legsFront}
+        <g ref={gull} transform={gullAt(STILL_AT)}>
+          <path className="gull gull-wings" d="M-4 0 Q-2 -2.4 0 0 Q2 -2.4 4 0" />
+        </g>
         {props.yard}
         {props.top}
       </svg>
