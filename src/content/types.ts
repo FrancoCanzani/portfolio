@@ -37,7 +37,9 @@ export interface Dictionary {
     shipTo: string;
     service: string;
     note: string;
-    cta: string;
+    email: string;
+    emailCta: string;
+    linkedinCta: string;
     href: string;
   };
 }

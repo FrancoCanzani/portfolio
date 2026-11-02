@@ -5,12 +5,12 @@ const LINKEDIN = "https://es.linkedin.com/in/franco-canzani";
 export const es: Dictionary = {
   meta: {
     title: "Franco Canzani · Responsable de Transporte Internacional",
-    description: "Responsable de logística con más de 8 años moviendo mercancía por Europa y Estados Unidos.",
+    description: "Responsable de logística con más de 8 años moviendo mercancía por Europa y Estados Unidos: transportistas, tarifas y cargas que llegan a tiempo.",
   },
   name: "Franco Canzani",
   role: "Responsable de Transporte Internacional",
   intro:
-    "Responsable de logística con más de 8 años moviendo mercancía por Europa y Estados Unidos. Conecto a clientes con transportistas de confianza, desde cargas completas a temperatura controlada hasta suministro just-in-time para automoción. Gestiono el ciclo completo: captar clientes, negociar tarifas y que cada carga llegue a tiempo.",
+    "Responsable de logística con más de 8 años moviendo mercancía por Europa y Estados Unidos. Conecto a clientes con transportistas de confianza, desde cargas completas a temperatura controlada hasta suministro just-in-time para automoción. Me ocupo del ciclo completo: captar clientes, negociar tarifas y que cada carga llegue a tiempo.",
   switchLabel: "English",
   sections: [
     {
@@ -22,18 +22,18 @@ export const es: Dictionary = {
           description: "Rentabilidad por ruta: coste por kilómetro, tarifas y retornos cargados.",
           meta: "Actualidad",
           current: true,
-          body: "Un camión que vuelve vacío pierde dinero en la mitad del viaje. Calculo el coste real por kilómetro de cada ruta, negocio tarifas que lo cubran y busco carga de vuelta para que el camión no regrese de vacío. Así cada ida y vuelta deja margen.",
+          body: "Un retorno en vacío puede comerse el margen de todo el viaje. Calculo cada ruta según su coste real por kilómetro, negocio tarifas que lo cubran y cierro cargas de vuelta, para que los camiones regresen llenos y cada ida y vuelta sea rentable.",
           figure: "route",
         },
         {
           title: "Sklum",
           description: "Importación marítima: contenedores desde Asia hasta el almacén.",
-          body: "Coordinación de contenedores desde el puerto hasta el almacén: seguimiento de buques, citas en terminal, transporte de arrastre y descarga, para que el stock llegue cuando la venta lo necesita.",
+          body: "Del buque a la puerta del almacén: seguimiento de navieras, citas en terminal, transporte de arrastre y planificación de descargas, para que el stock llegue cuando ventas lo necesita.",
           figure: "port",
         },
         {
           title: "Transporte de cargas",
-          description: "Dos empresas de cargas donde descubrí la logística como profesión.",
+          description: "Donde empezó todo: dos empresas de cargas que convirtieron la logística en mi profesión.",
         },
       ],
     },
@@ -41,9 +41,9 @@ export const es: Dictionary = {
       id: "formacion",
       title: "Formación",
       items: [
-        { title: "Universidad Católica de La Plata", description: "Estudios universitarios.", meta: "2014 – 2017" },
-        { title: "Automate the Boring Stuff with Python", description: "Curso en Udemy." },
-        { title: "NumPy for Data Science and Machine Learning", description: "Curso en Udemy." },
+        { title: "Universidad Católica de La Plata", description: "Estudios universitarios en Argentina.", meta: "2014 – 2017" },
+        { title: "Automate the Boring Stuff with Python", description: "Udemy. Automatizar informes repetitivos." },
+        { title: "NumPy for Data Science and Machine Learning", description: "Udemy. Trabajar con datos a escala." },
       ],
     },
     {
@@ -73,9 +73,11 @@ export const es: Dictionary = {
     title: "Contacto",
     priority: "Prioritario",
     shipTo: "Entregar a",
-    service: "Transporte internacional · Europa ⇄ EE. UU.",
-    note: "La forma más rápida de escribirme.",
-    cta: "Escríbeme en LinkedIn",
+    service: "Transporte por carretera · Europa ⇄ EE. UU.",
+    note: "¿Buscas perfil de logística, gestión de transportistas o grandes cuentas? Hablemos.",
+    email: "hola@francocanzani.com",
+    emailCta: "Escríbeme",
+    linkedinCta: "LinkedIn",
     href: LINKEDIN,
   },
 };

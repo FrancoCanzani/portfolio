@@ -5,7 +5,7 @@ const LINKEDIN = "https://www.linkedin.com/in/franco-canzani";
 export const en: Dictionary = {
   meta: {
     title: "Franco Canzani · International Road Freight & Logistics Manager",
-    description: "Logistics manager with 8+ years moving freight across Europe and the US.",
+    description: "Logistics manager with 8+ years moving freight across Europe and the US: carriers, rates and loads that arrive on time.",
   },
   name: "Franco Canzani",
   role: "International Road Freight & Logistics Manager",
@@ -19,21 +19,21 @@ export const en: Dictionary = {
       items: [
         {
           title: "RLC Transportes",
-          description: "Profitability per route: cost per kilometre, rates and loaded return trips.",
+          description: "Route profitability: cost per kilometre, pricing and loaded return trips.",
           meta: "Present",
           current: true,
-          body: "A truck that comes back empty loses money on half of the trip. I work out the real cost per kilometre of every route, negotiate rates that cover it and find return loads so the truck never drives home empty. That is how a round trip stays profitable.",
+          body: "An empty return leg can wipe out the margin of the whole trip. I price every route against its real cost per kilometre, negotiate rates that cover it and line up return loads, so trucks come back full and every round trip pays.",
           figure: "route",
         },
         {
           title: "Sklum",
           description: "Ocean imports: containers from Asia to the warehouse.",
-          body: "Coordinating containers from port to warehouse: tracking vessels, booking terminal slots, arranging drayage and unloading, so stock lands when sales need it.",
+          body: "From vessel to warehouse door: tracking ships, booking terminal slots, arranging drayage and scheduling unloads, so stock lands when sales need it.",
           figure: "port",
         },
         {
           title: "Freight transport",
-          description: "Two freight companies where I discovered logistics as a profession.",
+          description: "Where it started: two freight companies that turned logistics into my profession.",
         },
       ],
     },
@@ -41,9 +41,9 @@ export const en: Dictionary = {
       id: "education",
       title: "Education",
       items: [
-        { title: "Universidad Católica de La Plata", description: "University studies.", meta: "2014 – 2017" },
-        { title: "Automate the Boring Stuff with Python", description: "Udemy course." },
-        { title: "NumPy for Data Science and Machine Learning", description: "Udemy course." },
+        { title: "Universidad Católica de La Plata", description: "University studies in Argentina.", meta: "2014 – 2017" },
+        { title: "Automate the Boring Stuff with Python", description: "Udemy. Scripting away repetitive reporting." },
+        { title: "NumPy for Data Science and Machine Learning", description: "Udemy. Working with data at scale." },
       ],
     },
     {
@@ -73,9 +73,11 @@ export const en: Dictionary = {
     title: "Contact",
     priority: "Priority",
     shipTo: "Deliver to",
-    service: "International freight · Europe ⇄ US",
-    note: "The fastest way to reach me.",
-    cta: "Message me on LinkedIn",
+    service: "Road freight · Europe ⇄ US",
+    note: "Hiring for logistics, carrier management or key accounts? Let’s talk.",
+    email: "hello@francocanzani.com",
+    emailCta: "Email me",
+    linkedinCta: "LinkedIn",
     href: LINKEDIN,
   },
 };

@@ -20,28 +20,37 @@ function Tag({ current, children }: { current?: boolean; children: ReactNode }) 
 
 function ShippingLabel({ label, name }: { label: Dictionary["label"]; name: string }) {
   return (
-    <a
-      href={label.href}
-      target="_blank"
-      rel="noreferrer"
-      className="group block rotate-[-0.6deg] rounded-lg border border-dashed border-neutral-300 bg-white p-5 font-mono text-[11px] leading-[18px] text-neutral-500 shadow-[0_1px_0_#0000000a,0_8px_24px_-12px_#0000001f] transition-transform duration-300 ease-out hover:rotate-0 hover:-translate-y-0.5"
-    >
-      <span className="flex items-center justify-between uppercase tracking-wider">
+    <div className="rotate-[-0.6deg] rounded-lg border border-dashed border-neutral-300 bg-white p-5 font-mono text-[11px] leading-[18px] text-neutral-500 shadow-[0_1px_0_#0000000a,0_8px_24px_-12px_#0000001f] transition-transform duration-300 ease-out hover:rotate-0">
+      <div className="flex items-center justify-between tracking-wider uppercase">
         <span>{label.shipTo}</span>
         <span className="rounded-sm bg-signal px-1.5 text-white">{label.priority}</span>
-      </span>
-      <span className="mt-3 block font-display text-[26px] leading-[30px] tracking-normal text-neutral-900 normal-case">{name}</span>
-      <span className="mt-1 block">{label.service}</span>
-      <span className="mt-4 block border-t border-dashed border-neutral-200 pt-4 font-sans text-[13px] text-neutral-500 sm:text-[14px]">{label.note}</span>
-      <span className="mt-1 inline-flex items-center gap-1 font-sans text-[13px] font-medium text-neutral-900 transition-colors group-hover:text-signal sm:text-[14px]">
-        {label.cta}
-        <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
-      </span>
-      <span className="mt-5 flex items-end justify-between gap-4">
+      </div>
+      <p className="mt-3 font-sans text-[22px] leading-[28px] font-medium tracking-[-0.01em] text-neutral-900">{name}</p>
+      <p className="mt-0.5">{label.service}</p>
+      <p className="mt-4 border-t border-dashed border-neutral-200 pt-4 font-sans text-[13px] text-pretty text-neutral-500 sm:text-[14px]">{label.note}</p>
+      <div className="mt-4 flex flex-wrap items-center gap-2 font-sans text-[13px] sm:text-[14px]">
+        <a
+          href={`mailto:${label.email}`}
+          className="inline-flex items-center rounded-full bg-neutral-900 px-3.5 py-1.5 font-medium text-white transition-colors duration-200 hover:bg-signal"
+        >
+          {label.emailCta}
+        </a>
+        <a
+          href={label.href}
+          target="_blank"
+          rel="noreferrer"
+          className="group inline-flex items-center gap-1 rounded-full border border-neutral-200 px-3.5 py-1.5 font-medium text-neutral-900 transition-colors duration-200 hover:border-signal hover:text-signal"
+        >
+          {label.linkedinCta}
+          <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+        </a>
+      </div>
+      <p className="mt-2 select-all">{label.email}</p>
+      <div className="mt-5 flex items-end justify-between gap-4">
         <span className="barcode block h-9 w-40" aria-hidden="true" />
-        <span className="tracking-widest text-neutral-400">FC · 2026 · 08+</span>
-      </span>
-    </a>
+        <span className="tracking-widest text-neutral-400">FC · 08+ YRS</span>
+      </div>
+    </div>
   );
 }
 
@@ -111,10 +120,10 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
 
       <main className="mx-auto max-w-[640px] px-6 pt-10 pb-32 sm:pt-16">
         <div>
-          <h1 className="reveal font-display text-[32px] leading-[36px] text-balance text-neutral-900 sm:text-[40px] sm:leading-[44px]" style={reveal(order++)}>
+          <h1 className="reveal text-[24px] leading-[32px] font-medium tracking-[-0.01em] text-balance text-neutral-900 sm:text-[28px] sm:leading-[36px]" style={reveal(order++)}>
             {dict.name}
             <span className="text-signal"> | </span>
-            <span className="text-neutral-500 italic">{dict.role}</span>
+            <span className="text-neutral-500">{dict.role}</span>
           </h1>
           <p className="reveal mt-4 text-pretty text-neutral-500" style={reveal(order++)}>
             {dict.intro}
