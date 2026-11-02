@@ -1,7 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 import { notFound } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
-import { DeparturesBoard } from "@/components/contact/departures-board";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { LangSwitch } from "@/components/header/lang-switch";
 import { ScrollTruck } from "@/components/header/scroll-truck";
 import { LoadingFigure } from "@/components/figures/loading/figure";
@@ -17,6 +16,29 @@ function Tag({ current, children }: { current?: boolean; children: ReactNode }) 
       {current ? <span className="size-1.5 animate-pulse rounded-full bg-signal" aria-hidden="true" /> : null}
       {children}
     </span>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true">
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13M7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0" />
+    </svg>
+  );
+}
+
+function ContactLink({ href, icon, external, children }: { href: string; icon: ReactNode; external?: boolean; children: ReactNode }) {
+  return (
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      className="group -mx-2 inline-flex items-center gap-2.5 rounded-md px-2 py-1 text-neutral-900 transition-colors duration-200 hover:bg-red-50 hover:text-signal"
+    >
+      <span className="text-neutral-400 transition-colors duration-200 group-hover:text-signal">{icon}</span>
+      {children}
+      {external ? <ArrowUpRight className="size-3.5 text-neutral-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" /> : null}
+    </a>
   );
 }
 
@@ -133,9 +155,18 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
           <h2 className="reveal mb-4 font-medium text-neutral-900" style={reveal(order++)}>
             {dict.contact.title}
           </h2>
-          <div className="reveal" style={reveal(order++)}>
-            <DeparturesBoard contact={dict.contact} />
-          </div>
+          <ul className="reveal space-y-1.5" style={reveal(order++)}>
+            <li>
+              <ContactLink href={`mailto:${dict.contact.email}`} icon={<Mail className="size-4" aria-hidden="true" />}>
+                {dict.contact.email}
+              </ContactLink>
+            </li>
+            <li>
+              <ContactLink href={dict.contact.linkedin.href} icon={<LinkedInIcon />} external>
+                {dict.contact.linkedin.handle}
+              </ContactLink>
+            </li>
+          </ul>
         </section>
       </main>
     </div>

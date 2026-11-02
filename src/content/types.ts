@@ -35,10 +35,7 @@ export interface Dictionary {
   figures: Record<FigureName, string>;
   contact: {
     title: string;
-    board: string;
-    columns: { destination: string; contact: string; status: string };
     email: string;
     linkedin: { href: string; handle: string };
-    status: { available: string; online: string; copied: string };
   };
 }

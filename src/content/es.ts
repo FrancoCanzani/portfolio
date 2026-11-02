@@ -80,10 +80,7 @@ export const es: Dictionary = {
   },
   contact: {
     title: "Contacto",
-    board: "Salidas · Departures",
-    columns: { destination: "Destino", contact: "Contacto", status: "Estado" },
     email: "francocanzani@gmail.com",
-    linkedin: { href: LINKEDIN, handle: "/in/franco-canzani" },
-    status: { available: "Disponible", online: "En línea", copied: "Copiado" },
+    linkedin: { href: LINKEDIN, handle: "linkedin.com/in/franco-canzani" },
   },
 };
