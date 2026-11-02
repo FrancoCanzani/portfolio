@@ -25,7 +25,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   return (
-    <html lang={lang} className={`${inter.variable} antialiased`}>
+    <html lang={lang} data-scroll-behavior="smooth" className={`${inter.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );

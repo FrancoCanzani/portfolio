@@ -1,0 +1,58 @@
+.iso.rm-figure[data-theme="light"] {
+  --anatomy-card: #fafafa;
+  --anatomy-page: #fafafa;
+  --anatomy-lit: #ea580c;
+  --anatomy-lit-top: #fff3eb;
+  --anatomy-lit-shade: #fde3d1;
+  --anatomy-red: #dc2626;
+}
+
+.rm-figure .iso-figure {
+  margin: 12px 0 8px;
+}
+
+@media (min-width: 860px) {
+  .rm-figure .iso-figure {
+    margin-inline: -100px;
+  }
+
+  .rm-figure .iso-legend {
+    padding-inline: 100px;
+  }
+}
+
+.rm-figure .iso-plate {
+  box-shadow: 0 0 0 1px #e5e5e5;
+  border-radius: 10px;
+  padding: 44px 8px 40px;
+}
+
+.rm-figure .iso-legend {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.rm-stage {
+  cursor: ew-resize;
+  touch-action: pan-y;
+  outline: none;
+  border-radius: 6px;
+}
+
+.rm-stage:focus-visible {
+  box-shadow: 0 0 0 2px #ea580c33;
+}
+
+.rm-coin {
+  opacity: 0;
+}
+
+.rm-coin[data-over] .iso-edge {
+  stroke: var(--anatomy-red);
+}
+
+@media (max-width: 560px) {
+  .rm-figure .iso-plate {
+    padding: 40px 4px 64px;
+  }
+}

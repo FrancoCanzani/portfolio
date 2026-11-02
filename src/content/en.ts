@@ -9,11 +9,6 @@ export const en: Dictionary = {
   },
   name: "Franco Canzani",
   role: "Transport Manager · RLC Transportes",
-  summary: [
-    "I found my passion for logistics working at two freight companies. Today I run transport operations at RLC Transportes.",
-    "I pair day-to-day operations with data analysis: measure, understand and decide with numbers, not gut feeling.",
-  ],
-  indexLabel: "Index",
   switchLabel: "Español",
   sections: [
     {
@@ -22,8 +17,9 @@ export const en: Dictionary = {
       items: [
         {
           title: "RLC Transportes",
-          description: "Transport management: planning, fleet and regulatory compliance.",
+          description: "Profitability per route: cost per kilometre, rates and loaded return trips.",
           meta: "Present",
+          figure: "route-margin",
         },
         {
           title: "Freight transport",
@@ -63,4 +59,18 @@ export const en: Dictionary = {
       items: [{ title: "LinkedIn", description: "The fastest way to reach me.", href: LINKEDIN }],
     },
   ],
+  figures: {
+    routeMargin: {
+      fig: "Fig. 1",
+      title: "Margin per route",
+      hint: "Drag ↔ return pallets",
+      readout: "0 / 720 km · margin +€0",
+      label: "A model of a round trip between a depot and a customer. A truck leaves with 26 pallets and comes back with the chosen return load. Two coin stacks compare revenue and cost; the gap between them is the trip margin.",
+      margin: "margin",
+      pallets: "return pallets",
+      keys: { revenue: "Revenue (1 coin = €50)", cost: "Cost", margin: "Margin" },
+      caption:
+        "A 360 km leg each way. Approximate cost of an articulated truck in Spain: €1.25/km (fuel 0.43, driver 0.34, vehicle 0.38, other 0.10). The outbound leg pays €700; the return pays up to €600 with 26 pallets. Running back empty loses €200; coming back full earns €400.",
+    },
+  },
 };
