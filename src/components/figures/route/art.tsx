@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Dots, Line, Solid } from "@/components/iso/react/draw";
-import { BASE_ART, CUSTOMER_ART, DEPOT_ART, PLATE_ART, ROAD_ART, TRUCK_BACK, TRUCK_OUT, type Part } from "./geometry";
+import { TruckArt } from "../truck/art";
+import { BASE_ART, CUSTOMER_ART, DEPOT_ART, PLATE_ART, ROAD_ART, TRUCK_BACK, TRUCK_OUT } from "./geometry";
 import { RouteLive } from "./live";
 
 const BASE = (
@@ -58,43 +59,8 @@ function building(art: typeof DEPOT_ART, key: string) {
 const DEPOT = building(DEPOT_ART, "depot");
 const CUSTOMER = building(CUSTOMER_ART, "customer");
 
-function part(item: Part, index: number) {
-  const inner = (() => {
-    switch (item.kind) {
-      case "solid":
-        return <Solid paths={item.paths!} tone={item.tone} crease="faint" />;
-      case "line":
-        return <Line d={item.d!} tone={item.tone} />;
-      case "wheel":
-        return (
-          <>
-            <Solid paths={item.paths!} tone="hi" crease="none" />
-            <Line d={item.hub!} tone="lo" />
-            <Dots points={item.dots!} size={0.32} tone="mid" />
-          </>
-        );
-      case "pallet":
-        return (
-          <>
-            <Solid paths={item.paths!} tone={item.tone} crease="faint" />
-            {item.strap ? <Line d={item.strap} tone="lo" /> : null}
-          </>
-        );
-      default: {
-        const never: never = item.kind;
-        return never;
-      }
-    }
-  })();
-  return (
-    <g key={index} data-pallet={item.kind === "pallet" ? item.pallet : undefined}>
-      {inner}
-    </g>
-  );
-}
-
-const TRUCK_OUT_ART = <g key="truck-out">{TRUCK_OUT.map(part)}</g>;
-const TRUCK_BACK_ART = <g key="truck-back">{TRUCK_BACK.map(part)}</g>;
+const TRUCK_OUT_ART = <TruckArt parts={TRUCK_OUT} />;
+const TRUCK_BACK_ART = <TruckArt parts={TRUCK_BACK} />;
 
 export function RouteArt({ label }: { label: string }) {
   return <RouteLive label={label} base={BASE} depot={DEPOT} customer={CUSTOMER} truckOut={TRUCK_OUT_ART} truckBack={TRUCK_BACK_ART} />;

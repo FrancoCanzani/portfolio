@@ -4,11 +4,15 @@ export const defaultLocale: Locale = "es";
 
 export const hasLocale = (value: string): value is Locale => (locales as readonly string[]).includes(value);
 
+export type FigureName = "route" | "port";
+
 export interface Item {
   title: string;
   description: string;
   meta?: string;
   href?: string;
+  body?: string;
+  figure?: FigureName;
 }
 
 export interface Section {
@@ -25,5 +29,5 @@ export interface Dictionary {
   intro: string;
   switchLabel: string;
   sections: Section[];
-  figureLabel: string;
+  figures: Record<FigureName, string>;
 }

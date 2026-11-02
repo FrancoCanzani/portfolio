@@ -1,0 +1,57 @@
+.iso.figure[data-theme="light"] {
+  --anatomy-card: #fafafa;
+  --anatomy-page: #fafafa;
+  --anatomy-paper: #fafafa;
+  --accent-top: #f0524a;
+  --accent-shade-0: #b8231d;
+  --accent-shade-1: #c92a23;
+  --accent-shade-2: #d9332b;
+  --accent-shade-3: #e43d34;
+  --accent-edge: #8f1b16;
+  --cargo-top: #5b7fe0;
+  --cargo-shade-0: #2c4aa8;
+  --cargo-shade-1: #3453b8;
+  --cargo-shade-2: #3d5dc8;
+  --cargo-shade-3: #4a6bd6;
+  --cargo-edge: #1f357a;
+  --water: #eef2f6;
+  --water-line: #c5d1de;
+}
+
+.iso-accent > .iso-fill,
+.iso-accent > .iso-top {
+  fill: var(--accent-top);
+}
+.iso-accent > .iso-shade[data-shade="0"] { fill: var(--accent-shade-0); }
+.iso-accent > .iso-shade[data-shade="1"] { fill: var(--accent-shade-1); }
+.iso-accent > .iso-shade[data-shade="2"] { fill: var(--accent-shade-2); }
+.iso-accent > .iso-shade[data-shade="3"] { fill: var(--accent-shade-3); }
+.iso-accent > .iso-edge,
+.iso-accent > .iso-crease,
+.iso-accent > .iso-bevel {
+  stroke: var(--accent-edge);
+}
+
+.iso-cargo > .iso-fill,
+.iso-cargo > .iso-top {
+  fill: var(--cargo-top);
+}
+.iso-cargo > .iso-shade[data-shade="0"] { fill: var(--cargo-shade-0); }
+.iso-cargo > .iso-shade[data-shade="1"] { fill: var(--cargo-shade-1); }
+.iso-cargo > .iso-shade[data-shade="2"] { fill: var(--cargo-shade-2); }
+.iso-cargo > .iso-shade[data-shade="3"] { fill: var(--cargo-shade-3); }
+.iso-cargo > .iso-edge,
+.iso-cargo > .iso-crease,
+.iso-cargo > .iso-bevel {
+  stroke: var(--cargo-edge);
+}
+.iso-line.iso-cargo-line {
+  stroke: #93a9ec;
+}
+
+.iso-water > .iso-fill {
+  fill: var(--water);
+}
+.iso-line.iso-wave {
+  stroke: var(--water-line);
+}
