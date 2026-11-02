@@ -39,7 +39,7 @@ export function ScrollTruck() {
 
   return (
     <div ref={lane} className="relative h-5 min-w-0 flex-1" aria-hidden="true">
-      <span className="absolute inset-x-0 bottom-[2px] border-t border-dashed border-neutral-300" />
+      <span className="absolute right-0 bottom-[2px] left-1 border-t border-dashed border-neutral-300" />
       <div ref={truck} className="absolute bottom-[1px] left-0 will-change-transform">
         <svg width={TRUCK_W} height={16} viewBox="0 0 40 16" className="block overflow-visible">
           <rect x="1" y="3" width="24" height="8" rx="1" fill="#fff" stroke="#a1a1aa" strokeWidth="0.8" />
