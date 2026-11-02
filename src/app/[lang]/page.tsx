@@ -19,6 +19,12 @@ function Tag({ current, children }: { current?: boolean; children: ReactNode }) 
   );
 }
 
+function Emphasis({ text }: { text: string }) {
+  return text
+    .split("**")
+    .map((part, i) => (i % 2 ? <strong key={i} className="font-semibold text-neutral-900">{part}</strong> : part));
+}
+
 function ShippingLabel({ label, name }: { label: Dictionary["label"]; name: string }) {
   return (
     <div className="rotate-[-0.6deg] rounded-lg border border-dashed border-neutral-300 bg-white p-5 font-mono text-[11px] leading-[18px] text-neutral-500 shadow-[0_1px_0_#0000000a,0_8px_24px_-12px_#0000001f] transition-transform duration-300 ease-out hover:rotate-0">
@@ -129,7 +135,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
             <span className="block text-neutral-500">{dict.role}</span>
           </h1>
           <p className="reveal mt-4 text-[18px] leading-[28px] text-pretty text-neutral-600 sm:text-[20px] sm:leading-[30px]" style={reveal(order++)}>
-            {dict.intro}
+            <Emphasis text={dict.intro} />
           </p>
           <div className="reveal mt-8" style={reveal(order++)}>
             <LoadingFigure label={dict.figures.loading} />
