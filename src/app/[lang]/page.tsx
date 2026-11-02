@@ -134,8 +134,8 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
                     alt={client.name}
                     title={client.name}
                     style={{ height: client.height }}
-                    className={`w-auto opacity-60 transition duration-300 hover:opacity-100 ${
-                      client.silhouette ? "brightness-0" : "grayscale hover:grayscale-0"
+                    className={`w-auto transition duration-300 sm:opacity-60 sm:hover:opacity-100 ${
+                      client.silhouette ? "brightness-0 opacity-80" : "sm:grayscale sm:hover:grayscale-0"
                     }`}
                   />
                 </li>
