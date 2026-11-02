@@ -15,34 +15,8 @@ import {
   type Point3,
   type SolidPaths,
 } from "@/components/iso/iso-kit";
-import { COST_COINS, PALLETS, REVENUE_COINS } from "./model";
-import {
-  BASE,
-  BASE_H,
-  BUILDING_H,
-  COIN_H,
-  COIN_R,
-  COST_AT,
-  CUSTOMER,
-  DEPOT,
-  FOOT_H,
-  KNOB_D,
-  KNOB_H,
-  KNOB_W,
-  P,
-  RAIL,
-  RAIL_FROM,
-  RAIL_H,
-  RAIL_TO,
-  REVENUE_AT,
-  ROAD,
-  ROAD_H,
-  ROAD_Y,
-  TRAY,
-  TRAY_H,
-  at,
-  coinZ,
-} from "./view";
+import { PALLETS } from "./model";
+import { BASE, BASE_H, BUILDING_H, CUSTOMER, DEPOT, FOOT_H, P, ROAD, ROAD_H, ROAD_Y, at } from "./view";
 
 const slab = (plan: Plan, z: number, h: number, steps = 3, bevel = 0) => slabOf(plan, z, h, P, steps, bevel);
 const join = (paths: string[]) => paths.filter(Boolean).join("");
@@ -57,7 +31,7 @@ export const BASE_ART = {
   screwRings: join(corners(BASE, 9).map(([x, y]) => ring(x, y, 2.2, 0, P, 16))),
 };
 
-const PLATE: Plan = { x: -164, y: 26, w: 52, d: 11, r: 1.5 };
+const PLATE: Plan = { x: -140, y: 20, w: 52, d: 10, r: 1.5 };
 export const PLATE_ART = {
   plate: slab(PLATE, 0, 0.8, 3),
   line: planOutline(insetPlan(PLATE, 1.6), 0.8, P),
@@ -76,7 +50,7 @@ function kmTicks() {
   const major: string[] = [];
   const edge = ROAD.y + ROAD.d;
   for (let index = 0; index <= 24; index++) {
-    const x = -117 + (234 * index) / 24;
+    const x = -97 + (194 * index) / 24;
     const big = index % 4 === 0;
     (big ? major : minor).push(onTop([[x, edge + 0.8], [x, edge + (big ? 4.4 : 2.6)]], 0, P));
   }
@@ -128,52 +102,6 @@ function building(plan: Plan, canopy: boolean) {
 
 export const DEPOT_ART = building(DEPOT, false);
 export const CUSTOMER_ART = building(CUSTOMER, true);
-
-function coinStack([cx, cy]: [number, number], count: number) {
-  return Array.from({ length: count }, (_, index) => ({
-    body: cylinder(cx, cy, COIN_R, coinZ(index), COIN_H, P, 40),
-    rim: ring(cx, cy, COIN_R - 1.4, coinZ(index) + COIN_H, P, 32),
-  }));
-}
-
-export const TRAY_ART = {
-  tray: slab(TRAY, 0, TRAY_H, 4, 0.6),
-  lip: planOutline(insetPlan(TRAY, 2), TRAY_H, P, 4),
-  seats: join([REVENUE_AT, COST_AT].map(([x, y]) => ring(x, y, COIN_R + 0.8, TRAY_H, P, 40))),
-  screws: [at([TRAY.x + 3, TRAY.y + 3, TRAY_H]), at([TRAY.x + TRAY.w - 3, TRAY.y + 3, TRAY_H]), at([TRAY.x + 3, TRAY.y + TRAY.d - 3, TRAY_H]), at([TRAY.x + TRAY.w - 3, TRAY.y + TRAY.d - 3, TRAY_H])],
-};
-
-export const REVENUE_ART = coinStack(REVENUE_AT, REVENUE_COINS);
-export const COST_ART = coinStack(COST_AT, COST_COINS);
-
-function railTicks() {
-  const minor: string[] = [];
-  const major: string[] = [];
-  const edge = RAIL.y + RAIL.d;
-  for (let index = 0; index <= PALLETS; index++) {
-    const x = RAIL_FROM + ((RAIL_TO - RAIL_FROM) * index) / PALLETS;
-    const big = index % 13 === 0;
-    (big ? major : minor).push(onTop([[x, edge + 1], [x, edge + (big ? 4.6 : 2.6)]], 0, P));
-  }
-  return { minor: join(minor), major: join(major) };
-}
-
-const RAIL_TICKS = railTicks();
-export const RAIL_ART = {
-  rail: slab(RAIL, 0, RAIL_H, 3, 0.5),
-  slot: onTop([[RAIL_FROM, RAIL.y + RAIL.d / 2], [RAIL_TO, RAIL.y + RAIL.d / 2]], RAIL_H, P),
-  ends: [RAIL.x - 3, RAIL.x + RAIL.w].map((x) => slab({ x, y: RAIL.y - 1.5, w: 3, d: RAIL.d + 3, r: 0.8 }, 0, RAIL_H + 1.6, 2, 0.4)),
-  endScrews: [RAIL.x - 1.5, RAIL.x + RAIL.w + 1.5].map((x) => at([x, RAIL.y + RAIL.d / 2, RAIL_H + 1.6])),
-  minor: RAIL_TICKS.minor,
-  major: RAIL_TICKS.major,
-};
-
-const KNOB: Plan = { x: RAIL_FROM - KNOB_W / 2, y: RAIL.y + RAIL.d / 2 - KNOB_D / 2, w: KNOB_W, d: KNOB_D, r: 1.4 };
-export const KNOB_ART = {
-  body: slab(KNOB, RAIL_H - 1, KNOB_H, 3, 0.5),
-  grip: join([-1.4, 0, 1.4].map((dx) => onTop([[RAIL_FROM + dx, KNOB.y + 2], [RAIL_FROM + dx, KNOB.y + KNOB.d - 2]], RAIL_H - 1 + KNOB_H, P))),
-  pointer: onTop([[RAIL_FROM, KNOB.y + KNOB.d], [RAIL_FROM, KNOB.y + KNOB.d + 2.4]], 0, P),
-};
 
 export interface Part {
   key: number;

@@ -2,8 +2,8 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
-import { RouteMarginFigure } from "@/components/figures/route-margin/figure";
-import { getDictionary, hasLocale, type Dictionary, type Item, type Locale } from "@/content";
+import { RouteFigure } from "@/components/figures/route/figure";
+import { getDictionary, hasLocale, type Item } from "@/content";
 
 const reveal = (index: number) => ({ "--reveal-i": index }) as CSSProperties;
 
@@ -30,19 +30,6 @@ function Row({ item }: { item: Item }) {
   return <div className={`${shape} py-1`}>{body}</div>;
 }
 
-function Figure({ item, dict, lang }: { item: Item; dict: Dictionary; lang: Locale }) {
-  switch (item.figure) {
-    case undefined:
-      return null;
-    case "route-margin":
-      return <RouteMarginFigure copy={dict.figures.routeMargin} lang={lang} />;
-    default: {
-      const never: never = item.figure;
-      return never;
-    }
-  }
-}
-
 export default async function Page({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
@@ -52,12 +39,10 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
 
   return (
     <div className="min-h-dvh bg-[#fafafa] text-[13px] leading-[22px] text-neutral-600 sm:text-[14px]">
-      <header className="sticky top-0 z-10 border-b border-transparent bg-[#fafafa]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[560px] items-center justify-between px-6 py-4">
-          <Link href={`/${lang}`} className="min-w-0">
-            <span className="font-medium text-neutral-900">{dict.name}</span>
-            <span className="text-neutral-400"> · </span>
-            <span className="text-neutral-500">{dict.role}</span>
+      <header className="sticky top-0 z-10 bg-[#fafafa]/80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-[1040px] items-center justify-between px-6 py-4">
+          <Link href={`/${lang}`} className="font-medium text-neutral-900">
+            {dict.name}
           </Link>
           <Link
             href={`/${other}`}
@@ -69,23 +54,39 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-[560px] px-6 pt-10 pb-32 sm:pt-16">
-        {dict.sections.map((section, index) => (
-          <section key={section.id} id={section.id} className={`${index ? "mt-12" : ""} scroll-mt-20`}>
-            <h2 className="reveal mb-2 font-medium text-neutral-900" style={reveal(order++)}>
-              {section.title}
-            </h2>
-            {section.intro ? <p className="mb-3 text-neutral-500">{section.intro}</p> : null}
-            <ul className="space-y-1.5">
-              {section.items.map((item) => (
-                <li key={item.title} className="reveal" style={reveal(order++)}>
-                  <Row item={item} />
-                  <Figure item={item} dict={dict} lang={lang} />
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
+      <main className="mx-auto flex max-w-[1040px] flex-col gap-10 px-6 pt-10 pb-32 sm:pt-16 lg:grid lg:grid-cols-[minmax(0,480px)_minmax(0,1fr)] lg:gap-x-16 lg:gap-y-12">
+        <div className="lg:col-start-1 lg:row-start-1">
+          <h1 className="reveal text-[18px] leading-[28px] font-medium text-balance text-neutral-900 sm:text-[20px] sm:leading-[30px]" style={reveal(order++)}>
+            {dict.name}
+            <span className="text-neutral-300"> | </span>
+            <span>{dict.role}</span>
+          </h1>
+          <p className="reveal mt-4 text-pretty text-neutral-500" style={reveal(order++)}>
+            {dict.intro}
+          </p>
+        </div>
+
+        <aside className="reveal lg:sticky lg:top-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start" style={reveal(order++)}>
+          <RouteFigure label={dict.figureLabel} />
+        </aside>
+
+        <div className="lg:col-start-1 lg:row-start-2">
+          {dict.sections.map((section, index) => (
+            <section key={section.id} id={section.id} className={`${index ? "mt-12" : ""} scroll-mt-20`}>
+              <h2 className="reveal mb-2 font-medium text-neutral-900" style={reveal(order++)}>
+                {section.title}
+              </h2>
+              {section.intro ? <p className="mb-3 text-neutral-500">{section.intro}</p> : null}
+              <ul className="space-y-1.5">
+                {section.items.map((item) => (
+                  <li key={item.title} className="reveal" style={reveal(order++)}>
+                    <Row item={item} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
       </main>
     </div>
   );

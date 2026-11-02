@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Dots, Line, Solid } from "@/components/iso/react/draw";
-import { BASE_ART, COST_ART, CUSTOMER_ART, DEPOT_ART, KNOB_ART, PLATE_ART, RAIL_ART, REVENUE_ART, ROAD_ART, TRAY_ART, TRUCK_BACK, TRUCK_OUT, type Part } from "./geometry";
-import { RouteMarginLive, type RouteMarginText } from "./live";
+import { BASE_ART, CUSTOMER_ART, DEPOT_ART, PLATE_ART, ROAD_ART, TRUCK_BACK, TRUCK_OUT, type Part } from "./geometry";
+import { RouteLive } from "./live";
 
 const BASE = (
   <g key="base">
@@ -58,31 +58,6 @@ function building(art: typeof DEPOT_ART, key: string) {
 const DEPOT = building(DEPOT_ART, "depot");
 const CUSTOMER = building(CUSTOMER_ART, "customer");
 
-const TRAY = (
-  <g key="tray">
-    <Solid paths={TRAY_ART.tray} tone="mid" />
-    <Line d={TRAY_ART.lip} tone="faint" />
-    <Line d={TRAY_ART.seats} tone="lo" />
-    <Dots points={TRAY_ART.screws} size={0.45} tone="mid" />
-  </g>
-);
-
-function coins(stack: typeof REVENUE_ART, kind: "revenue" | "cost", lit: boolean) {
-  return (
-    <g key={kind}>
-      {stack.map((coin, index) => (
-        <g key={index} data-coin={index} className="rm-coin">
-          <Solid paths={coin.body} tone="hi" lit={lit} crease="none" />
-          <Line d={coin.rim} tone={lit ? "lit" : "lo"} />
-        </g>
-      ))}
-    </g>
-  );
-}
-
-const REVENUE = coins(REVENUE_ART, "revenue", true);
-const COST = coins(COST_ART, "cost", false);
-
 function part(item: Part, index: number) {
   const inner = (() => {
     switch (item.kind) {
@@ -121,41 +96,6 @@ function part(item: Part, index: number) {
 const TRUCK_OUT_ART = <g key="truck-out">{TRUCK_OUT.map(part)}</g>;
 const TRUCK_BACK_ART = <g key="truck-back">{TRUCK_BACK.map(part)}</g>;
 
-const RAIL = (
-  <g key="rail">
-    <Solid paths={RAIL_ART.rail} tone="mid" />
-    <Line d={RAIL_ART.slot} tone="lo" />
-    {RAIL_ART.ends.map((paths, index) => (
-      <Solid key={index} paths={paths} tone="mid" />
-    ))}
-    <Dots points={RAIL_ART.endScrews} size={0.45} tone="mid" />
-    <Line d={RAIL_ART.minor} tone="lo" />
-    <Line d={RAIL_ART.major} tone="mid" />
-  </g>
-);
-
-const KNOB = (
-  <g key="knob">
-    <Line d={KNOB_ART.pointer} tone="hi" />
-    <Solid paths={KNOB_ART.body} tone="hi" />
-    <Line d={KNOB_ART.grip} tone="lo" />
-  </g>
-);
-
-export function RouteMarginArt({ text }: { text: RouteMarginText }) {
-  return (
-    <RouteMarginLive
-      text={text}
-      base={BASE}
-      depot={DEPOT}
-      customer={CUSTOMER}
-      tray={TRAY}
-      revenue={REVENUE}
-      cost={COST}
-      truckOut={TRUCK_OUT_ART}
-      truckBack={TRUCK_BACK_ART}
-      rail={RAIL}
-      knob={KNOB}
-    />
-  );
+export function RouteArt({ label }: { label: string }) {
+  return <RouteLive label={label} base={BASE} depot={DEPOT} customer={CUSTOMER} truckOut={TRUCK_OUT_ART} truckBack={TRUCK_BACK_ART} />;
 }
