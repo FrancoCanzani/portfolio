@@ -54,6 +54,18 @@ function ShippingLabel({ label, name }: { label: Dictionary["label"]; name: stri
   );
 }
 
+function Milestone({ item }: { item: Item }) {
+  return (
+    <>
+      <span className="absolute top-[3px] -left-[5px] flex size-[9px]" aria-hidden="true">
+        {item.current ? <span className="absolute inset-0 animate-ping rounded-full bg-signal opacity-60" /> : null}
+        <span className={`relative size-[9px] rounded-full ring-4 ring-[#fafafa] ${item.current ? "bg-signal" : "bg-neutral-300"}`} />
+      </span>
+      {item.period ? <p className="mb-1 font-mono text-[10.5px] leading-[16px] tracking-wide text-neutral-400 uppercase tabular-nums">{item.period}</p> : null}
+    </>
+  );
+}
+
 function Row({ item }: { item: Item }) {
   const body = (
     <>
@@ -141,22 +153,19 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
               </h2>
               {section.intro ? <p className="mb-3 text-neutral-500">{section.intro}</p> : null}
             </div>
-            <ul className="space-y-1.5">
-              {section.items.map((item) =>
-                item.figure ? (
-                  <li key={item.title} className="reveal pb-8" style={reveal(order++)}>
-                    <Row item={item} />
+            <ul className={section.timeline ? "ml-1 border-l border-dashed border-neutral-300" : "space-y-1.5"}>
+              {section.items.map((item) => (
+                <li key={item.title} className={`reveal ${section.timeline ? "relative pb-12 pl-6 last:pb-0" : ""}`} style={reveal(order++)}>
+                  {section.timeline ? <Milestone item={item} /> : null}
+                  <Row item={item} />
+                  {item.figure ? (
                     <div className="my-4">
                       <Figure item={item} dict={dict} />
                     </div>
-                    {item.body ? <p className="text-pretty text-neutral-500">{item.body}</p> : null}
-                  </li>
-                ) : (
-                  <li key={item.title} className="reveal" style={reveal(order++)}>
-                    <Row item={item} />
-                  </li>
-                ),
-              )}
+                  ) : null}
+                  {item.body ? <p className="text-pretty text-neutral-500">{item.body}</p> : null}
+                </li>
+              ))}
             </ul>
           </section>
         ))}

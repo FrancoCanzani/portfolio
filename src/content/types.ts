@@ -14,12 +14,14 @@ export interface Item {
   body?: string;
   figure?: FigureName;
   current?: boolean;
+  period?: string;
 }
 
 export interface Section {
   id: string;
   title: string;
   intro?: string;
+  timeline?: boolean;
   items: Item[];
 }
 

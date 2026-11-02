@@ -16,23 +16,26 @@ export const es: Dictionary = {
     {
       id: "experiencia",
       title: "Experiencia",
+      timeline: true,
       items: [
         {
           title: "RLC Transportes",
+          period: "2022 → Actualidad",
           description: "Rentabilidad por ruta: coste por kilómetro, tarifas y retornos cargados.",
-          meta: "Actualidad",
           current: true,
           body: "Un retorno en vacío puede comerse el margen de todo el viaje. Calculo cada ruta según su coste real por kilómetro, negocio tarifas que lo cubran y cierro cargas de vuelta, para que los camiones regresen llenos y cada ida y vuelta sea rentable.",
           figure: "route",
         },
         {
           title: "Sklum",
+          period: "2020 → 2022",
           description: "Importación marítima: contenedores desde Asia hasta el almacén.",
           body: "Del buque a la puerta del almacén: seguimiento de navieras, citas en terminal, transporte de arrastre y planificación de descargas, para que el stock llegue cuando ventas lo necesita.",
           figure: "port",
         },
         {
           title: "Transporte de cargas",
+          period: "2017 → 2020",
           description: "Donde empezó todo: dos empresas de cargas que convirtieron la logística en mi profesión.",
         },
       ],

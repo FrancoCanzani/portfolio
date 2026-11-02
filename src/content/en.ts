@@ -16,23 +16,26 @@ export const en: Dictionary = {
     {
       id: "experience",
       title: "Experience",
+      timeline: true,
       items: [
         {
           title: "RLC Transportes",
+          period: "2022 → Present",
           description: "Route profitability: cost per kilometre, pricing and loaded return trips.",
-          meta: "Present",
           current: true,
           body: "An empty return leg can wipe out the margin of the whole trip. I price every route against its real cost per kilometre, negotiate rates that cover it and line up return loads, so trucks come back full and every round trip pays.",
           figure: "route",
         },
         {
           title: "Sklum",
+          period: "2020 → 2022",
           description: "Ocean imports: containers from Asia to the warehouse.",
           body: "From vessel to warehouse door: tracking ships, booking terminal slots, arranging drayage and scheduling unloads, so stock lands when sales need it.",
           figure: "port",
         },
         {
           title: "Freight transport",
+          period: "2017 → 2020",
           description: "Where it started: two freight companies that turned logistics into my profession.",
         },
       ],
