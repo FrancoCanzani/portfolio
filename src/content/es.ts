@@ -52,7 +52,7 @@ export const es: Dictionary = {
       id: "formacion",
       title: "Formación",
       items: [
-        { title: "Universidad Católica de La Plata", description: "Estudios universitarios en Argentina.", meta: "2014 – 2017" },
+        { title: "Universidad Católica de La Plata", description: "Ciencias Políticas y Relaciones Internacionales, Argentina.", meta: "2014 – 2017" },
       ],
     },
     {
