@@ -12,7 +12,6 @@ export const es: Dictionary = {
   role: "Responsable de Transporte Internacional",
   intro:
     "Responsable de logística con más de 8 años moviendo mercancía por Europa y Estados Unidos. Conecto a clientes con transportistas de confianza, desde cargas completas a temperatura controlada hasta suministro just-in-time para automoción. Me ocupo del ciclo completo: captar clientes, negociar tarifas y que cada carga llegue a tiempo.",
-  switchLabel: "English",
   sections: [
     {
       id: "experiencia",

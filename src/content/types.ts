@@ -31,7 +31,6 @@ export interface Dictionary {
   greeting: string;
   role: string;
   intro: string;
-  switchLabel: string;
   sections: Section[];
   figures: Record<FigureName, string>;
   label: {
