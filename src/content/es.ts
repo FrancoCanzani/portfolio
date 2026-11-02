@@ -9,7 +9,7 @@ export const es: Dictionary = {
   },
   name: "Franco Canzani",
   greeting: "Hola, soy",
-  role: "Account & Logistics Manager · Transporte internacional por carretera",
+  role: "Account & Logistics Manager",
   intro:
     "Soy un responsable de logística viviendo en Dénia, Alicante, y ayudo a algunas de las empresas más grandes de Europa a mover su mercancía.",
   sections: [

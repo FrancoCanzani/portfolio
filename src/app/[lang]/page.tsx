@@ -128,7 +128,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
             {dict.greeting} {dict.name}
             <span className="block text-neutral-500">{dict.role}</span>
           </h1>
-          <p className="reveal mt-4 text-pretty text-neutral-500" style={reveal(order++)}>
+          <p className="reveal mt-4 text-[18px] leading-[28px] text-pretty text-neutral-600 sm:text-[20px] sm:leading-[30px]" style={reveal(order++)}>
             {dict.intro}
           </p>
           <div className="reveal mt-8" style={reveal(order++)}>
