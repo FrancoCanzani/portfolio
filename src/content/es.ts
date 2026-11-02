@@ -84,7 +84,7 @@ export const es: Dictionary = {
     shipTo: "Entregar a",
     service: "Transporte por carretera · Europa ⇄ EE. UU.",
     note: "¿Buscas perfil de logística, gestión de transportistas o grandes cuentas? Hablemos.",
-    email: "hola@francocanzani.com",
+    email: "francocanzani@gmail.com",
     emailCta: "Escríbeme",
     linkedinCta: "LinkedIn",
     href: LINKEDIN,

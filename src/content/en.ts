@@ -84,7 +84,7 @@ export const en: Dictionary = {
     shipTo: "Deliver to",
     service: "Road freight · Europe ⇄ US",
     note: "Hiring for logistics, carrier management or key accounts? Let’s talk.",
-    email: "hello@francocanzani.com",
+    email: "francocanzani@gmail.com",
     emailCta: "Email me",
     linkedinCta: "LinkedIn",
     href: LINKEDIN,
