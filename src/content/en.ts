@@ -21,9 +21,9 @@ export const en: Dictionary = {
         {
           title: "RLC Transportes",
           period: "2022 → Present",
-          description: "Route profitability: cost per kilometre, pricing and loaded return trips.",
+          description: "Import & Export Manager.",
           current: true,
-          body: "An empty return leg can wipe out the margin of the whole trip. I price every route against its real cost per kilometre, negotiate rates that cover it and line up return loads, so trucks come back full and every round trip pays.",
+          body: "I manage transport routes to and from Spain with every country in Europe.",
           figure: "route",
         },
         {

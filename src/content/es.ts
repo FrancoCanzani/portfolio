@@ -21,9 +21,9 @@ export const es: Dictionary = {
         {
           title: "RLC Transportes",
           period: "2022 → Actualidad",
-          description: "Rentabilidad por ruta: coste por kilómetro, tarifas y retornos cargados.",
+          description: "Responsable de importación y exportación.",
           current: true,
-          body: "Un retorno en vacío puede comerse el margen de todo el viaje. Calculo cada ruta según su coste real por kilómetro, negocio tarifas que lo cubran y cierro cargas de vuelta, para que los camiones regresen llenos y cada ida y vuelta sea rentable.",
+          body: "Me encargo de gestionar rutas de transporte desde y hacia España con todos los países de Europa.",
           figure: "route",
         },
         {
