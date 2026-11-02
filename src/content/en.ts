@@ -20,7 +20,7 @@ export const en: Dictionary = {
       items: [
         {
           title: "RLC Transportes",
-          period: "2022 → Present",
+          period: "Jul 2024 → Present",
           description: "Import & Export Manager.",
           current: true,
           body: "I manage transport routes to and from Spain with every country in Europe. I look after a portfolio of clients and carriers: preparing quotes, negotiating rates and terms, and finding the right truck for each load, many of them temperature-controlled. I follow every shipment from pickup to delivery, sort out any issues along the way and keep growing the portfolio with clients and carriers I can rely on.",
@@ -28,15 +28,24 @@ export const en: Dictionary = {
         },
         {
           title: "Sklum",
-          period: "2020 → 2022",
+          period: "Feb 2023 → Jul 2024",
           description: "Supply Planner.",
           body: "I planned supply: deciding what to buy and when, based on stock projections and the demand forecast for each item. I coordinated domestic and international suppliers, most of them shipping containers from Asia, and tracked orders and loading plans so they met the agreed dates and incoterms. I tracked KPIs such as stock coverage, inventory turnover and supplier on-time delivery.",
           figure: "port",
         },
         {
-          title: "Freight transport",
-          period: "2017 → 2020",
-          description: "Where it started: two freight companies that turned logistics into my profession.",
+          title: "Wheels Logistics",
+          period: "May 2022 → Dec 2022",
+          description: "Freight Manager.",
+          body: "I ran the import routes from Germany to Ford’s plant in Almussafes, working directly with Ford and its suppliers at the pace of just-in-time production. I planned routes, tracked service KPIs and looked for improvements across the transport network.",
+          figure: "loading",
+        },
+        {
+          title: "Miami, Florida",
+          period: "2018 → 2019",
+          description: "Where it started.",
+          body: "Two freight companies, each running 25 trucks. I coordinated departures with the workshop, managed loads with customers and closed out each week’s collections and payments with customers and drivers. All in English.",
+          muted: true,
         },
       ],
     },

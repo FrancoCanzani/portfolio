@@ -20,7 +20,7 @@ export const es: Dictionary = {
       items: [
         {
           title: "RLC Transportes",
-          period: "2022 → Actualidad",
+          period: "jul 2024 → Actualidad",
           description: "Responsable de importación y exportación.",
           current: true,
           body: "Me encargo de gestionar rutas de transporte desde y hacia España con todos los países de Europa. Llevo una cartera de clientes y transportistas: preparo cotizaciones, negocio tarifas y condiciones, y busco el camión adecuado para cada carga, muchas de ellas a temperatura controlada. Sigo cada servicio desde la recogida hasta la entrega, resuelvo las incidencias y hago crecer la cartera con clientes y proveedores de confianza.",
@@ -28,15 +28,24 @@ export const es: Dictionary = {
         },
         {
           title: "Sklum",
-          period: "2020 → 2022",
+          period: "feb 2023 → jul 2024",
           description: "Planificador de aprovisionamiento.",
           body: "Me encargaba de planificar el aprovisionamiento: definir qué comprar y cuándo a partir de las proyecciones de stock y la previsión de demanda de cada artículo. Coordinaba a proveedores nacionales e internacionales, la mayoría con mercancía que llegaba en contenedor desde Asia, y controlaba los pedidos y los planes de carga para que cumplieran las fechas y los incoterms acordados. Hacía seguimiento de KPIs como la cobertura de stock, la rotación y el cumplimiento de plazos de los proveedores.",
           figure: "port",
         },
         {
-          title: "Transporte de cargas",
-          period: "2017 → 2020",
-          description: "Donde empezó todo: dos empresas de cargas que convirtieron la logística en mi profesión.",
+          title: "Wheels Logistics",
+          period: "may 2022 → dic 2022",
+          description: "Freight Manager.",
+          body: "Gestionaba las rutas de importación desde Alemania hasta la planta de Ford en Almussafes, en contacto directo con Ford y sus proveedores y al ritmo de su producción just-in-time. Planificaba las rutas, seguía los KPIs del servicio y buscaba mejoras en la red de transporte.",
+          figure: "loading",
+        },
+        {
+          title: "Miami, Florida",
+          period: "2018 → 2019",
+          description: "Primeros pasos.",
+          body: "Dos empresas de transporte de carga, cada una con 25 camiones. Coordinaba las salidas con el taller, gestionaba las cargas con los clientes y cerraba cada semana los cobros y pagos con clientes y camioneros. Todo en inglés.",
+          muted: true,
         },
       ],
     },

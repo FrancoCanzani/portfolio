@@ -66,7 +66,11 @@ function Milestone({ item }: { item: Item }) {
     <>
       <span className="absolute top-[3px] -left-[5px] flex size-[9px]" aria-hidden="true">
         {item.current ? <span className="absolute inset-0 animate-ping rounded-[2px] bg-sky-500 opacity-60" /> : null}
-        <span className={`relative size-[9px] rounded-[2px] ring-4 ring-[#fafafa] ${item.current ? "bg-sky-500" : "bg-neutral-300"}`} />
+        <span
+          className={`relative size-[9px] rounded-[2px] ring-4 ring-[#fafafa] ${
+            item.current ? "bg-sky-500" : item.muted ? "border border-neutral-300 bg-[#fafafa]" : "bg-neutral-300"
+          }`}
+        />
       </span>
       {item.period ? <p className="mb-1 font-mono text-[11px] leading-[16px] text-neutral-400 tabular-nums">{item.period}</p> : null}
     </>
@@ -137,9 +141,6 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
           <p className="reveal mt-4 text-[18px] leading-[28px] text-pretty text-neutral-600 sm:text-[20px] sm:leading-[30px]" style={reveal(order++)}>
             <Emphasis text={dict.intro} />
           </p>
-          <div className="reveal mt-8" style={reveal(order++)}>
-            <LoadingFigure label={dict.figures.loading} />
-          </div>
         </div>
 
         {dict.sections.map((section) => (
@@ -160,7 +161,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
                       <Figure item={item} dict={dict} />
                     </div>
                   ) : null}
-                  {item.body ? <p className="text-pretty text-neutral-500">{item.body}</p> : null}
+                  {item.body ? <p className={`text-pretty ${item.muted ? "text-[12.5px] leading-[20px] text-neutral-400 sm:text-[13px]" : "text-neutral-500"}`}>{item.body}</p> : null}
                 </li>
               ))}
             </ul>
