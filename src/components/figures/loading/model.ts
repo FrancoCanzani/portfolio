@@ -1,6 +1,6 @@
 import { DOOR_X, SLOTS, TRUCK_AWAY, TRUCK_STOP } from "./view";
 
-export const LOOP = 12;
+const LOOP = 12;
 export const STILL_AT = 5.4;
 
 const FIRST_BOX = 1.8;
@@ -16,12 +16,12 @@ const ease = (value: number) => {
 const span = (t: number, from: number, to: number) => clamp01((t - from) / (to - from));
 const mix = (a: number, b: number, t: number) => a + (b - a) * t;
 
-export interface BoxState {
+interface BoxState {
   x: number;
   alpha: number;
 }
 
-export interface Moment {
+interface Moment {
   truckX: number;
   truckAlpha: number;
   boxes: BoxState[];

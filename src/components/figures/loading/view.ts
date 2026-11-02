@@ -2,7 +2,7 @@ import { fitProjection, iso, type Plan, type Point3 } from "@/components/iso/iso
 
 export const WIDTH = 560;
 export const HEIGHT = 300;
-export const AZIMUTH = 58;
+const AZIMUTH = 58;
 
 export const BASE: Plan = { x: -116, y: -54, w: 216, d: 84, r: 6 };
 export const BASE_H = 8;

@@ -4,7 +4,7 @@ import { PortArt } from "./art";
 
 export function PortFigure({ label }: { label: string }) {
   return (
-    <div className="iso figure" data-theme="light">
+    <div className="iso">
       <PortArt label={label} />
     </div>
   );

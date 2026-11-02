@@ -1,5 +1,5 @@
 export const PALLETS = 26;
-export const LOOP = 11;
+const LOOP = 11;
 const T = { leave: 0.8, arrive: 4.2, unloaded: 5.0, loaded: 5.8, back: 9.2, done: 10.0 };
 export const STILL_AT = 1.5;
 
@@ -10,7 +10,7 @@ const ease = (value: number) => {
 };
 const span = (t: number, from: number, to: number) => clamp01((t - from) / (to - from));
 
-export interface Moment {
+interface Moment {
   heading: 1 | -1;
   along: number;
   load: number;

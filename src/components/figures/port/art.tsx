@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Dots, Line, Solid } from "@/components/iso/react/draw";
 import { CONTAINER_TINTS, type Tint } from "../scenery";
 import { TruckArt } from "../truck/art";

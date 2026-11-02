@@ -116,7 +116,7 @@ export const CRANE_TOP = {
 export const TROLLEY = slab(box(CRANE_X - 31, PICK_Y - 5, 62, 10, 0.6), TROLLEY_Z, 3, 2);
 export const SPREADER_AT = PICK[2] + BOX_H;
 export const SPREADER = slab(box(CRANE_X - 28, PICK_Y - BOX_W / 2, BOX_L, BOX_W, 0.4), SPREADER_AT, 1.6, 2);
-export const CABLE_POINTS: Array<[number, number]> = [
+const CABLE_POINTS: Array<[number, number]> = [
   [CRANE_X - 22, -3],
   [CRANE_X - 22, 3],
   [CRANE_X + 22, -3],

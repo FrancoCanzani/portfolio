@@ -13,7 +13,7 @@ export interface Part {
   strap?: string;
 }
 
-export type Cargo = { kind: "pallets"; count: number } | { kind: "flatbed" } | { kind: "chassis" };
+type Cargo = { kind: "pallets"; count: number } | { kind: "flatbed" } | { kind: "chassis" };
 
 interface TruckOptions {
   projection: Projection;

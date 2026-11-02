@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Dots, Line, Solid } from "@/components/iso/react/draw";
 import { Verge } from "../scenery-art";
 import { TruckArt } from "../truck/art";

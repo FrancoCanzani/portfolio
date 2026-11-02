@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Solid } from "@/components/iso/react/draw";
 import type { VergeArt } from "./scenery";
 

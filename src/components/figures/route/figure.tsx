@@ -4,7 +4,7 @@ import { RouteArt } from "./art";
 
 export function RouteFigure({ label }: { label: string }) {
   return (
-    <div className="iso figure" data-theme="light">
+    <div className="iso">
       <RouteArt label={label} />
     </div>
   );

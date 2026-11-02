@@ -10,7 +10,6 @@ export interface Item {
   title: string;
   description: string;
   meta?: string;
-  href?: string;
   body?: string;
   figure?: FigureName;
   current?: boolean;
@@ -20,7 +19,6 @@ export interface Item {
 export interface Section {
   id: string;
   title: string;
-  intro?: string;
   timeline?: boolean;
   items: Item[];
 }

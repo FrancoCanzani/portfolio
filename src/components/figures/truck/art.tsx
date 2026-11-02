@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Dots, Line, Solid } from "@/components/iso/react/draw";
 import type { Flat } from "@/components/iso/iso-kit";
 import type { Part } from "./geometry";

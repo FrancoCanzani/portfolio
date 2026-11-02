@@ -11,10 +11,9 @@ import { clients, getDictionary, hasLocale, type Dictionary, type Item } from "@
 
 const reveal = (index: number) => ({ "--reveal-i": index }) as CSSProperties;
 
-function Tag({ current, children }: { current?: boolean; children: ReactNode }) {
+function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded border border-neutral-200 bg-white px-1.5 py-px font-mono text-[10.5px] leading-[18px] tracking-wide text-neutral-500 tabular-nums">
-      {current ? <span className="size-1.5 animate-pulse rounded-full bg-signal" aria-hidden="true" /> : null}
+    <span className="mt-0.5 inline-flex shrink-0 rounded border border-neutral-200 bg-white px-1.5 py-px font-mono text-[10.5px] leading-[18px] tracking-wide text-neutral-500 tabular-nums">
       {children}
     </span>
   );
@@ -60,26 +59,16 @@ function Milestone({ item }: { item: Item }) {
 }
 
 function Row({ item }: { item: Item }) {
-  const body = (
-    <>
+  return (
+    <div className="flex items-start gap-3 py-1">
       <span className="min-w-0 flex-1">
         <span className="font-medium text-neutral-900">{item.title}</span>
         <span className="text-neutral-400"> · </span>
         <span className="text-neutral-500">{item.description}</span>
       </span>
-      {item.meta ? <Tag current={item.current}>{item.meta}</Tag> : null}
-      {item.href ? <ArrowUpRight className="mt-1 size-3.5 shrink-0 text-neutral-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" /> : null}
-    </>
+      {item.meta ? <Tag>{item.meta}</Tag> : null}
+    </div>
   );
-  const shape = "group flex items-start gap-3";
-  if (item.href) {
-    return (
-      <a href={item.href} target="_blank" rel="noreferrer" className={`${shape} -mx-2 rounded-md px-2 py-1 transition-colors duration-200 hover:bg-red-50`}>
-        {body}
-      </a>
-    );
-  }
-  return <div className={`${shape} py-1`}>{body}</div>;
 }
 
 function Figure({ item, dict }: { item: Item; dict: Dictionary }) {
@@ -133,8 +122,10 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
                     src={client.src}
                     alt={client.name}
                     title={client.name}
-                    style={{ height: client.height }}
-                    className={`w-auto transition duration-300 sm:opacity-60 sm:hover:opacity-100 ${
+                    height={client.height}
+                    width={Math.round(client.height * client.ratio)}
+                    decoding="async"
+                    className={`transition duration-300 sm:opacity-60 sm:hover:opacity-100 ${
                       client.silhouette ? "brightness-0 opacity-80" : "sm:grayscale sm:hover:grayscale-0"
                     }`}
                   />
@@ -146,12 +137,9 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
 
         {dict.sections.map((section) => (
           <section key={section.id} id={section.id} className="mt-16 scroll-mt-20">
-            <div>
-              <h2 className="reveal mb-2 font-medium text-neutral-900" style={reveal(order++)}>
-                {section.title}
-              </h2>
-              {section.intro ? <p className="mb-3 text-neutral-500">{section.intro}</p> : null}
-            </div>
+            <h2 className="reveal mb-2 font-medium text-neutral-900" style={reveal(order++)}>
+              {section.title}
+            </h2>
             <ul className={section.timeline ? "ml-1 border-l border-dashed border-neutral-300" : "space-y-1.5"}>
               {section.items.map((item) => (
                 <li key={item.title} className={`reveal ${section.timeline ? "relative pb-12 pl-6 last:pb-0" : ""}`} style={reveal(order++)}>

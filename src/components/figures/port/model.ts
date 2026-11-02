@@ -1,6 +1,6 @@
 import { BOX_H, LANE_Y, PICK, PICK_Y, TRUCK_DECK, TRUCK_FROM, TRUCK_STOP, TRUCK_TO } from "./view";
 
-export const LOOP = 14;
+const LOOP = 14;
 export const STILL_AT = 5.2;
 
 const REST = 38;

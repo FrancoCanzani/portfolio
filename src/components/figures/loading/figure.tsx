@@ -4,7 +4,7 @@ import { LoadingArt } from "./art";
 
 export function LoadingFigure({ label }: { label: string }) {
   return (
-    <div className="iso figure" data-theme="light">
+    <div className="iso">
       <LoadingArt label={label} />
     </div>
   );
