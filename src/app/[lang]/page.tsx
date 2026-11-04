@@ -128,7 +128,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
           <p className="reveal mt-4 text-[18px] leading-[28px] text-pretty text-neutral-600 sm:text-[20px] sm:leading-[30px]" style={reveal(order++)}>
             <Emphasis text={dict.intro} />
           </p>
-          <div className="reveal mt-10" style={reveal(order++)}>
+          <div className="reveal mt-12" style={reveal(order++)}>
             <p className="mb-4 text-center text-neutral-400">{dict.clientsTitle}</p>
             <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5">
               {clients.map((client) => (
@@ -152,7 +152,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
         </div>
 
         {dict.sections.map((section) => (
-          <section key={section.id} id={section.id} className="mt-16 scroll-mt-20">
+          <section key={section.id} id={section.id} className="mt-24 scroll-mt-20">
             <h2 className="reveal mb-2 font-medium text-neutral-900" style={reveal(order++)}>
               {section.title}
             </h2>
@@ -173,7 +173,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
           </section>
         ))}
 
-        <section id="contact" className="mt-16 scroll-mt-20">
+        <section id="contact" className="mt-24 scroll-mt-20">
           <h2 className="reveal mb-4 font-medium text-neutral-900" style={reveal(order++)}>
             {dict.contact.title}
           </h2>
