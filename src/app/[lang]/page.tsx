@@ -8,6 +8,7 @@ import { LoadingFigure } from "@/components/figures/loading/figure";
 import { PortFigure } from "@/components/figures/port/figure";
 import { RouteFigure } from "@/components/figures/route/figure";
 import { clients, getDictionary, hasLocale, type Dictionary, type Item } from "@/content";
+import { siteUrl } from "@/content/site";
 
 const reveal = (index: number) => ({ "--reveal-i": index }) as CSSProperties;
 
@@ -94,8 +95,23 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
   const dict = getDictionary(lang);
   let order = 0;
 
+  const person = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: dict.name,
+    jobTitle: dict.role,
+    description: dict.meta.description,
+    url: `${siteUrl}/${lang}`,
+    address: { "@type": "PostalAddress", addressLocality: "Dénia", addressRegion: "Alicante", addressCountry: "ES" },
+    worksFor: { "@type": "Organization", name: "RLC Transportes" },
+    alumniOf: { "@type": "CollegeOrUniversity", name: "Universidad Católica de La Plata" },
+    knowsLanguage: ["es", "en"],
+    sameAs: [dict.contact.linkedin.href],
+  };
+
   return (
     <div className="min-h-dvh bg-[#fdfdfd] text-[13px] leading-[22px] text-neutral-600 sm:text-[14px]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }} />
       <header className="sticky top-0 z-10 bg-[#fdfdfd]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-[640px] items-center gap-4 px-6 py-2">
           <ScrollTruck />

@@ -24,7 +24,7 @@ export interface Section {
 }
 
 export interface Dictionary {
-  meta: { title: string; description: string };
+  meta: { title: string; description: string; tagline: string };
   name: string;
   greeting: string;
   role: string;

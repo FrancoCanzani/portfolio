@@ -5,7 +5,8 @@ const LINKEDIN = "https://www.linkedin.com/in/franco-canzani";
 export const en: Dictionary = {
   meta: {
     title: "Franco Canzani · Account & Logistics Manager",
-    description: "Logistics manager living in Dénia, Alicante, helping some of the biggest companies move their goods across Europe.",
+    description: "Franco Canzani, logistics manager based in Dénia, Spain. International road freight, imports and exports between Spain and the rest of Europe.",
+    tagline: "International road freight · Dénia, Spain",
   },
   name: "Franco Canzani",
   greeting: "Hello, I’m",

@@ -20,6 +20,12 @@ All copy lives in `src/content/`:
 
 In the intro, wrap words in `**double asterisks**` to render them in bold.
 
+## SEO
+
+Each locale gets its own title, description, canonical URL, `hreflang` alternates, Open Graph / Twitter card image (`src/app/[lang]/opengraph-image.tsx`) and Person structured data. `robots.txt` and `sitemap.xml` are generated from `src/app/robots.ts` and `src/app/sitemap.ts`.
+
+Absolute URLs come from `NEXT_PUBLIC_SITE_URL`, falling back to Vercel's production domain. Set it once a custom domain is connected, e.g. `NEXT_PUBLIC_SITE_URL=https://francocanzani.com`.
+
 ## Structure
 
 - `src/app/[lang]/page.tsx` — the page: intro, client logos, experience timeline, education, certifications, languages and contact.
